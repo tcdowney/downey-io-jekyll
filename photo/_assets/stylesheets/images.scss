@@ -1,0 +1,74 @@
+.image-list {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+
+  @include media($large-screen) {
+    width: 70%;
+    margin: auto;
+  }
+
+  > h1 {
+    width: 100%;
+    margin-bottom: $base-line-height;
+  }
+
+  .pagination {
+    padding: golden-ratio(1em, -1);
+    margin-bottom: $content-bottom-margin;
+
+    a {
+      @extend .subdued;
+    }
+
+    .previous {
+      float: left;
+    }
+
+    .next {
+      float: right;
+    }
+  }
+}
+
+.image-post {
+  border-radius: $base-border-radius;
+  padding: golden-ratio(1em, -1);
+  margin-bottom: golden-ratio(1em, 1);
+
+  i {
+    color: $dark-gray;
+  }
+
+  h2 {
+    font-size: 1em;
+    text-align: left;
+    padding-top: golden-ratio(1em, -2);
+
+    a {
+      @extend .subdued;
+    }
+  }
+}
+
+article {
+  @include clearfix;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+
+  .title {
+    text-align: left;
+    width: 100%;
+    padding-bottom: golden-ratio(1em, -1);
+
+    h1 {
+      display: inline;
+    }
+
+    time {
+      @extend .subdued;
+      padding: golden-ratio(1em, -1);
+    }
+  }
+}

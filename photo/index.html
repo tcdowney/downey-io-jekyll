@@ -1,0 +1,35 @@
+---
+layout: default
+title: Your New Jekyll Site
+---
+
+<div class="image-list">
+  <ul>
+    {% for post in paginator.posts %}
+      <li class="image-post">
+        <a href="{{ post.url }}"><img src="{{ post.image }}"></a>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <a href="/" class="previous">
+          <i class="fa fa-long-arrow-left fa-2x"></i>
+        </a>
+      {% else %}
+        <a href="/page{{ paginator.previous_page }}" class="previous">
+          <i class="fa fa-long-arrow-left fa-2x"></i>
+        </a>
+      {% endif %}
+    {% endif %}
+    {% if paginator.next_page %}
+      <a href="/page{{ paginator.next_page }}" class="next">
+        <i class="fa fa-long-arrow-right fa-2x"></i>
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+

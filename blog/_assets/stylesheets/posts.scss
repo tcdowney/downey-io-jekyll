@@ -1,0 +1,167 @@
+@mixin post-excerpt-color($color) {
+  .post-badge {
+    > span i {
+      color: $color;
+    }
+  }
+
+  &:hover {
+    .post-excerpt-content > p {
+      @include transition(color 0.25s linear);
+      color: lighten($base-font-color,30);
+    }
+
+    .post-badge > span i {
+      @include transition(color 0.25s linear);
+      color: lighten($color,30);
+    }
+  }
+}
+
+.post-list {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+
+  @include media($large-screen) {
+    width: 70%;
+    margin: auto;
+  }
+
+  & > .posts {
+    display: inline-block;
+    & > * {
+      text-align: left;
+    }
+  }
+
+  > h1 {
+    width: 100%;
+    padding-top: golden-ratio(1em, -1);
+    margin-bottom: $base-line-height;
+  }
+
+  .pagination {
+    padding: golden-ratio(1em, -1);
+    margin-bottom: $content-bottom-margin;
+
+    a {
+      @extend .subdued;
+    }
+
+    .previous {
+      float: left;
+    }
+
+    .next {
+      float: right;
+    }
+  }
+}
+
+.post-excerpt {
+  $post-gutter: 1.4em;
+  $post-image-padding: .7em;
+  $post-image-width: 4em;
+  $post-color: $base-font-color;
+  $post-background: $base-font-color;
+  $post-detail-color: transparentize($post-color, .5);
+  $post-image-vert-alignment: top;
+
+  @include post-excerpt-color($post-background);
+
+  display: table;
+  width: 100%;
+  margin-bottom: $base-line-height;
+  padding-bottom: 1em;
+  border-bottom: 1px solid transparentize($post-color, .9);
+
+  .post-badge,
+  .post-content {
+    display: table-cell;
+    vertical-align: $post-image-vert-alignment;
+  }
+
+  .post-badge {
+    > span {
+      margin-right: $post-gutter;
+      width: $post-image-width;
+      height: auto;
+      border-radius: $base-border-radius;
+      padding: $post-image-padding;
+      display: block;
+      max-width: none;
+
+      i {
+        color: $off-white;
+      }
+    }
+  }
+
+  .post-excerpt-content {
+    width: 100%;
+
+    h1 {
+      font-size: 1em;
+      margin-bottom: .5em;
+    }
+
+    .post-detail {
+      font-style: italic;
+      font-size: .9em;
+      color: $post-detail-color;
+    }
+
+    .read-more {
+      font-size: .9em;
+      margin-left: .5em;
+      text-transform: uppercase;
+    }
+
+    p {
+      display: none;
+      margin-bottom: .5em;
+    }
+
+    @include media($medium-screen-up) {
+      p {
+        display: inherit;
+      }
+    }
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.post-excerpt-indigo {
+  @extend .post-excerpt;
+  $post-background: $indigo;
+  @include post-excerpt-color($post-background);
+}
+
+.post-excerpt-violet {
+  @extend .post-excerpt;
+  $post-background: $violet;
+  @include post-excerpt-color($post-background);
+}
+
+.post-excerpt-red-violet {
+  @extend .post-excerpt;
+  $post-background: $red-violet;
+  @include post-excerpt-color($post-background);
+}
+
+.post-excerpt-red {
+  @extend .post-excerpt;
+  $post-background: $red;
+  @include post-excerpt-color($post-background);
+}
+
+.post-excerpt-teal {
+  @extend .post-excerpt;
+  $post-background: $teal;
+  @include post-excerpt-color($post-background);
+}
+

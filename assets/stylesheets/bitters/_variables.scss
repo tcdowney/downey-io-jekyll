@@ -1,0 +1,67 @@
+// Typography
+///////////////////////////////////////////////////////////////////////////////
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway|Merriweather);
+
+$sans-serif: "Open Sans", sans-serif;
+$serif: "Merriweather", "Times New Roman", Times, serif;
+
+$base-font-family: $serif;
+$header-font-family: "Raleway";
+$nav-font-family: "Raleway";
+
+// Sizes
+///////////////////////////////////////////////////////////////////////////////
+$base-font-size: 1em;
+$base-line-height: $base-font-size * 1.5;
+$base-border-radius: em(3);
+
+$content-bottom-margin: $base-line-height * 3;
+
+// Colors
+///////////////////////////////////////////////////////////////////////////////
+
+$blue: #477DCA;
+$mint-green: #7ABF8A;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #DDD;
+$light-red: #FBE3E4;
+$light-yellow: #FFF6BF;
+$light-green: #E6EFC2;
+$off-white: #FCFCFC;
+
+// Post Colors
+// These correspond with a .post-#{color_name} class
+$indigo: #0C1828;
+$violet: #5C2849;
+$red-violet: #A73E5C;
+$red: #BD383F;
+$teal: #288C8F;
+
+// Body Color
+$base-body-color: $indigo;
+$photo-body-color: $off-white;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$base-accent-color: $blue;
+
+// Text Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 15);
+$subdued-link-color: $medium-gray;
+$hover-subdued-link-color: $dark-gray;
+
+// Border color
+$base-border-color: $light-gray;
+
+// Nav Colors
+$nav-base-color: $off-white;
+$nav-accent-color: $red;
+$nav-alt-color: $dark-gray;
+$nav-alt-accent-color: $teal;
+
+// Flash Colors
+$error-color: $light-red;
+$notice-color: $light-yellow;
+$success-color: $light-green;

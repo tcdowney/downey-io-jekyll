@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<article class="post-container">
+  <div class="post-badge-{{ page.color }}">
+    <span class="icon-wrapper">
+      <i class="fa {{ page.icon }} fa-fw fa-2x"></i>
+    </span>
+  </div>
+  <div class="title">
+    <h1>{{ page.title }}</h1>
+    <time class="date">{{ page.date | date_to_string }}</time>
+  </div>
+  <div class="post-content">
+    {{ content }}
+  </div>
+  <hr>
+  <p class="categories">{{ page.categories }}</p>
+  <p class="author">Tim</p>
+</article>
+
+

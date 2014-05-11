@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color:  $photo-body-color;
+}
+
+header {
+  @include clearfix();
+
+  padding: golden-ratio(10px, 1) golden-ratio(10px, 1);
+  text-align: center;
+  display: block;
+
+  @include media($medium-screen-up) {
+    h1 {
+      float: left;
+    }
+
+    nav {
+      float: right;
+    }
+  }
+}
+
+.signature {
+  max-width: 200px;
+  max-height: 105px;
+  fill: $nav-alt-color;
+
+  &:hover {
+    @include transition(fill 0.25s linear);
+    fill: $nav-alt-accent-color;
+  }
+}
+
+.header-wrapper {
+  @include outer-container;
+}
+
+main {
+  @include outer-container;
+  @include clearfix;
+
+  padding-top: $base-line-height;
+  background-color: $off-white;
+
+  @include media($max-width) {
+    border-radius: $base-border-radius;
+  }
+}
+
+nav {
+  a {
+    display: inline;
+    margin-right: 1em;
+    font-family: $nav-font-family;
+    color: $nav-alt-color;
+
+    &:hover {
+      @include transition(color 0.25s linear);
+      color: $nav-alt-accent-color;
+    }
+
+    &:active, &:focus {
+      outline: none;
+      color: $nav-alt-accent-color;
+    }
+  }
+}

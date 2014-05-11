@@ -1,0 +1,121 @@
+article {
+  @include clearfix;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+
+  .categories {
+    float: right;
+    font-size: .7em;
+    font-weight: 700;
+    text-transform: lowercase;
+  }
+
+  .title {
+    margin-bottom: golden-ratio(1em, 1);
+  }
+
+  .post-content {
+    line-height: $base-line-height * 1.25;
+  }
+
+  .post-badge {
+    margin: 1em 0 1em;
+
+    > span {
+      width: 4em;
+      height: auto;
+      border-radius: $base-border-radius;
+      padding: .7em;
+      display: block;
+      max-width: none;
+
+      i {
+        color: $dark-gray;
+      }
+    }
+  }
+
+  .post-badge-indigo {
+    @extend .post-badge;
+
+    > span i {
+      color: $indigo;
+    }
+  }
+
+  .post-badge-violet {
+    @extend .post-badge;
+
+    > span i {
+      color: $violet;
+    }
+  }
+
+  .post-badge-red-violet {
+    @extend .post-badge;
+
+    > span i {
+      color: $red-violet;
+    }
+  }
+
+  .post-badge-red {
+    @extend .post-badge;
+
+    > span i {
+      color: $red;
+    }
+  }
+
+  .post-badge-teal {
+    @extend .post-badge;
+
+    > span i {
+      color: $teal;
+    }
+  }
+
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: .3em;
+
+    @include media($medium-screen) {
+      font-size: 2.6em;
+    }
+  }
+
+  h2 {
+    font-style: italic;
+    font-size: 1em;
+    line-height: 1.6em;
+    margin-bottom: .9em;
+
+    @include media($medium-screen) {
+      font-size: 1.2em;
+    }
+  }
+
+  time.date {
+    color: transparentize($base-font-color, .4);
+    font-style: italic;
+    font-size: 1em;
+    width: 100%;
+    margin-bottom: .4em;
+  }
+
+  p, pre, code {
+    margin-top: 1em;
+    text-align: left;
+  }
+
+  hr {
+    width: 3em;
+  }
+
+  .author {
+    font-family: $serif;
+    text-transform: lowercase;
+  }
+}

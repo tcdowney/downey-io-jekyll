@@ -1,0 +1,52 @@
+---
+layout: default
+title: Your New Jekyll Site
+---
+
+<div class="post-list">
+  <h1>blog</h1>
+  <ul class="posts">
+    {% for post in paginator.posts %}
+      {% if post.color %}
+        <li class="post-excerpt-{{ post.color }}">
+      {% else %}
+        <li class="post-excerpt">
+      {% endif %}
+          <div class="post-badge">
+            <span class="icon-wrapper">
+              <i class="fa {{ post.icon }} fa-fw fa-2x"></i>
+            </span>
+          </div>
+          <div class="post-excerpt-content">
+            <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+            <p>
+              {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+              <a class="read-more" href="{{ post.url }}">
+                <span class="read-more">Read More</span>
+              </a>
+            </p>
+            <time class="post-detail">{{ post.date | date_to_string }}</time>
+          </div>
+        </li>
+    {% endfor %}
+  </ul>
+
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <a href="/" class="previous">
+          <i class="fa fa-long-arrow-left fa-2x"></i>
+        </a>
+      {% else %}
+        <a href="/page{{ paginator.previous_page }}" class="previous">
+          <i class="fa fa-long-arrow-left fa-2x"></i>
+        </a>
+      {% endif %}
+    {% endif %}
+    {% if paginator.next_page %}
+      <a href="/page{{ paginator.next_page }}" class="next">
+        <i class="fa fa-long-arrow-right fa-2x"></i>
+      </a>
+    {% endif %}
+  </div>
+</div>
