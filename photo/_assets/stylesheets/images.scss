@@ -32,9 +32,12 @@
 }
 
 .image-post {
-  border-radius: $base-border-radius;
   padding: golden-ratio(1em, -1);
   margin-bottom: golden-ratio(1em, 1);
+
+  img {
+    border-radius: $base-border-radius;
+  }
 
   i {
     color: $dark-gray;
@@ -62,13 +65,22 @@ article {
     width: 100%;
     padding-bottom: golden-ratio(1em, -1);
 
-    h1 {
-      display: inline;
-    }
-
     time {
       @extend .subdued;
-      padding: golden-ratio(1em, -1);
     }
+
+    @include media($medium-screen-up) {
+      h1 {
+        display: inline;
+      }
+
+      time {
+        padding: golden-ratio(1em, -1);
+      }
+    }
+  }
+
+  img {
+    border-radius: $base-border-radius;
   }
 }

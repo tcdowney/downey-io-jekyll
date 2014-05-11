@@ -1,10 +1,17 @@
-$light-background-image: "../../images/subtle_patterns/textured_paper/textured_paper.png";
+$light-background-image: "../../images/subtle_patterns/cream_dust.png";
+$light-background-image-hidpi: "../../images/subtle_patterns/cream_dust_@2X.png";
 
 body {
   margin: 0;
   padding: 0;
   background-color: $photo-body-color;
+  background-position: initial initial;
+  background-repeat: initial initial;
   background-image: url($light-background-image);
+
+  @include hidpi(1.3) {
+    background-image: url($light-background-image-hidpi);
+  }
 }
 
 header {
@@ -26,6 +33,8 @@ header {
 }
 
 .signature {
+  @include transition(fill 0.25s linear);
+
   max-width: 200px;
   max-height: 105px;
   fill: $nav-alt-color;
@@ -46,11 +55,6 @@ main {
 
   padding-top: $base-line-height * 2;
   margin-bottom: $base-line-height * 2;
-  background-color: $off-white;
-
-  @include media($max-width) {
-    border-radius: $base-border-radius;
-  }
 }
 
 nav {
