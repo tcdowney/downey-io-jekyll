@@ -1,7 +1,10 @@
+$dark-background-image: "../../images/subtle_patterns/dark_wall/dark_wall.png";
+
 body {
   margin: 0;
   padding: 0;
   background-color: $base-body-color;
+  background-image: url($dark-background-image);
 }
 
 header {

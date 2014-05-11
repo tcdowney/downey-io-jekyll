@@ -1,7 +1,10 @@
+$light-background-image: "../../images/subtle_patterns/textured_paper/textured_paper.png";
+
 body {
   margin: 0;
   padding: 0;
-  background-color:  $photo-body-color;
+  background-color: $photo-body-color;
+  background-image: url($light-background-image);
 }
 
 header {
@@ -41,7 +44,8 @@ main {
   @include outer-container;
   @include clearfix;
 
-  padding-top: $base-line-height;
+  padding-top: $base-line-height * 2;
+  margin-bottom: $base-line-height * 2;
   background-color: $off-white;
 
   @include media($max-width) {

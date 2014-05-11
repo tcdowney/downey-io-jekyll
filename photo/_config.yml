@@ -1,4 +1,4 @@
 name: downey.io
 highlighter: pygments
 paginate: 5
-permalink: posts/:year/:month/:day/:title.html
+permalink: photos/:year/:month/:day/:title.html
