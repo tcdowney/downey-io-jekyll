@@ -1,0 +1,17 @@
+.error-page {
+  padding: golden-ratio(1em, 3);
+  text-align: center;
+
+  i {
+    margin: golden-ratio(1em, -3);
+    color: $indigo;
+
+    @include media($medium-screen-up) {
+      font-size: 12em;
+    }
+  }
+}
+
+.error-message {
+  font-size: 3em;
+}
