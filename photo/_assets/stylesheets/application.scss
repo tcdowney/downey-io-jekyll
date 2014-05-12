@@ -6,7 +6,8 @@ $visual-grid: false;
 $border-box-sizing: true;
 $gutter: 1em;
 
-@import "normalize";
+@import "../../../assets/stylesheets/normalize";
+@import "../../../assets/stylesheets/syntax";
 @import "bourbon";
 @import "../../../assets/stylesheets/bitters/bitters";
 @import "neat";
