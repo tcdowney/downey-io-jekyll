@@ -1,5 +1,16 @@
-name: downey.io
-exclude: [s3_website.yml]
+# Site settings
+title: downey.io
+name: Tim Downey
+description: "Tim's really good photography blog."
+baseurl: ""
+url: "http://downey.io"
+
+# Build settings
 highlighter: pygments
 paginate: 5
 permalink: photos/:year/:month/:day/:title.html
+
+exclude:
+  - s3_website.yml
+gems:
+  - jekyll-sitemap
