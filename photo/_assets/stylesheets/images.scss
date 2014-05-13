@@ -69,7 +69,7 @@ article {
       @extend .subdued;
     }
 
-    @include media($medium-screen-up) {
+    @include media($large-screen-up) {
       h1 {
         display: inline;
       }

@@ -19,19 +19,33 @@ article {
     line-height: $base-line-height * 1.25;
   }
 
+  .author {
+    text-align: right;
+    font-family: $serif;
+    text-transform: lowercase;
+  }
+
+  .footnote {
+    float: right;
+  }
+
   .post-badge {
     margin: 1em 0 1em;
 
     > span {
-      width: 4em;
-      height: auto;
-      border-radius: $base-border-radius;
-      padding: .7em;
-      display: block;
-      max-width: none;
+      font-size: 3em;
 
       i {
         color: $dark-gray;
+      }
+
+      @include media($medium-screen-up) {
+        font-size: 1em;
+        width: 4em;
+        height: auto;
+        padding: .7em;
+        display: block;
+        max-width: none;
       }
     }
   }
@@ -111,11 +125,6 @@ article {
   }
 
   hr {
-    width: 3em;
-  }
-
-  .author {
-    font-family: $serif;
-    text-transform: lowercase;
+    width: 4em;
   }
 }
