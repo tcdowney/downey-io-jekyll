@@ -1,4 +1,5 @@
 name: downey.io
+exclude: [s3_website.yml]
 highlighter: pygments
 paginate: 5
 permalink: posts/:year/:month/:day/:title.html
