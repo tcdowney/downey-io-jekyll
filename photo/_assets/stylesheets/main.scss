@@ -1,5 +1,4 @@
 $light-background-image: "../../images/subtle_patterns/cream_dust.png";
-$light-background-image-hidpi: "../../images/subtle_patterns/cream_dust_@2X.png";
 
 body {
   margin: 0;
@@ -8,10 +7,6 @@ body {
   background-position: initial initial;
   background-repeat: initial initial;
   background-image: url($light-background-image);
-
-  @include hidpi(1.3) {
-    background-image: url($light-background-image-hidpi);
-  }
 }
 
 header {

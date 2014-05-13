@@ -1,5 +1,4 @@
 $dark-background-image: "../../images/subtle_patterns/indigo_wall.png";
-$dark-background-image-hidpi: "../../images/subtle_patterns/indigo_wall_@2X.png";
 
 body {
   margin: 0;
@@ -8,10 +7,6 @@ body {
   background-position: initial initial;
   background-repeat: initial initial;
   background-image: url($dark-background-image);
-
-  @include hidpi(1.3) {
-    background-image: url($dark-background-image-hidpi);
-  }
 }
 
 header {
