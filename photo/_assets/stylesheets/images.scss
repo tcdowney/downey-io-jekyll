@@ -35,6 +35,10 @@
   padding: golden-ratio(1em, -1);
   margin-bottom: golden-ratio(1em, 1);
 
+  a {
+    @extend .subdued;
+  }
+
   img {
     border-radius: $base-border-radius;
   }
@@ -47,10 +51,6 @@
     font-size: 1em;
     text-align: left;
     padding-top: golden-ratio(1em, -2);
-
-    a {
-      @extend .subdued;
-    }
   }
 }
 
