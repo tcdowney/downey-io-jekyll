@@ -65,7 +65,7 @@ article {
     width: 100%;
     padding-bottom: golden-ratio(1em, -1);
 
-    time {
+    .date {
       @extend .subdued;
     }
 
@@ -74,7 +74,7 @@ article {
         display: inline;
       }
 
-      time {
+      .date {
         padding: golden-ratio(1em, -1);
       }
     }

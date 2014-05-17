@@ -26,7 +26,9 @@ title: downey.io - blog
                 <span class="read-more">Read More</span>
               </a>
             </p>
-            <time class="post-detail">{{ post.date | date_to_string }}</time>
+            <span class="post-detail">
+              {{ post.date | date: '%B %d, %Y' }}
+            </span>
           </div>
         </li>
     {% endfor %}
