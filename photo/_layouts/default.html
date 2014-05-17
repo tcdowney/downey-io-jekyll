@@ -3,10 +3,15 @@ layout: application
 ---
 
 <body>
-  <header>
-    {% include header.html %}
-  </header>
-  <main>
-    {{ content }}
-  </main>
+  <div class="main-content">
+    <header>
+      {% include header.html %}
+    </header>
+    <main>
+      {{ content }}
+    </main>
+  </div>
+  <footer>
+    {% include footer.html %}
+  </footer>
 </body>

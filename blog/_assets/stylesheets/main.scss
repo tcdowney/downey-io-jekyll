@@ -1,5 +1,9 @@
 $dark-background-image: "../../images/subtle_patterns/indigo_wall.png";
 
+html, body, .main-content {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +11,12 @@ body {
   background-position: initial initial;
   background-repeat: initial initial;
   background-image: url($dark-background-image);
+
+  .main-content {
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 3em;
+  }
 }
 
 header {
@@ -72,6 +82,40 @@ nav {
     &:active, &:focus {
       outline: none;
       color: $nav-accent-color;
+    }
+  }
+}
+
+footer {
+  @include outer-container;
+  @include clearfix();
+
+  height: 3em;
+  margin-top: -3em;
+  text-align: center;
+
+  a {
+    color: $nav-base-color;
+
+    &:hover {
+      @include transition(color 0.25s linear);
+      color: $nav-accent-color;
+    }
+
+    &:active, &:focus {
+      outline: none;
+      color: $nav-accent-color;
+    }
+  }
+
+  .footer-social {
+    li {
+      display: inline-block;
+      padding: 0 .25em 0;
+    }
+
+    @include media($medium-screen-up) {
+      float: right;
     }
   }
 }

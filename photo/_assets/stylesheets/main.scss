@@ -70,3 +70,37 @@ nav {
     }
   }
 }
+
+footer {
+  @include outer-container;
+  @include clearfix();
+
+  height: 3em;
+  margin-top: -3em;
+  text-align: center;
+
+  a {
+    color: $nav-alt-color;
+
+    &:hover {
+      @include transition(color 0.25s linear);
+      color: $nav-alt-accent-color;
+    }
+
+    &:active, &:focus {
+      outline: none;
+      color: $nav-alt-accent-color;
+    }
+  }
+
+  .footer-social {
+    li {
+      display: inline-block;
+      padding: 0 .25em 0;
+    }
+
+    @include media($medium-screen-up) {
+      float: right;
+    }
+  }
+}
