@@ -33,7 +33,7 @@
 
 .image-post {
   padding: golden-ratio(1em, -1);
-  margin-bottom: golden-ratio(1em, 1);
+  margin-bottom: golden-ratio(1em, 3);
 
   a {
     @extend .subdued;
@@ -41,10 +41,6 @@
 
   img {
     border-radius: $base-border-radius;
-  }
-
-  i {
-    color: $dark-gray;
   }
 
   h2 {

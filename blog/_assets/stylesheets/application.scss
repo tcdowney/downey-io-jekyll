@@ -2,10 +2,6 @@
  *= require_self
  */
 
-$visual-grid: false;
-$border-box-sizing: true;
-$gutter: 1em;
-
 @import "../../../assets/stylesheets/normalize";
 @import "../../../assets/stylesheets/syntax";
 @import "bourbon";
@@ -13,5 +9,5 @@ $gutter: 1em;
 @import "neat";
 @import "posts";
 @import "post";
-@import "errors";
+@import "../../../assets/stylesheets/errors";
 @import "main";
