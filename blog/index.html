@@ -4,7 +4,7 @@ title: downey.io - blog
 ---
 
 <div class="post-list">
-  <i class="fa fa-paper-plane fa-fw fa-3x"></i>
+  <span class="fa fa-paper-plane fa-fw fa-3x"></span>
   <h1>fresh</h1>
   <ul class="posts">
     {% for post in paginator.posts %}
@@ -15,7 +15,7 @@ title: downey.io - blog
       {% endif %}
           <div class="post-badge">
             <span class="icon-wrapper">
-              <i class="fa {{ post.icon }} fa-fw fa-2x"></i>
+              <span class="fa {{ post.icon }} fa-fw fa-2x"></span>
             </span>
           </div>
           <div class="post-excerpt-content">
@@ -38,17 +38,17 @@ title: downey.io - blog
     {% if paginator.previous_page %}
       {% if paginator.previous_page == 1 %}
         <a href="/" class="previous">
-          <i class="fa fa-long-arrow-left fa-2x"></i>
+          <span class="fa fa-long-arrow-left fa-2x"></span>
         </a>
       {% else %}
         <a href="/page{{ paginator.previous_page }}" class="previous">
-          <i class="fa fa-long-arrow-left fa-2x"></i>
+          <span class="fa fa-long-arrow-left fa-2x"></span>
         </a>
       {% endif %}
     {% endif %}
     {% if paginator.next_page %}
       <a href="/page{{ paginator.next_page }}" class="next">
-        <i class="fa fa-long-arrow-right fa-2x"></i>
+        <span class="fa fa-long-arrow-right fa-2x"></span>
       </a>
     {% endif %}
   </div>

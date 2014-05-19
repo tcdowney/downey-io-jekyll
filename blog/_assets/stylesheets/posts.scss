@@ -1,6 +1,6 @@
 @mixin post-excerpt-color($color) {
   .post-badge {
-    > span i {
+    > span .fa {
       @include transition(color 0.5s linear);
       color: $color;
     }
@@ -16,7 +16,7 @@
       color: lighten($base-font-color,30);
     }
 
-    .post-badge > span i {
+    .post-badge > span .fa {
       @include transition(color 0.25s linear);
       color: lighten($color,30);
     }

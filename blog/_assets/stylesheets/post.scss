@@ -34,7 +34,7 @@ article {
     > span {
       font-size: 3em;
 
-      i {
+      .fa {
         color: $dark-gray;
       }
 
@@ -52,7 +52,7 @@ article {
   .post-badge-indigo {
     @extend .post-badge;
 
-    > span i {
+    > span .fa {
       color: $indigo;
     }
   }
@@ -60,7 +60,7 @@ article {
   .post-badge-violet {
     @extend .post-badge;
 
-    > span i {
+    > span .fa {
       color: $violet;
     }
   }
@@ -68,7 +68,7 @@ article {
   .post-badge-red-violet {
     @extend .post-badge;
 
-    > span i {
+    > span .fa {
       color: $red-violet;
     }
   }
@@ -76,7 +76,7 @@ article {
   .post-badge-red {
     @extend .post-badge;
 
-    > span i {
+    > span .fa {
       color: $red;
     }
   }
@@ -84,7 +84,7 @@ article {
   .post-badge-teal {
     @extend .post-badge;
 
-    > span i {
+    > span .fa {
       color: $teal;
     }
   }
