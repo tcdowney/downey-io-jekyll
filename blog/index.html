@@ -1,55 +1,15 @@
 ---
-layout: default
-title: downey.io - blog
+layout: home
+title: downey.io
 ---
 
-<div class="post-list">
-  <span class="fa fa-paper-plane fa-fw fa-3x"></span>
-  <h1>fresh</h1>
-  <ul class="posts">
-    {% for post in paginator.posts %}
-      {% if post.color %}
-        <li class="post-excerpt-{{ post.color }}">
-      {% else %}
-        <li class="post-excerpt">
-      {% endif %}
-          <div class="post-badge">
-            <span class="icon-wrapper">
-              <span class="fa {{ post.icon }} fa-fw fa-2x"></span>
-            </span>
-          </div>
-          <div class="post-excerpt-content">
-            <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-            <p>
-              {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
-              <a class="read-more" href="{{ post.url }}">
-                <span class="read-more">Read More</span>
-              </a>
-            </p>
-            <span class="post-detail">
-              {{ post.date | date: '%B %d, %Y' }}
-            </span>
-          </div>
-        </li>
-    {% endfor %}
-  </ul>
+<h1>{% include signature.html %}</h1>
+<div class="blurb">
+  <h2>
+    Hello, my name is <strong>Tim Downey</strong>
+  </h2>
+  <h3>
+    I am a <strong>software developer</strong> based in the Midwest and I enjoy <a href="https://github.com/tcdowney" class="programming">programming</a>, <a href="https://www.flickr.com/photos/tcdowney/sets/72157630027052421" class="plants">plants</a>, <a href="http://photo.downey.io/" class="photography">photography</a>, and ice cold Pepsi>
+  </h3>
 
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-        <a href="/" class="previous">
-          <span class="fa fa-long-arrow-left fa-2x"></span>
-        </a>
-      {% else %}
-        <a href="/page{{ paginator.previous_page }}" class="previous">
-          <span class="fa fa-long-arrow-left fa-2x"></span>
-        </a>
-      {% endif %}
-    {% endif %}
-    {% if paginator.next_page %}
-      <a href="/page{{ paginator.next_page }}" class="next">
-        <span class="fa fa-long-arrow-right fa-2x"></span>
-      </a>
-    {% endif %}
-  </div>
 </div>

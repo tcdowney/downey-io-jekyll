@@ -1,6 +1,6 @@
 // Typography
 ///////////////////////////////////////////////////////////////////////////////
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway|Merriweather);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:200,300,400,600|Merriweather);
 
 $sans-serif: "Open Sans", sans-serif;
 $serif: "Merriweather", "Times New Roman", Times, serif;
@@ -37,6 +37,8 @@ $violet: #5C2849;
 $red-violet: #A73E5C;
 $red: #BD383F;
 $teal: #288C8F;
+$blue: #0074D9;
+$green: #489E41;
 
 // Body Color
 $base-body-color: $indigo;
@@ -60,6 +62,12 @@ $nav-base-color: $off-white;
 $nav-accent-color: $red;
 $nav-alt-color: $dark-gray;
 $nav-alt-accent-color: $teal;
+
+// Home Page Colors
+$home-base-color: $off-white;
+$home-programming-color: $red;
+$home-plant-color: $green;
+$home-photo-color: $blue;
 
 // Flash Colors
 $error-color: $light-red;

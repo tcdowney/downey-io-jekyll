@@ -35,18 +35,18 @@ header {
       float: right;
     }
   }
-}
 
-.signature {
-  @include transition(fill 0.25s linear);
-
-  max-width: 200px;
-  max-height: 105px;
-  fill: $nav-base-color;
-
-  &:hover {
+  .signature {
     @include transition(fill 0.25s linear);
-    fill: $nav-accent-color;
+
+    max-width: 200px;
+    max-height: 105px;
+    fill: $nav-base-color;
+
+    &:hover {
+      @include transition(fill 0.25s linear);
+      fill: $nav-accent-color;
+    }
   }
 }
 
@@ -54,7 +54,103 @@ header {
   @include outer-container;
 }
 
-main {
+.home {
+  @include outer-container;
+
+  padding-top: 3em;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+
+  & > * {
+    display: inline-block;
+  }
+
+  .signature {
+    @include transition(fill 0.5s linear);
+
+    width: 100%;
+    max-width: 400px;
+    max-height: 210px;
+    fill: $home-base-color;
+
+    &:hover {
+      @include transition(fill 0.5s linear);
+      fill: $nav-accent-color;
+    }
+  }
+
+  .blurb {
+    width: 80%;
+    padding-top: 2em;
+    text-align: left;
+    color: $home-base-color;
+
+    h2 {
+      font-size: $base-font-size * 1.5;
+      font-weight: 400;
+    }
+
+    h3 {
+      font-size: $base-font-size * 1.25;
+      padding-top: 1em;
+      font-weight: 200;
+
+      strong {
+        font-weight: 400;
+      }
+    }
+
+    a {
+      @include transition(color 0.25s linear);
+      font-weight: 400;
+
+      &.programming {
+        color: lighten($home-programming-color, 30);
+
+        &:hover, &:active, &:focus {
+          color: $home-programming-color;
+        }
+      }
+
+      &.plants {
+        color: lighten($home-plant-color, 30);
+
+        &:hover, &:active, &:focus {
+          color: $home-plant-color;
+        }
+      }
+
+      &.photography {
+        color: lighten($home-photo-color, 30);
+
+        &:hover, &:active, &:focus {
+          color: $home-photo-color;
+        }
+      }
+
+      &:hover, &:active, &:focus {
+        @include transition(color 0.25s linear);
+      }
+    }
+  }
+
+  @include media($medium-screen-up) {
+    .blurb {
+      padding-top: 3em;
+
+      h2 {
+        font-size: $base-font-size * 2;
+      }
+
+      h3 {
+        font-size: $base-font-size * 1.75;
+      }
+    }
+  }
+}
+
+.blog {
   @include outer-container;
   @include clearfix;
 

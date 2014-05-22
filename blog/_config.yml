@@ -8,7 +8,8 @@ url: "http://downey.io"
 # Build settings
 highlighter: pygments
 paginate: 5
-permalink: posts/:year/:month/:day/:title.html
+paginate_path: "blog/page:num"
+permalink: "posts/:year/:month/:day/:title.html"
 
 exclude:
   - s3_website.yml
