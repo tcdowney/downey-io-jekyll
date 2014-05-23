@@ -83,16 +83,16 @@ header {
   .blurb {
     width: 80%;
     padding-top: 2em;
-    text-align: left;
+    text-align: center;
     color: $home-base-color;
 
     h2 {
-      font-size: $base-font-size * 1.5;
+      font-size: $base-font-size * 2;
       font-weight: 400;
     }
 
     h3 {
-      font-size: $base-font-size * 1.25;
+      font-size: $base-font-size * 1.5;
       padding-top: 1em;
       font-weight: 200;
 
@@ -135,9 +135,27 @@ header {
     }
   }
 
+  .nav-icons {
+    padding-top: 2em;
+    width: 100%;
+    color: $home-base-color;
+
+    li {
+      display: inline;
+
+      span.fa {
+        padding: .25em .25em;
+      }
+    }
+  }
+
   @include media($medium-screen-up) {
+    h1 {
+      margin-right: 1em;
+    }
+
     .blurb {
-      padding-top: 3em;
+      padding-top: 4em;
 
       h2 {
         font-size: $base-font-size * 2;
@@ -145,6 +163,16 @@ header {
 
       h3 {
         font-size: $base-font-size * 1.75;
+      }
+    }
+
+    .nav-icons {
+      padding-top: 4em;
+
+      li {
+        span.fa {
+          padding: .25em 1em;
+        }
       }
     }
   }
