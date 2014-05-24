@@ -1,9 +1,9 @@
 # Site settings
 title: downey.io
 name: Tim Downey
-description: "Tim's really good photography blog."
+description: "photos and such"
 baseurl: ""
-url: "http://downey.io"
+url: "http://photo.downey.io"
 
 # Build settings
 highlighter: pygments
