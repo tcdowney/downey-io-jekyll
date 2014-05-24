@@ -14,3 +14,9 @@ exclude:
   - s3_website.yml
 gems:
   - jekyll-sitemap
+
+assets:
+  sources:
+    - '../assets/javascripts'
+    - _assets/javascripts
+    - _assets/stylesheets
