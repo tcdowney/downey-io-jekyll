@@ -80,7 +80,7 @@ header {
     }
   }
 
-  .blurb {
+  section {
     width: 80%;
     padding-top: 2em;
     text-align: center;
@@ -135,7 +135,7 @@ header {
     }
   }
 
-  .nav-icons {
+  nav {
     padding-top: 2em;
     width: 100%;
     color: $home-base-color;
@@ -154,7 +154,7 @@ header {
       margin-right: 1em;
     }
 
-    .blurb {
+    section {
       padding-top: 4em;
 
       h2 {
@@ -166,7 +166,7 @@ header {
       }
     }
 
-    .nav-icons {
+    nav {
       padding-top: 4em;
 
       li {
