@@ -3,9 +3,9 @@
     <a href="/"> {% include signature.html %}</a>
   </h1>
   <nav>
-    <a class="extra" href="http://github.com/tcdowney">code</a>
-    <a class="extra" href="/blog/">blog</a>
-    <a class="extra" href="http://photo.downey.io">photos</a>
-    <a class="extra" href="/archive">archive</a>
+    <a href="http://github.com/tcdowney">code</a>
+    <a class="{{ include.blog }}" href="/blog/">blog</a>
+    <a href="http://photo.downey.io">photos</a>
+    <a class="{{ include.archive }}" href="/archive">archive</a>
   </nav>
 </div>

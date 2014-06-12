@@ -207,6 +207,10 @@ nav {
       outline: none;
       color: $nav-accent-color;
     }
+
+    &.active {
+      font-weight: 700;
+    }
   }
 }
 

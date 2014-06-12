@@ -68,6 +68,10 @@ nav {
       outline: none;
       color: $nav-alt-accent-color;
     }
+
+    &.active {
+      font-weight: 700;
+    }
   }
 }
 

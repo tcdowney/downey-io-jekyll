@@ -5,7 +5,13 @@ layout: application
 <body>
   <div class="main-content">
     <header>
-      {% include header.html %}
+      {% if page.type == "blog" %}
+        {% include header.html blog="active" %}
+      {% elsif page.type == "archive" %}
+        {% include header.html archive="active" %}
+      {% else %}
+        {% include header.html %}
+      {% endif %}
     </header>
     <main class="blog">
       {{ content }}
