@@ -77,6 +77,7 @@ article {
   }
 
   img {
+    padding: golden-ratio(1em, 1) 0 golden-ratio(1em, 1);
     border-radius: $base-border-radius;
   }
 }
