@@ -89,6 +89,14 @@ article {
     }
   }
 
+  .post-badge-green {
+    @extend .post-badge;
+
+    > span .fa {
+      color: $green;
+    }
+  }
+
   h1 {
     font-size: 2em;
     font-weight: 700;
@@ -100,10 +108,10 @@ article {
   }
 
   h2 {
-    font-style: italic;
-    font-size: 1em;
+    font-size: 1.6em;
     line-height: 1.6em;
-    margin-bottom: .9em;
+    margin-top: 1.2em;
+    margin-bottom: 1em;
 
     @include media($medium-screen) {
       font-size: 1.2em;

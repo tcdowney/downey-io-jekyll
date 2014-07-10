@@ -194,3 +194,9 @@
   @include post-excerpt-color($post-background);
 }
 
+.post-excerpt-green {
+  @extend .post-excerpt;
+  $post-background: $green;
+  @include post-excerpt-color($post-background);
+}
+
