@@ -5,8 +5,12 @@ color: green
 icon: fa-code
 date: 2014-07-09
 categories: programming
+redirect_from:
+  - posts/2014/07/09/thirty-nine-days-of-code.html
 excerpt:
   'Early last May I was inspired by John Resig’s post <a href="http://ejohn.org/blog/write-code-every-day/">Write Code Every Day</a> and decided to give it a go myself.  I made a commitment to myself to program outside of work for a minimum of thirty minutes each day and have it committed by midnight.  I surpassed this initial goal and made it to thirty nine days in spite of a brief bout in San Francisco.  Now I’m not going to pretend that this endeavour had some profound effect on me, but it did oblige me to write this post.'
+description:
+  'A brief overview of my 30 days of writing code every day.'
 ---
 
 <div><img src="https://s3.amazonaws.com/stuff.downey.io/images/github_calendar.PNG" alt="Github Contribution Calendar"></div>

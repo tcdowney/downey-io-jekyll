@@ -5,6 +5,8 @@ color: teal
 icon: fa-smile-o
 date: 2014-05-10
 categories: general
+redirect_from:
+  - posts/2014/05/10/my-first-post.html
 ---
 
 I've finally gotten around to creating my first Jekyll blog.

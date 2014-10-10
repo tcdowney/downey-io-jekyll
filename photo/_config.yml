@@ -2,6 +2,9 @@
 title: downey.io
 name: Tim Downey
 description: "photos and such"
+keywords:
+  - photography
+  - photoblog
 baseurl: ""
 url: "http://photo.downey.io"
 
