@@ -106,24 +106,28 @@ RSpec.describe 'user views home page', :type => :feature do
 end
 {% endhighlight %}
 
-If you are less concerned about specific translations and just want to be alerted of missing translations in general, then I suggest just using Capybara to check the page body for the indicators that the translation libraries attach such as `translation_missing` class that’s inserted by the regular Rails `t()` helper or the `[missing “en.whatever” translation]` text that i18n-js inserts.  One way of doing this is by writing a custom RSpec Matcher:
+If you are less concerned about specific translations and just want to be alerted of missing translations in general, then I suggest just using Capybara to check the page body for the indicators that the translation libraries attach such as `translation_missing` class that’s inserted by the regular Rails `t()` helper or the `[missing “en.whatever” translation]` text that i18n-js inserts.  One way of doing this is by writing a [custom RSpec Matcher](https://www.relishapp.com/rspec/rspec-expectations/v/3-1/docs/custom-matchers/define-matcher).  Below is an example of what a basic missing translations matcher could look like.
 
 {% highlight ruby %}
 # spec/support/missing_translations.rb
 require 'rspec/expectations'
 
 RSpec::Matchers.define :have_missing_translations do
+
   match do |actual|
-    missing_i18n_js = /\[missing ".*" translation\]/
-    missing_i18n_ruby = /class="translation_missing"/
-    !!(actual.body.match(missing_i18n_ruby) || actual.body.match(missing_i18n_js))
+    missing_i18n_js = /\[missing "\S*" translation\]/ # Default missing translation fallback for i18n-js
+    missing_rails_t = /class="translation_missing"/   # Default missing translation fallback for the Rails t() helper
+    missing_i18n_t  = /translation missing: \S*\.\S*/ # Default missing translation fallback for I18n.t
+    !!(actual.body.match(missing_rails_t) || 
+       actual.body.match(missing_i18n_t)  || 
+       actual.body.match(missing_i18n_js))
   end
 
-  failure_message_for_should do |actual|
+  failure_message do
     'expected page to have missing translations'
   end
 
-  failure_message_for_should_not do |actual|
+  failure_message_when_negated do
     'expected page to not have missing translations'
   end
 end
