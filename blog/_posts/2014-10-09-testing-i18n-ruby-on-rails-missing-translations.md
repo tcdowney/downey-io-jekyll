@@ -36,7 +36,7 @@ This can be especially helpful for those cases where it may not be so obvious th
 
 For information regarding raising exceptions on missing translations in past versions of Rails, I recommend reading Thoughtbot's post on [Foolproof I18n Setup in Rails](http://robots.thoughtbot.com/foolproof-i18n-setup-in-rails).
 
-## perform static code analysis
+## Perform Static Code Analysis
 The next line of defense in our war on missing translations is through the usage of a static i18n analysis tool such as the [i18n-tasks gem](https://github.com/glebm/i18n-tasks).  Although i18n-tasks has many great features, the one that I have found most valuable is its ability to find missing translations in both Ruby and Javascript code (assuming you’re using `i18n-js`) across all of your locale files.  The beauty of static code analysis is that it will cover all of your code even if you may not quite have 100% test coverage.
 
 To start using the i18n-tasks gem, just follow the [installation instructions](https://github.com/glebm/i18n-tasks#installation) in the gem’s README.
@@ -65,7 +65,7 @@ Feel free to use ERB in the `i18n-tasks.yml` file since the gem will automatical
 
 One caveat to i18n-tasks (and static code analysis in general) is that it won’t work well for dynamically generated code.  For our purposes, that means that the gem will fail to detect missing translations resulting from dynamic translation keys (ie. `t(“errors.#{ error_name }.description”)`).  Now although I understand the appeal of dynamic translation keys, I advise being explicit with your translation keys.  Just skip the interpolation altogether and use a case statement to select the correct key.  Sure your codebase will be a few lines longer and your code will be slightly more verbose, but you’ll help mitigate the risk of having one of you users encounter a missing translation in production.
 
-## write automated feature specs
+## Write Automated Feature Specs
 You may find it valuable to have some automated feature specs hitting your application in all of your supported locales using [RSpec](https://github.com/rspec/rspec), [Capybara](https://github.com/jnicklas/capybara), and [capybara-webkit](https://github.com/thoughtbot/capybara-webkit) (this is a WebKit driver for Capybara that will allow your feature specs to execute your application’s Javascript code).
 
 Keep in mind that a comprehensive suite of feature specs will be expensive both in terms of developer time and execution time, so it really is a judgement call as to whether or not they’ll provide enough value to your project to justify the expense.  However, if you do decide to write some, remember that they will likely be slow so I recommend reserving them for your Jenkins/Travis CI builds or whatever form of continuous integration you use.
@@ -115,9 +115,15 @@ require 'rspec/expectations'
 RSpec::Matchers.define :have_missing_translations do
 
   match do |actual|
-    missing_i18n_js = /\[missing "\S*" translation\]/ # Default missing translation fallback for i18n-js
-    missing_rails_t = /class="translation_missing"/   # Default missing translation fallback for the Rails t() helper
-    missing_i18n_t  = /translation missing: \S*\.\S*/ # Default missing translation fallback for I18n.t
+    # Default missing translation fallback for i18n-js
+    missing_i18n_js = /\[missing "\S*" translation\]/
+
+    # Default missing translation fallback for the Rails t() helper
+    missing_rails_t = /class="translation_missing"/
+
+    # Default missing translation fallback for I18n.t
+    missing_i18n_t  = /translation missing: \S*\.\S*/
+    
     !!(actual.body.match(missing_rails_t) || 
        actual.body.match(missing_i18n_t)  || 
        actual.body.match(missing_i18n_js))
