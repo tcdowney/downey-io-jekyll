@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Red Door, 2014"
-image: "https://s3.amazonaws.com/stuff.downey.io/images/2014/10/reddoor.jpg"
-image-med: "https://s3.amazonaws.com/stuff.downey.io/images/2014/10/reddoor-750.jpg"
+image: "https://s3.amazonaws.com/stuff.downey.io/images/2014/reddoor.jpg"
+image-med: "https://s3.amazonaws.com/stuff.downey.io/images/2014/reddoor-750.jpg"
 alt: "Red Door in the West Bottoms"
 date: 2014-06-14
 categories: boulevardia
