@@ -29,10 +29,10 @@
       />
       <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
 
-      {% javascript application %}
-
       <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
       {% stylesheet application %}
   </head>
   {{ content }}
+
+  {% javascript application %}
 </html>
