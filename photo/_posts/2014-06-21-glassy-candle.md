@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Glassy Candle, 2014"
-image: "https://s3.amazonaws.com/stuff.downey.io/images/2014/glassycandle.jpg"
-image-med: "https://s3.amazonaws.com/stuff.downey.io/images/2014/glassycandle-750.jpg"
+image: "https://s3.amazonaws.com/images.downey.io/2015-08-15/P6210237_large.jpg"
+image-lq: "https://s3.amazonaws.com/images.downey.io/2015-08-15/P6210237_large_lq.jpg"
+image-med: "https://s3.amazonaws.com/images.downey.io/2015-08-15/P6210237_medium.jpg"
+image-med-lq: "https://s3.amazonaws.com/images.downey.io/2015-08-15/P6210237_medium_lq.jpg"
 alt: "A glassy candle."
 date: 2014-06-21
 categories: candle

@@ -1,4 +1,5 @@
 $dark-background-image: "../../images/subtle_patterns/indigo_wall.png";
+$light-background-image: "../../images/subtle_patterns/cream_dust.png";
 
 html, body, .main-content {
   height: 100%;
@@ -10,13 +11,18 @@ body {
   background-color: $base-body-color;
   background-position: initial initial;
   background-repeat: initial initial;
-  background-image: url($dark-background-image);
+  background-image: url($light-background-image);
 
   .main-content {
     height: auto;
     min-height: 100%;
     padding-bottom: 3em;
   }
+}
+
+body.home {
+  background-color: $home-body-color;
+  background-image: url($dark-background-image);
 }
 
 header {
@@ -41,11 +47,11 @@ header {
 
     max-width: 200px;
     max-height: 105px;
-    fill: $nav-base-color;
+    fill: $nav-alt-color;
 
     &:hover {
       @include transition(fill 0.25s linear);
-      fill: $nav-accent-color;
+      fill: $nav-alt-accent-color;
     }
   }
 }
@@ -54,7 +60,7 @@ header {
   @include outer-container;
 }
 
-.home {
+.home main {
   @include outer-container;
 
   padding-top: 3em;
@@ -144,13 +150,21 @@ header {
   nav {
     padding-top: 2em;
     width: 100%;
-    color: $home-base-color;
 
     li {
       display: inline;
 
       span.fa {
         padding: .25em .5em;
+      }
+
+      a {
+        color: $nav-base-color;
+
+        &:hover {
+          @include transition(color 0.25s linear);
+          color: $nav-accent-color;
+        }
       }
     }
   }
@@ -202,16 +216,16 @@ nav {
     display: inline;
     margin-right: 1em;
     font-family: $nav-font-family;
-    color: $nav-base-color;
+    color: $nav-alt-color;
 
     &:hover {
       @include transition(color 0.25s linear);
-      color: $nav-accent-color;
+      color: $nav-alt-accent-color;
     }
 
     &:active, &:focus {
       outline: none;
-      color: $nav-accent-color;
+      color: $nav-alt-accent-color;
     }
 
     &.active {
@@ -229,16 +243,16 @@ footer {
   text-align: center;
 
   a {
-    color: $nav-base-color;
+    color: $nav-alt-color;
 
     &:hover {
       @include transition(color 0.25s linear);
-      color: $nav-accent-color;
+      color: $nav-alt-accent-color;
     }
 
     &:active, &:focus {
       outline: none;
-      color: $nav-accent-color;
+      color: $nav-alt-accent-color;
     }
   }
 

@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Green Fruits, 2014"
-image: "https://s3.amazonaws.com/stuff.downey.io/images/P5030035.jpg"
-image-med: "https://s3.amazonaws.com/stuff.downey.io/images/P5030035-750.jpg"
+image: "https://s3.amazonaws.com/images.downey.io/2015-08-15/P5030035_large.jpg"
+image-lq: "https://s3.amazonaws.com/images.downey.io/2015-08-15/P5030035_large_lq.jpg"
+image-med: "https://s3.amazonaws.com/images.downey.io/2015-08-15/P5030035_medium.jpg"
+image-med-lq: "https://s3.amazonaws.com/images.downey.io/2015-08-15/P5030035_medium_lq.jpg"
 alt: "green fruits"
 date: 2014-05-17
 categories: botanical

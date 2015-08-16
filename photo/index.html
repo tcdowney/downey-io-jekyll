@@ -8,7 +8,12 @@ title: downey.io - photos
     {% for post in paginator.posts %}
       <li class="image-post">
         <a href="{{ post.url }}">
-          <img src="{{ post.image-med }}" alt="{{ post.alt }}" />
+          <img 
+            src="{{ post.image-med-lq }}"
+            data-src="{{ post.image-med }}"
+            alt="{{ post.alt }}"
+            class="lazyload"
+          />
           <h2>{{ post.title }}</h2>
         </a>
       </li>

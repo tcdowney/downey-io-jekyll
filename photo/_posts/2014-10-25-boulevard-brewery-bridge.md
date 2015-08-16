@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Bridge at Boulevard Brewery, 2014"
-image: "https://s3.amazonaws.com/stuff.downey.io/images/2014/boulevardbridge.jpg"
-image-med: "https://s3.amazonaws.com/stuff.downey.io/images/2014/boulevardbridge-750.jpg"
+image: "https://s3.amazonaws.com/images.downey.io/2015-08-15/PA250010-2_large.jpg"
+image-lq: "https://s3.amazonaws.com/images.downey.io/2015-08-15/PA250010-2_large_lq.jpg"
+image-med: "https://s3.amazonaws.com/images.downey.io/2015-08-15/PA250010-2_medium.jpg"
+image-med-lq: "https://s3.amazonaws.com/images.downey.io/2015-08-15/PA250010-2_medium_lq.jpg"
 alt: "Bridge at Boulevard Brewery"
 date: 2014-10-25
 categories: boulevard
