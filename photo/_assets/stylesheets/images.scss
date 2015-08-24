@@ -12,23 +12,6 @@
     width: 100%;
     margin-bottom: $base-line-height;
   }
-
-  .pagination {
-    padding: golden-ratio(1em, -1);
-    margin-bottom: $content-bottom-margin;
-
-    a {
-      @extend .subdued;
-    }
-
-    .previous {
-      float: left;
-    }
-
-    .next {
-      float: right;
-    }
-  }
 }
 
 .image-post {
@@ -50,34 +33,54 @@
   }
 }
 
-article {
+.image-detail {
   @include clearfix;
   text-align: center;
   width: 90%;
   margin: auto;
+  
+  article {
 
-  .title {
-    text-align: left;
-    width: 100%;
-    padding-bottom: golden-ratio(1em, -1);
-
-    .date {
-      @extend .subdued;
-    }
-
-    @include media($large-screen-up) {
-      h1 {
-        display: inline;
-      }
+    .title {
+      text-align: left;
+      width: 100%;
+      padding-bottom: golden-ratio(1em, -1);
 
       .date {
-        padding: golden-ratio(1em, -1);
+        @extend .subdued;
+      }
+
+      @include media($large-screen-up) {
+        h1 {
+          display: inline;
+        }
+
+        .date {
+          padding: golden-ratio(1em, -1);
+        }
       }
     }
+
+    img {
+      padding: golden-ratio(1em, 1) 0 golden-ratio(1em, 1);
+      border-radius: $base-border-radius;
+    }
+  }
+}
+
+.pagination {
+  padding: golden-ratio(1em, -1);
+  margin-bottom: $content-bottom-margin;
+
+  a {
+    @extend .subdued;
   }
 
-  img {
-    padding: golden-ratio(1em, 1) 0 golden-ratio(1em, 1);
-    border-radius: $base-border-radius;
+  .previous {
+    float: left;
+  }
+
+  .next {
+    float: right;
   }
 }

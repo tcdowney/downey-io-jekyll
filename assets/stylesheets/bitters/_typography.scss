@@ -11,6 +11,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   text-rendering: optimizeLegibility; // Fix the character spacing for headings
   text-transform: lowercase;
+  line-height: initial;
 }
 
 h1 {
@@ -23,6 +24,7 @@ h2 {
 
 h3 {
   font-size: $base-font-size * 1.75; // 16 * 1.75 = 28px
+  line-height: $base-font-size * 2.25;
 }
 
 h4 {
