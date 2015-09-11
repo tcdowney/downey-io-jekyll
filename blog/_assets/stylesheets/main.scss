@@ -204,7 +204,6 @@ header {
 
   padding-top: $base-line-height;
   margin-bottom: $base-line-height * 2;
-  background-color: $off-white;
 
   @include media($max-width) {
     border-radius: $base-border-radius;
