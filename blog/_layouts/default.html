@@ -7,8 +7,6 @@ layout: application
     <header>
       {% if page.type == "blog" %}
         {% include header.html blog="active" %}
-      {% elsif page.type == "archive" %}
-        {% include header.html archive="active" %}
       {% else %}
         {% include header.html %}
       {% endif %}

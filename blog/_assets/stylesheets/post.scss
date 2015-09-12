@@ -154,3 +154,20 @@ article {
     width: 7em;
   }
 }
+
+.pagination {
+  padding: golden-ratio(1em, -1);
+  margin-bottom: $content-bottom-margin;
+
+  a {
+    @extend .subdued;
+  }
+
+  .previous {
+    float: left;
+  }
+
+  .next {
+    float: right;
+  }
+}

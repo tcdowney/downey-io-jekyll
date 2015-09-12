@@ -23,5 +23,16 @@ layout: default
     <p class="author">Tim Downey</p>
   </div>
 </article>
-
+<div class="pagination">
+  {% if page.previous.url %}
+    <a href="{{ page.previous.url }}" class="previous">
+      <span aria-label="{{ page.previous.title }}" class="fa fa-long-arrow-left fa-2x"></span>
+    </a>
+  {% endif %}
+  {% if page.next.url %}
+    <a href="{{ page.next.url }}" class="next">
+      <span aria-label="{{ page.next.title }}" class="fa fa-long-arrow-right fa-2x"></span>
+    </a>
+  {% endif %}
+</div>
 
