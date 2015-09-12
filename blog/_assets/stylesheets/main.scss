@@ -117,27 +117,27 @@ header {
       @include transition(color 0.25s linear);
       font-weight: 400;
 
-      &.programming {
-        color: lighten($home-programming-color, 30);
+      &.first-interest {
+        color: lighten($home-first-interest-color, 30);
 
         &:hover, &:active, &:focus {
-          color: $home-programming-color;
+          color: $home-first-interest-color;
         }
       }
 
-      &.plants {
-        color: lighten($home-plant-color, 30);
+      &.second-interest {
+        color: lighten($home-second-interest-color, 30);
 
         &:hover, &:active, &:focus {
-          color: $home-plant-color;
+          color: $home-second-interest-color;
         }
       }
 
-      &.photography {
-        color: lighten($home-photo-color, 30);
+      &.third-interest {
+        color: lighten($home-third-interest-color, 30);
 
         &:hover, &:active, &:focus {
-          color: $home-photo-color;
+          color: $home-third-interest-color;
         }
       }
 
