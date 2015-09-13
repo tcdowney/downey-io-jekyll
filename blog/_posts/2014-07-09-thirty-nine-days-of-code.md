@@ -1,5 +1,6 @@
 ---
 layout: post
+type: blog
 title: "Thirty-Nine Days of Code"
 color: green
 icon: fa-code

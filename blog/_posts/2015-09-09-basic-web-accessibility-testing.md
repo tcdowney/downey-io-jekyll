@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Basic Web Accessibility Testing"
-sub_title:  "Simple Tips for Evaluating Your Site"
+type: blog
+title: "Web Accessibility Testing for Everyone"
+sub_title:  "Simple Ways to Evaluate Your Site"
 color: violet
 icon: fa-wheelchair
 date: 2015-09-09

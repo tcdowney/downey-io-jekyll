@@ -1,5 +1,6 @@
 ---
 layout: post
+type: blog
 title: "Batch Uploading Images to Amazon S3"
 sub_title:  "Using Mitty for Jekyll Photo Blogs"
 color: teal
