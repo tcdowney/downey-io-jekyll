@@ -32,6 +32,16 @@ article {
     text-transform: lowercase;
   }
 
+  .post-content {
+    img {
+      margin-bottom: 1em;
+    }
+
+    ol {
+      @extend %default-ol;
+    }
+  }
+
   .footnote {
     float: right;
   }
@@ -137,7 +147,7 @@ article {
     margin-bottom: 1em;
   }
 
-  p, pre, code, ul {
+  p, pre, code, ul, ol {
     margin-bottom: 1em;
     text-align: left;
   }

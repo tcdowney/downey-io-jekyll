@@ -78,7 +78,7 @@ GEM
       ffi (>= 0.5.0)
     redcarpet (3.2.0)
     ref (2.0.0)
-    rouge (1.7.2)
+    rouge (1.10.1)
     s3_website (2.11.0)
       colored (= 1.2)
       configure-s3-website (= 1.7.1)
