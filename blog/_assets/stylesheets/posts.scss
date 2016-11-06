@@ -9,18 +9,6 @@
   .post-excerpt-content > p {
     @include transition(color 0.5s linear);
   }
-
-  &:hover {
-    .post-excerpt-content > p {
-      @include transition(color 0.25s linear);
-      color: lighten($base-font-color,30);
-    }
-
-    .post-badge > span .fa {
-      @include transition(color 0.25s linear);
-      color: lighten($color,30);
-    }
-  }
 }
 
 .post-list {
