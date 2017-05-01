@@ -8,7 +8,7 @@ image_med_lq: "https://s3.amazonaws.com/images.downey.io/2017-04-30/joshua_tree_
 image_thumb: "https://s3.amazonaws.com/images.downey.io/2017-04-30/joshua_tree_sunrise_thumb.jpg"
 image_thumb_lq: "https://s3.amazonaws.com/images.downey.io/2017-04-30/joshua_tree_sunrise_thumb_lq.jpg"
 alt: "Sunrise at Joshua Tree"
-date: 2016-02-19
+date: 2017-02-19
 categories:
  - joshua tree national park
  - sunrise

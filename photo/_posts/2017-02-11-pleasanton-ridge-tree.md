@@ -8,7 +8,7 @@ image_med_lq: "https://s3.amazonaws.com/images.downey.io/2017-04-30/pleasanton_r
 image_thumb: "https://s3.amazonaws.com/images.downey.io/2017-04-30/pleasanton_ridge_tree_thumb.jpg"
 image_thumb_lq: "https://s3.amazonaws.com/images.downey.io/2017-04-30/pleasanton_ridge_tree_thumb_lq.jpg"
 alt: "Pleasanton Ridge"
-date: 2016-02-11
+date: 2017-02-11
 categories:
  - pleasanton ridge park
  - hills
