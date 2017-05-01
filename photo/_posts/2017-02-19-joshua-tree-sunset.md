@@ -1,0 +1,17 @@
+---
+layout: post
+title: "Sunset at Joshua Tree, 2017"
+image: "https://s3.amazonaws.com/images.downey.io/2017-04-30/joshua_tree_sunset_1_large.jpg"
+image_lq: "https://s3.amazonaws.com/images.downey.io/2017-04-30/joshua_tree_sunset_1_large_lq.jpg"
+image_med: "https://s3.amazonaws.com/images.downey.io/2017-04-30/joshua_tree_sunset_1_medium.jpg"
+image_med_lq: "https://s3.amazonaws.com/images.downey.io/2017-04-30/joshua_tree_sunset_1_medium_lq.jpg"
+image_thumb: "https://s3.amazonaws.com/images.downey.io/2017-04-30/joshua_tree_sunset_1_thumb.jpg"
+image_thumb_lq: "https://s3.amazonaws.com/images.downey.io/2017-04-30/joshua_tree_sunset_1_thumb_lq.jpg"
+alt: "Sunset at Joshua Tree"
+date: 2016-02-19
+categories:
+ - joshua tree national park
+ - sunset
+---
+
+Sunset at Joshua Tree National Park
