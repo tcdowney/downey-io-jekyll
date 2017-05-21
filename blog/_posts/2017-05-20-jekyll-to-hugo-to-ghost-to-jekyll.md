@@ -13,12 +13,14 @@ categories:
   - hugo
   - ghost
 excerpt:
-  "Although CKEditor 4 ships with support for over 60 different language variants, you may find yourself needing to add a 61st. Or maybe while localizing your application you've found that you need to tweak the phrasing for an existing locale. Here's how to add support for new languages to CKEditor and modify existing translations without needing to generate a custom build."
+  "In a world where new static site generators and blogging platforms crop up everyday it can be tempting to scrap everything and start anew.  This is the story of me doing just that -- moving from Jekyll to Hugo to Ghost and winding right back up at Jekyll.  A rambling tale of what I discovered and why I didn't end up migrating in the end."
 description:
-  "Why I stuck with Jekyll instead of continuing to spin my wheels searching for the perfect static site generator."
+  "Why I stuck with Jekyll instead of continuing to spin my wheels searching for the best static site generator."
 ---
 
-<div><img src="https://s3.amazonaws.com/images.downey.io/blog/subaru-park-city-journey.jpg" alt="Drive from Kansas City to SF Bay Area"></div>
+<div>
+<img src="https://s3.amazonaws.com/images.downey.io/blog/subaru-park-city-journey.jpg" alt="Excuse #1 for not making blog posts: cross-country move">
+</div>
 
 It's been nearly 18 months since I have last posted to this blog. Sure, 2016 was a busy year for us -- we moved from Kansas City to the SF Bay Area and I started working toward my Master's -- but the real reason I haven't been posting was because I felt the itch to "upgrade" this site away from [Jekyll](http://jekyllrb.com/) before adding any new content.  I decided to act on this itch and find a blogging platform that met the following criteria:
 
