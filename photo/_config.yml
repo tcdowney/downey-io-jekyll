@@ -1,16 +1,17 @@
 # Site settings
 title: downey.io
 name: Tim Downey
-description: "Pics and stuff (but mostly pics) by Tim Downey"
+description: "Tim Downey's photography blog -- mostly landscapes, sometimes more"
 keywords:
   - photography
+  - landscape photography
   - photoblog
 baseurl: ""
 url: "http://photo.downey.io"
 
 # Build settings
 highlighter: pygments
-paginate: 5
+paginate: 10
 permalink: photos/:year/:month/:day/:title.html
 
 exclude:
