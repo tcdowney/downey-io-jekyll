@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'bourbon'
+gem 'bourbon', '~> 4.0.1'
 gem 'jekyll', '~> 2.5.3'
-gem 'jekyll-assets'
-gem 'jekyll-sitemap', '~>0.6.0'
+gem 'jekyll-assets', '~> 0.7.8'
+gem 'jekyll-sitemap', '~> 0.10'
 gem 'jekyll-redirect-from'
 gem 'neat'
 gem 'rouge'
