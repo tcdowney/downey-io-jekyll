@@ -13,9 +13,9 @@ categories:
   - cloud foundry
   - staticfile buildpack
 excerpt:
-  "When it comes to hosting a static website there are many options available ranging from the free (and somewhat limiting) Github Pagesto deploying directly to an Amazon S3 bucket to self-hosting Nginx on Digital Ocean. For those looking for more flexibility than what Github and S3 can provide, but want to avoid the hassle of maintaining a full virtual machine on Digital Ocean, a managed Cloud Foundry can be a good option.  This post will cover how to use the Cloud Foundry Staticfile buildpack to deploy to a public Cloud Foundry PaaS and wire it up with Cloudflare SSL."
+  "When it comes to hosting a static website there are many options available ranging from the free (and somewhat limiting) Github Pagesto deploying directly to an Amazon S3 bucket to self-hosting Nginx on Digital Ocean. For those looking for more flexibility than what Github and S3 can provide, but want to avoid the hassle of maintaining a full virtual machine on Digital Ocean, a managed Cloud Foundry can be a good option.  This post will cover how to use the Cloud Foundry Staticfile buildpack to deploy to a public Cloud Foundry PaaS and wire it up with a custom domain name and Cloudflare SSL."
 description:
-  "How to deploy a static website on to Cloud Foundry using the Staticfile buildpack and hook it up with Cloudflare SSL."
+  "How to deploy a static website on to Cloud Foundry using the Staticfile buildpack and hook it up with a custom domain name and Cloudflare SSL."
 ---
 
 I've been a fan of static websites for a while now and although I've been tempted at times to switch back to Wordpress or Ghost, I [always end up coming back]({{ site.baseurl }}{% post_url 2017-05-20-jekyll-to-hugo-to-ghost-to-jekyll %}).  One thing I do miss about having a "real" server, though, is the added control it gives your site on handling the inbound request. For example this site is currently hosted on Amazon S3 sitting behind CloudFront. I decided one day to get rid of the useless splash page sitting at the root and wanted to direct folks to `/blog` directly. Since I didn't have a real server at my control, however, this meant I had to use some [hacky combo of meta tags with Javascript as a fallback](https://github.com/tcdowney/downey-io-jekyll/blob/3eb580ba09b81b1255439e4c0875f344bd0b87f6/blog/index.html) to compel the browsers to redirect. It's not perfect by any means and there is some jitteriness, but it gets the job done.
@@ -24,9 +24,9 @@ At the time I thought about migrating over to a budget VPS host like [Digital Oc
 
 This is where Cloud Foundry comes in.
 
-## Cloud Foundry Platform as a Service
+## What is Cloud Foundry
 
-[Cloud Foundry](https://www.cloudfoundry.org/) is an open source application platform that is mainly used by enterprises to self-host their hoards of Java and .NET apps both on premise and across the different cloud providers (e.g. Amazon Web Services, Google Cloud Platform, Azure, etc.). There are a number of public Cloud Foundry offerings available for hosting our site such as [IBM BlueMix](https://www.ibm.com/cloud-computing/bluemix/) and [Pivotal Web Services](https://run.pivotal.io/). For this tutorial I'm going to be using Pivotal Web Services since I used to work on it at Pivotal (still at Pivotal, but now work on the [Cloud Controller](https://github.com/cloudfoundry/cloud_controller_ng) CF component) and am more familiar with it. 
+[Cloud Foundry](https://www.cloudfoundry.org/) is an open source application platform that is mainly used by enterprises to self-host their hoards of Java and .NET apps both on premise and across the different cloud providers (e.g. Amazon Web Services, Google Cloud Platform, Azure, etc.). There are a number of public Cloud Foundry offerings available for hosting our site such as [IBM BlueMix](https://www.ibm.com/cloud-computing/bluemix/) and [Pivotal Web Services](https://run.pivotal.io/). For this tutorial I'm going to be using Pivotal Web Services since I used to work on it at Pivotal (still at Pivotal, but now work on the [Cloud Controller](https://github.com/cloudfoundry/cloud_controller_ng) CF component) and am more familiar with it.
 
 The steps below should also apply to BlueMix and a static site should run comfortably under their free tier as well.
 
@@ -49,7 +49,7 @@ $ cf login
 
 ## Deploying a Sample Jekyll Site
 
-Now, as an example, we will deploy [this sample Jekyll site](https://github.com/tcdowney/jekyll-cf-static-site-example). Feel free to follow along and deploy it yourself to get a feel for the process.
+Now, as an example, we will deploy [this sample Jekyll site](https://github.com/tcdowney/jekyll-cf-static-site-example). Feel free to follow along and deploy it yourself to get a feel for the process. At the end, you should end up with something like [this](https://jekyll.cfapps.io).
 
 {% highlight bash %}
 $ git clone https://github.com/tcdowney/jekyll-cf-static-site-example.git
@@ -133,6 +133,6 @@ There will be a warning regarding the non-subdomain form of the domain (e.g. `ex
 Finally, to enable SSL, just go over to the "SSL" tab and switch it on to "Full." The process is similar to the process for [enabling CloudFlare SSL with Github Pages](https://blog.cloudflare.com/secure-and-fast-github-pages-with-cloudflare/) -- the main difference is just in the DNS settings we set up earlier.
 
 ## Wrapping It Up
-Well, that's about it. At this point feel free to try this out with your static site for real and feel free to scale up or down the memory and instance counts as you see fit. I find in practice I can get away with 32M of memory for a simple Jekyll site and a single instance since the CloudFlare CDN is doing the brunt of the work.
+Well, that's about it. At this point feel free to try this out with your static site for real and feel free to scale up or down the memory and instance counts as you see fit. I find in practice I can get away with 32M of memory (perhaps even less) for a simple Jekyll site and a single instance since the CloudFlare CDN is doing the brunt of the work.
 
 Thanks for taking the time to read through all of this and good luck!
