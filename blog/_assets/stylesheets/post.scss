@@ -99,6 +99,14 @@ article {
     }
   }
 
+  .post-badge-subaru-orange {
+    @extend .post-badge;
+
+    > span .fa {
+      color: $subaru-orange;
+    }
+  }
+
   .post-badge-teal {
     @extend .post-badge;
 
