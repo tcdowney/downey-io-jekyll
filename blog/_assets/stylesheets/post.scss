@@ -30,6 +30,15 @@ article {
   .author {
     text-align: right;
     text-transform: lowercase;
+
+    a {
+      color: $dark-gray;
+
+      &:hover {
+        @include transition(color 0.5s linear);
+        color: darken($dark-gray, 30);
+      }
+    }
   }
 
   .post-content {
@@ -40,6 +49,11 @@ article {
     ol {
       @extend %default-ol;
     }
+  }
+
+  .post-script {
+    color: $medium-gray;
+    font-style: italic;
   }
 
   .footnote {

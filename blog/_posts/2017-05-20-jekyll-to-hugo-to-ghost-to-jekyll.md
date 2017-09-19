@@ -57,3 +57,11 @@ I also realized that most of my pain centered around my image uploading workflow
 **tl;dr**
 
 I used by search for the perfect blogging framework as an excuse for procrastination and Jekyll works just fine. 🌝
+
+<div class="post-script">
+  <p>p.s.</p>
+
+  <p>
+    If you're interest in learning more about how I use Jekyll, I've recently written a new post on how I <a href="{{ site.baseurl }}{% post_url 2017-09-17-how-to-deploy-static-site-cloud-foundry %}">deploy Jekyll sites to Cloud Foundry</a>!
+  </p>
+</div>
