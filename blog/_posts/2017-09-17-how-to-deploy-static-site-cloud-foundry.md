@@ -42,14 +42,15 @@ Next, target the PWS API with your CLI:
 $ cf api api.run.pivotal.io
 {% endhighlight %}
 
-Then log in with the username and password you signed up with:
+Then log in with the username and password you signed up with and target the organization that you just created:
 {% highlight bash %}
-$ cf login
+$ cf login # you will be prompted for your username and password
+$ cf target -o ORGANIZATION_NAME
 {% endhighlight %}
 
 ## Deploying a Sample Jekyll Site
 
-Now, as an example, we will deploy [this sample Jekyll site](https://github.com/tcdowney/jekyll-cf-static-site-example). Feel free to follow along and deploy it yourself to get a feel for the process. At the end, you should end up with something like [this](https://jekyll.cfapps.io).
+Now, as an example, we will deploy [this sample Jekyll site](https://github.com/tcdowney/jekyll-cf-static-site-example). Feel free to follow along and deploy it yourself to get a feel for the process.
 
 {% highlight bash %}
 $ git clone https://github.com/tcdowney/jekyll-cf-static-site-example.git
@@ -58,9 +59,14 @@ $ cd jekyll-cf-static-site-example
 
 Within this directory you'll find two files unique to deploying a static site on Cloud Foundry: the `Staticfile` and a `manifest.yml` file.
 
-The `Staticfile` contains commands that the Staticfile buildpack will use to configure your site and the nginx server that it will sit behind. Our sample Jekyll site's simply tells it to use the `_site` directory as its root path. See [these docs](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html) for a full list of options.
+The `Staticfile` contains commands that the Staticfile buildpack will use to configure your site and the nginx server that it will sit behind. Our sample Jekyll site's simply tells it to use the `_site` directory as its root path.
 
-The `Staticfile` will let you do some powerful things including providing the ability to supply a custom `nginx.conf` file. This means you can tweak nginx to provide gzipped assets, do custom location routing (handy for redirecting), require basic auth password protection, and much more.
+{% highlight yaml %}
+# Staticfile
+root: _site
+{% endhighlight %}
+
+The `Staticfile` allows you to do some powerful things such as serving gzipped assets and requiring basic auth password protect. You can even provide a custom `nginx.conf` file to configure the embedded nginx server. This can be handy when setting up custom redirect rules and url parsing. See [these docs](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html#config-options) for a full list of the available `Staticfile` configuration options.
 
 The `manifest.yml` file is used by the CLI to remember configuration for the app. These application manifests typically contain information regarding how much memory the app should have, what routes it should use, how many instances of the app should be deployed, and more.  Check out the [application manifest docs](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) for more information.
 This is what our sample site's looks like:
@@ -82,7 +88,30 @@ Now go ahead and push this site your your org!
 $ cf push
 {% endhighlight %}
 
-The app will stage and be available at a random route on the `cfapps.io` domain.
+The app will stage and be available at a random route on the `cfapps.io` domain. Your site should look similar to this [example deployment](https://jekyll.cfapps.io).
+
+Updating the site is just as simple. If you happen to have a Ruby environment and Jekyll set up, feel free to add a new post or edit the existing sample post in `_posts/2017-09-17-welcome-to-jekyll.markdown`.
+
+While we're at it, let's also edit the `manifest.yml` file to scale down our site a bit and conserve resources since it really doesn't need to be _that_ highly available.
+
+{% highlight yaml %}
+# editing manifest.yml
+applications:
+- name: my-static-site
+  memory: 32M
+  instances: 1
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack
+  random-route: true
+{% endhighlight %}
+
+This change will scale the site down to a single instance the next time we run `cf push`. To deploy your changes just run `jekyll build` to regenerate the `_site` folder and `cf push` again. If you don't have Jekyll set up, don't worry.  For the purposes of this demo just edit the files in the `_site` directory directly. Now, let's kick off that build and deploy:
+
+{% highlight bash %}
+$ jekyll build # or optionally edit _site manually
+$ cf push
+{% endhighlight %}
+
+The site will restage and you'll be able to see your changes live at the route you were given earlier. Running `cf app my-static-site` will confirm that it has been scaled down to a single instance.
 
 ## Mapping a Custom Domain
 
