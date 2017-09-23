@@ -13,7 +13,7 @@ categories:
   - cloud foundry
   - staticfile buildpack
 excerpt:
-  "When it comes to hosting a static website there are many options available ranging from the free (and somewhat limiting) Github Pagesto deploying directly to an Amazon S3 bucket to self-hosting Nginx on Digital Ocean. For those looking for more flexibility than what Github and S3 can provide, but want to avoid the hassle of maintaining a full virtual machine on Digital Ocean, a managed Cloud Foundry can be a good option.  This post will cover how to use the Cloud Foundry Staticfile buildpack to deploy to a public Cloud Foundry PaaS and wire it up with a custom domain name and Cloudflare SSL."
+  "When it comes to hosting a static website there are many options available ranging from the free (and somewhat limiting) Github Pagesto deploying directly to an Amazon S3 bucket to self-hosting NGINX on Digital Ocean. For those looking for more flexibility than what Github and S3 can provide, but want to avoid the hassle of maintaining a full virtual machine on Digital Ocean, a managed Cloud Foundry can be a good option.  This post will cover how to use the Cloud Foundry Staticfile buildpack to deploy to a public Cloud Foundry PaaS and wire it up with a custom domain name and Cloudflare SSL."
 description:
   "How to deploy a static website on to Cloud Foundry using the Staticfile buildpack and hook it up with a custom domain name and Cloudflare SSL."
 ---
@@ -59,14 +59,15 @@ $ cd jekyll-cf-static-site-example
 
 Within this directory you'll find two files unique to deploying a static site on Cloud Foundry: the `Staticfile` and a `manifest.yml` file.
 
-The `Staticfile` contains commands that the Staticfile buildpack will use to configure your site and the nginx server that it will sit behind. Our sample Jekyll site's simply tells it to use the `_site` directory as its root path.
+The `Staticfile` contains commands that the Staticfile buildpack will use to configure your site and the NGINX server that it will sit behind. Our sample Jekyll site's simply tells it to use the `_site` directory as its root path and tells NGINX to include some additional configuration files. In the case of our example site, it is including a file called `error404.conf` that is used to [add a custom 404 error page]({{ site.baseurl }}{% post_url 2017-09-22-cloud-foundry-staticfile-buildpack-custom-404-error %}).
 
 {% highlight yaml %}
 # Staticfile
 root: _site
+location_include: includes/*.conf
 {% endhighlight %}
 
-The `Staticfile` allows you to do some powerful things such as serving gzipped assets and requiring basic auth password protect. You can even provide a custom `nginx.conf` file to configure the embedded nginx server. This can be handy when setting up custom redirect rules and url parsing. See [these docs](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html#config-options) for a full list of the available `Staticfile` configuration options.
+The `Staticfile` allows you to do some powerful things such as serving gzipped assets and requiring basic auth password protect. You can even provide a custom `nginx.conf` file to configure the embedded NGINX server. This can be handy when setting up custom redirect rules and url parsing. See [these docs](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html#config-options) for a full list of the available `Staticfile` configuration options.
 
 The `manifest.yml` file is used by the CLI to remember configuration for the app. These application manifests typically contain information regarding how much memory the app should have, what routes it should use, how many instances of the app should be deployed, and more.  Check out the [application manifest docs](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) for more information.
 This is what our sample site's looks like:
