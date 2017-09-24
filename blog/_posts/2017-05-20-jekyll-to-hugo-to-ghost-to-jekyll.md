@@ -62,6 +62,6 @@ I used by search for the perfect blogging framework as an excuse for procrastina
   <p>p.s.</p>
 
   <p>
-    If you're interest in learning more about how I use Jekyll, I've recently written a new post on how I <a href="{{ site.baseurl }}{% post_url 2017-09-17-how-to-deploy-static-site-cloud-foundry %}">deploy Jekyll sites to Cloud Foundry</a>!
+    If you're interested in learning more about how I use Jekyll to manage these blogs, I've recently written a new post on how I <a href="{{ site.baseurl }}{% post_url 2017-09-17-how-to-deploy-static-site-cloud-foundry %}">deploy Jekyll sites to Cloud Foundry</a>!
   </p>
 </div>
