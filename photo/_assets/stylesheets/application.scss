@@ -4,9 +4,9 @@
 
 @import "../../../assets/stylesheets/normalize";
 @import "../../../assets/stylesheets/syntax";
-@import "bourbon";
+@import "../../../assets/stylesheets/bourbon/bourbon";
+@import "../../../assets/stylesheets/neat/neat";
 @import "../../../assets/stylesheets/bitters/bitters";
-@import "neat";
 @import "images";
 @import "../../../assets/stylesheets/errors";
 @import "main";

@@ -16,11 +16,11 @@ permalink: photos/:year/:month/:day/:title.html
 
 exclude:
   - s3_website.yml
-gems:
+plugins:
   - jekyll-sitemap
+  - jekyll-paginate
 
 assets:
   sources:
-    - '../assets/javascripts'
     - _assets/javascripts
     - _assets/stylesheets

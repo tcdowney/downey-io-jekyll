@@ -1,11 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'bourbon', '~> 4.0.1'
-gem 'jekyll', '~> 2.5.3'
-gem 'jekyll-assets', '~> 0.7.8'
-gem 'jekyll-sitemap', '~> 0.10'
+gem 'jekyll'
+gem 'jekyll-assets'
+gem 'jekyll-sitemap'
 gem 'jekyll-redirect-from'
-gem 'neat'
+gem 'jekyll-paginate'
+
+gem 'bourbon', '~> 4.3.4'
+gem 'neat', '~> 1.0'
+
 gem 'rouge'
 gem 's3_website'
 gem 'therubyracer'
