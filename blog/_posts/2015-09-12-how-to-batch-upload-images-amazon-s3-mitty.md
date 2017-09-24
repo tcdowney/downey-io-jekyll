@@ -1,7 +1,7 @@
 ---
 layout: post
 type: blog
-title: "Batch Uploading Images to Amazon S3"
+title: "Batch Uploading Photos to Amazon S3 with Mitty"
 sub_title:  "Using Mitty for Jekyll Photo Blogs"
 color: teal
 icon: fa-camera-retro
@@ -28,7 +28,7 @@ The `mitty` gem relies on [rmagick](https://github.com/rmagick/rmagick) for phot
 
 ## Installation
 
-To install the gem, simply follow the instructions int he [README](https://github.com/tcdowney/mitty#installation).  It will cover the gem installation itself, as well as what configuration options are available/required.
+To install the gem, just follow the instructions in the [README](https://github.com/tcdowney/mitty#installation).  It will cover the gem installation itself, as well as what configuration options are available/required.
 
 In order to upload images to an Amazon S3 bucket, mitty requires a valid `aws_access_key_id` and `aws_secret_access_key`.  Although I allow this to be configured via the `.mitty` file, I recommend storing these values in environment variables so that they aren't accidentally checked in to source control or otherwise leaked.  I also recommend creating an AWS that has minimal access.  It should only need to have permissions to a single bucket.  For more information acquiring these keys and best practices in general, I recommend reading the [Managing AWS Access Keys documentation](http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html).
 
@@ -57,10 +57,14 @@ As I mentioned earlier, the upload command can accept AWS access key IDs and sec
 By default, the upload command will upload the images to a folder named for the current date.  However, the name of this folder can be overwritten with the `--object_key_prefix` option.  Likewise, by default it will upload images to the bucket specified in the `.mitty` configuration file, but this too can be overwritten with the `--bucket` option.  You can even set the [ACL permissions](http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#setting-acls) of the images with the `--acl` option.  I know all of that can be confusing so here's an example:
 
 {% highlight bash %}
-mitty upload PATH --access_key_id SOME_AWS_ACCESS_KEY_ID --secret_access_key SOME_SECRET_ACCESS_KEY --object_key_prefix pix --bucket super_bucket --acl private
+mitty upload PATH --access_key_id SOME_AWS_ACCESS_KEY_ID \
+                  --secret_access_key SOME_AWS_SECRET_ACCESS_KEY \
+                  --object_key_prefix photos \
+                  --bucket image-bucket \
+                  --acl private
 {% endhighlight %}
 
-The above command will use "SOME_AWS_ACCESS_KEY_ID" and "SOME_SECRET_ACCESS_KEY" as the AWS Access Key ID and Secret Access Key to authenticate with Amazon Web Services.  It will then upload the images to an AWS S3 bucket named "super_bucket" and place them in a folder called "pix".  Lastly, these images will be private so only owners of the bucket can view/manipulate them.
+The above command will use "SOME_AWS_ACCESS_KEY_ID" and "SOME_AWS_SECRET_ACCESS_KEY" as the AWS Access Key ID and Secret Access Key to authenticate with Amazon Web Services.  It will then upload the images to an AWS S3 bucket named "image-bucket" and place them in a folder called "photos".  Lastly, these images will use the "private" ACL so only owners of the bucket can view or edit them.
 
 ## Mitty Manage
 The `resize` and `upload` commands can help save a lot of time, but they are still pretty fine-grained.  I wanted a command to automate my entire workflow.  This is where the `mitty manage` command comes in.

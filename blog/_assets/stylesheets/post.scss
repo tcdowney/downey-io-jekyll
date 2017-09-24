@@ -197,9 +197,25 @@ article {
 
   .previous {
     float: left;
+
+    .pagination-button {
+      margin-right: .25em;
+    }
   }
 
   .next {
     float: right;
+
+    .pagination-button {
+      margin-left: .25em;
+    }
+  }
+
+  .pagination-button, .pagination-label {
+    vertical-align: middle;
+  }
+
+  .pagination-label {
+    font-size: smaller;
   }
 }
