@@ -18,7 +18,7 @@ description:
   "How to deploy a static website on to Cloud Foundry using the Staticfile buildpack and hook it up with a custom domain name and Cloudflare SSL."
 ---
 
-I've been a fan of static websites for a while now and although I've been tempted at times to switch back to Wordpress or Ghost, I [always end up coming back]({{ site.baseurl }}{% post_url 2017-05-20-jekyll-to-hugo-to-ghost-to-jekyll %}).  One thing I do miss about having a "real" server, though, is the added control it gives your site on handling the inbound request. For example this site is currently hosted on Amazon S3 sitting behind CloudFront. I decided one day to get rid of the useless splash page sitting at the root and wanted to direct folks to `/blog` directly. Since I didn't have a real server at my control, however, this meant I had to use some [hacky combo of meta tags with Javascript as a fallback](https://github.com/tcdowney/downey-io-jekyll/blob/3eb580ba09b81b1255439e4c0875f344bd0b87f6/blog/index.html) to compel the browsers to redirect. It's not perfect by any means and there is some jitteriness, but it gets the job done.
+I've been a fan of static websites for a while now and although I've been tempted at times to switch back to Wordpress or Ghost, I [always end up coming back]({{ site.baseurl }}{% post_url 2017-05-20-jekyll-to-hugo-to-ghost-to-jekyll %}).  One thing I do miss about having a "real" server, though, is the added control it gives your site on handling the inbound request. For example this site is currently hosted on Amazon S3 sitting behind CloudFront. I decided one day to get rid of the useless splash page sitting at the root and wanted to direct folks to `/blog` directly. Since I didn't have a real server at my control, however, this meant I had to use some [hacky combo of meta tags with Javascript as a fallback](https://github.com/tcdowney/downey-io-jekyll/blob/3eb580ba09b81b1255439e4c0875f344bd0b87f6/blog/index.html) to beseech the browsers to redirect. It's not perfect by any means and there is some jitteriness, but it gets the job done... for now.
 
 At the time I thought about migrating over to a budget VPS host like [Digital Ocean](https://www.digitalocean.com/) or [Vultr](https://www.vultr.com/), but really didn't want the hassle of having to actual maintain a production server (security patching, installing updates, etc.).  But what if there was a way to get more control over my static site, but with minimal continued maintenance by myself?
 
@@ -26,9 +26,9 @@ This is where Cloud Foundry comes in.
 
 ## What is Cloud Foundry
 
-[Cloud Foundry](https://www.cloudfoundry.org/) is an open source application platform that is mainly used by enterprises to self-host their hoards of Java and .NET apps both on premise and across the different cloud providers (e.g. Amazon Web Services, Google Cloud Platform, Azure, etc.). There are a number of public Cloud Foundry offerings available for hosting our site such as [IBM BlueMix](https://www.ibm.com/cloud-computing/bluemix/) and [Pivotal Web Services](https://run.pivotal.io/). For this tutorial I'm going to be using Pivotal Web Services since I used to work on it at Pivotal (still at Pivotal, but now work on the [Cloud Controller](https://github.com/cloudfoundry/cloud_controller_ng) CF component) and am more familiar with it.
+[Cloud Foundry](https://www.cloudfoundry.org/) is an open source application platform that is mainly used by enterprises to self-host their hoards of Java and .NET apps both on premise and across the different cloud providers (e.g. Amazon Web Services, Google Cloud Platform, Azure, etc.). There are a number of public Cloud Foundry offerings available for hosting our site such as [IBM BlueMix](https://www.ibm.com/cloud-computing/bluemix/) and [Pivotal Web Services](https://run.pivotal.io/) (PWS). For this tutorial I'm going to be using Pivotal Web Services since I used to work on it at Pivotal (still at Pivotal, but now work on the [Cloud Controller](https://github.com/cloudfoundry/cloud_controller_ng) CF component) and am more familiar with it. Plus with the amount of resources that a static site consumes, it will take months to burn down the trial credit.
 
-The steps below should also apply to BlueMix and a static site should run comfortably under their free tier as well.
+Apart from the PWS account creation process, the steps below should also apply to any deployment of Cloud Foundry, such as BlueMix, and a static site should run comfortably under their free tier as well.
 
 ## Getting Started
 
@@ -99,20 +99,20 @@ While we're at it, let's also edit the `manifest.yml` file to scale down our sit
 # editing manifest.yml
 applications:
 - name: my-static-site
-  memory: 32M
+  memory: 20M
   instances: 1
   buildpack: https://github.com/cloudfoundry/staticfile-buildpack
   random-route: true
 {% endhighlight %}
 
-This change will scale the site down to a single instance the next time we run `cf push`. To deploy your changes just run `jekyll build` to regenerate the `_site` folder and `cf push` again. If you don't have Jekyll set up, don't worry.  For the purposes of this demo just edit the files in the `_site` directory directly. Now, let's kick off that build and deploy:
+This change will scale the site down to a single instance with only 20 megabytes of RAM the next time we run `cf push`. To deploy your changes just run `jekyll build` to regenerate the `_site` folder and `cf push` again. If you don't have Jekyll set up, don't worry.  For the purposes of this demo just edit the files in the `_site` directory directly. Now, let's kick off that build and deploy:
 
 {% highlight bash %}
 $ jekyll build # or optionally edit _site manually
 $ cf push
 {% endhighlight %}
 
-The site will restage and you'll be able to see your changes live at the route you were given earlier. Running `cf app my-static-site` will confirm that it has been scaled down to a single instance.
+The site will restage and you'll be able to see your changes live at the route you were given earlier. Running `cf app my-static-site` will confirm that it has been scaled down to a single instance and will display how much of the 20 MB of memory it's actually using.
 
 ## Mapping a Custom Domain
 
