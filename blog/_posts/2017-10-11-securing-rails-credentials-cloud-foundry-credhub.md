@@ -38,12 +38,15 @@ At it's most basic, CredHub is just an encrypted credential store -- similar to 
 What makes CredHub nice, though, is how seamlessly your Cloud Foundry deployed apps are able to communicate with it.
 
 ## Introducing CredHubble -- A CredHub Ruby Client
-So how do you use it with a Rail's app? This is where [CredHubble](https://github.com/tcdowney/cred_hubble) comes in. CredHubble is an http client for CredHub that's I've been working on in my spare time for fun since there's currently no official Ruby client available.
-It handles most of the [CredHub API endpoints](https://credhub-api.cfapps.io/) that you're most likely to care about and I'm continuing to add more. Since it's unofficial, I didn't want to take the name `credhub-ruby` or something, so I thought real hard and tried to be creative.
+So how do you integrate CredHub with your Rails app? This is where the [CredHubble CredHub ruby client](https://github.com/tcdowney/cred_hubble) comes in. CredHubble is an http client for the CredHub API that I've been working on in my spare time since there's currently no official Ruby client available. I used to make service clients all of the time while working on [HealtheIntent at Cerner](http://www.cerner.com/page.aspx?pageid=17179876814) so it was a bit nostalgic to get to play around with [Faraday](https://github.com/lostisland/faraday) and [Virtus](https://github.com/solnic/virtus) again.
+
+It's not an unofficial client, so I didn't want to take an official sounding name `credhub-ruby` or something. So I thought real hard and tried to be creative.
 
 CredHubble was the best I could come up with. It lets you look at or view credentials, just like the Hubble Space Telescope lets you look at much cooler things. Like galaxies and supernovas. Yeah...
 
 CredHubble is not perfect by any means and CredHub has a pretty simple API so you could whip up something custom with `Net::Http` pretty quickly and name it something even better if you want. 😉
+
+It does handle most of the [CredHub API endpoints](https://credhub-api.cfapps.io/) that you're most likely to care about as an app developer, though.
 
 Anyways, here's how you can use CredHubble to fetch secrets from CredHub and populate your `secrets.yml`.
 
