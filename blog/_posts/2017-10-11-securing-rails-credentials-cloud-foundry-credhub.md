@@ -53,7 +53,7 @@ Anyways, here's how you can use CredHubble to fetch secrets from CredHub and pop
 First, add `cred_hubble` to your Gemfile and run `bundle install`. This will install the gem and make it available to your app.
 
 {% highlight ruby %}
-gem 'cred_hubble', '~> 0.1.0.pre' # will release a non-pre version soon
+gem 'cred_hubble', '~> 0.1.0'
 {% endhighlight %}
 
 Next, we're going to make an initializer to bootstrap the client.
