@@ -13,12 +13,12 @@ categories:
   - sequel migrations
   - rubocop
 excerpt:
-  "Active Record and Sequel migrations provide an easy way for Ruby developers to alter their database schemas without having to write SQL by hand. This abstraction means that the same migration file could work against both a Postgres and MySQL database by simply changing the underlying database adapter. For large projects with many developers, however, it can be difficult to keep migration style consistent since code linters typically omit them. In this post we'll discuss how to write our own custom Rubocop cops for linting migration files."
+  "Active Record and Sequel migrations provide an easy way for Ruby developers to alter their database schemas without having to write SQL by hand. This abstraction means that the same migration file could work against both a Postgres and MySQL database by simply changing the underlying database adapter. For large projects with many developers, however, it can be difficult to keep migration style consistent and enforce best practices without additional tooling. In this post we'll write our own custom Rubocop cop for linting migration files."
 description:
   "How to write custom Rubocop linters for your Sequel and Active Record migrations."
 ---
 
-[Active Record](http://edgeguides.rubyonrails.org/active_record_migrations.html) and [Sequel](http://sequel.jeremyevans.net/) migrations provide an easy way for Ruby developers to alter their database schemas without having to write SQL by hand. This abstraction means that the same migration file could work against both a Postgres and MySQL database by simply changing the underlying database adapter. For large projects with many developers, however, it can be difficult to keep migration style consistent since code linters typically omit them. 
+[Active Record](http://edgeguides.rubyonrails.org/active_record_migrations.html) and [Sequel](http://sequel.jeremyevans.net/) migrations provide an easy way for Ruby developers to alter their database schemas without having to write SQL by hand. This abstraction means that the same migration file could work against both a Postgres and MySQL database by simply changing the underlying database adapter. For large projects with many developers, however, it can be difficult to keep migration style consistent and enforce best practices  without additional tooling.
 
 As an example, the [Cloud Foundry](https://www.cloudfoundry.org/) [Cloud Controller](https://github.com/cloudfoundry/cloud_controller_ng) service uses the Ruby [Sequel gem](https://github.com/jeremyevans/sequel) as its ORM and can be run on both Postgres and MySQL-compatible databases. This flexibility means we need to take some special care when writing our migration files. Consider the following Sequel migration:
 
@@ -88,7 +88,7 @@ module RuboCop
   module Cop
     module Migration
       class AddIndexName < RuboCop::Cop::Cop
-        
+
       end
     end
   end
@@ -148,22 +148,22 @@ module RuboCop
     module Migration
       class AddIndexName < RuboCop::Cop::Cop
         MSG = 'Please explicitly name your index or constraint.'.freeze
-        
+
         COLUMN_ADDING_METHODS = %i{ add_column column String Integer }.freeze
-        
+
         def on_block(node)
           node.each_descendant(:send) do |send_node|
             method = method_name(send_node)
             next unless sequel_column_adding_method?(method)
           end
         end
-        
+
         private
-        
+
         def sequel_column_adding_method?(method)
           COLUMN_ADDING_METHODS.include?(method)
         end
-        
+
         def method_name(node)
           node.children[1]
         end
@@ -173,7 +173,7 @@ module RuboCop
 end
 {% endhighlight %}
 
-First we'll start simple. The code above will go through every Ruby block, check the method name, and skip to the next unless we're dealing with one of Sequel's column adding methods (for simplicity we're just checking a subset of them in this cop). We can find the column adding method by looping through each "send" node descendant of the `create_table` block that we're on. The send nodes look like this: 
+First we'll start simple. The code above will go through every Ruby block, check the method name, and skip to the next unless we're dealing with one of Sequel's column adding methods (for simplicity we're just checking a subset of them in this cop). We can find the column adding method by looping through each "send" node descendant of the `create_table` block that we're on. The send nodes look like this:
 
 {% highlight ruby %}
 (send nil :String
@@ -192,29 +192,29 @@ module RuboCop
     module Migration
       class AddIndexName < RuboCop::Cop::Cop
         MSG = 'Please explicitly name your index or constraint.'.freeze
-        
+
         COLUMN_ADDING_METHODS = %i{ add_column column String Integer }.freeze
-        
+
         def on_block(node)
           node.each_descendant(:send) do |send_node|
             method = method_name(send_node)
             next unless sequel_column_adding_method?(method)
-        
+
             opts = send_node.children.last
             add_offense(send_node, location: :expression) if missing_index_name?(opts)
           end
         end
-        
+
         private
-                
+
         def sequel_column_adding_method?(method)
           COLUMN_ADDING_METHODS.include?(method)
         end
-        
+
         def method_name(node)
           node.children[1]
         end
-        
+
         def missing_index_name?(opts)
           opts.type == :sym && opts.children[0] == :index
         end
@@ -230,13 +230,21 @@ ColumnAddingMethod :column_name, :other_options
 # e.g. String :guid, :index
 {% endhighlight %}
 
-In this very basic implementation of the cop, if we see that the options passed to the method are just a single symbol and that symbol is `:index` then we are clearly missing a name for our index.
+Then the true magic happens in the following line:
+{% highlight ruby %}
+add_offense(send_node, location: :expression) if missing_index_name?(opts)
+{% endhighlight %}
 
-We can now test out our cop by adding it to the `.rubocop.yml file`:
+In this very basic implementation of the cop, if we see that the options passed to the method are just a single symbol and that symbol is `:index` then we are clearly missing a name for our index. We then call Rubocop's `add_offense` method with the current AST node that we're on. This will mark the expression as an offending piece of lint and it, along with the `MSG` that we declared earlier, will show up in the output when we run `rubocop`.
+
+Now it's time to make Rubocop aware of our new cop's existence by adding it to the `.rubocop.yml file`:
 
 {% highlight yaml %}
+# <project-root>/.rubocop.yml
 require:
 - ./linters/migration/add_index_name.rb
+
+# ... other config ...
 {% endhighlight %}
 
 Then simply run the `rubocop` command:
