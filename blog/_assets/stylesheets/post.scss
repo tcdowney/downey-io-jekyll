@@ -158,6 +158,15 @@ article {
     }
   }
 
+  h3 {
+    text-align: left;
+    font-size: 1.2em;
+
+    @include media($medium-screen) {
+      font-size: 1.4em;
+    }
+  }
+
   .date {
     color: transparentize($base-font-color, .4);
     font-style: italic;
