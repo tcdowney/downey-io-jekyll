@@ -14,9 +14,9 @@ layout: default
       <h2>{{ page.sub_title }}</h2>
     {% endif %}
     <time class="date">{{ page.date | date: '%B %d, %Y' }}</time>
-    {% if page.updated %}
+    {% if page.last_modified_at %}
       <p class="date">
-        Updated: <time>{{ page.updated | date: '%B %d, %Y' }}</time>
+        Updated: <time>{{ page.last_modified_at | date: '%B %d, %Y' }}</time>
       </p>
     {% endif %}
   </div>

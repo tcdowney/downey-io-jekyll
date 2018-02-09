@@ -6,7 +6,7 @@ sub_title:  "A Ruby dev's rambling journey deeper down the stack"
 color: green
 icon: fa-book
 date: 2018-01-21
-updated: 2018-02-08
+last_modified_at: 2018-02-08
 categories:
   - programming
   - c programming language

@@ -24,8 +24,8 @@ type: blog
               {{ post.excerpt }}
             </p>
             <div class="post-detail">
-              {% if post.updated %}
-                <span><time>{{ post.date | date: '%B %d, %Y' }}</time>, updated <time>{{ post.updated | date: '%B %d, %Y' }}</time></span>
+              {% if post.last_modified_at %}
+                <span><time>{{ post.date | date: '%B %d, %Y' }}</time>, updated <time>{{ post.last_modified_at | date: '%B %d, %Y' }}</time></span>
               {% else %}
                  <span><time>{{ post.date | date: '%B %d, %Y' }}</time></span>
               {% endif %}
