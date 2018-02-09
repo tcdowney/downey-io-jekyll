@@ -13,7 +13,12 @@ layout: default
     {% if page.sub_title %}
       <h2>{{ page.sub_title }}</h2>
     {% endif %}
-    <span class="date">{{ page.date | date: '%B %d, %Y' }}</span>
+    <time class="date">{{ page.date | date: '%B %d, %Y' }}</time>
+    {% if page.updated %}
+      <p class="date">
+        Updated: <time>{{ page.updated | date: '%B %d, %Y' }}</time>
+      </p>
+    {% endif %}
   </div>
   <div class="post-content">
     {{ content }}

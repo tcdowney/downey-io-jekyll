@@ -12,7 +12,7 @@ article {
   }
 
   .title {
-    h1, h2 {
+    h1, h2, p {
       text-align: center;
     }
 
@@ -22,6 +22,11 @@ article {
 
     h2 {
       margin-bottom: 1em;
+    }
+
+    p {
+      margin-top: .5em;
+      margin-bottom: .5em;
     }
 
     margin-bottom: golden-ratio(1em, 1);
