@@ -62,9 +62,7 @@ The first couple of days covered some Linux basics such as syscalls, file permis
 
 The latter half of the week covered [cgroups](https://en.wikipedia.org/wiki/Cgroups), [capabilities](http://man7.org/linux/man-pages/man7/capabilities.7.html), [seccomp](https://en.wikipedia.org/wiki/Seccomp), and [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces) -- all of the core Linux features that enable the creation and use of containers.
 
-I'm considering doing some further research on these topics and making a dedicated post synthesizing some of what I learned, but until then I recommend checking out this post to see how all of these topics come together to make a container:
-
-* https://blog.lizzie.io/linux-containers-in-500-loc.html
+I'm considering doing some further research on these topics and making a dedicated post synthesizing some of what I learned, but until then I recommend checking out this post to see how all of these topics come together to make a container: [Linux containers in 500 lines of code](https://blog.lizzie.io/linux-containers-in-500-loc.html)
 
 At [Cloud Foundry](https://www.cloudfoundry.org/) we're all about running applications in containers. However for me personally, most of my work has been in Ruby at some of the higher levels of the platform. The lower layers, such as the [garden-runc](https://docs.cloudfoundry.org/concepts/architecture/garden.html#garden-runc) containerization component, have, until now, been a bit of a black box to me. This week of training, however, has helped demystify containers for me and that makes me very excited to learn more. 😊
 
