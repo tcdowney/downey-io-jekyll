@@ -6,7 +6,7 @@ sub_title:  "A Ruby dev's rambling journey deeper down the stack"
 color: green
 icon: fa-book
 date: 2018-01-21
-last_modified_at: 2018-02-08
+last_modified_at: 2018-02-09
 categories:
   - programming
   - c programming language
@@ -21,7 +21,7 @@ description:
 
 > I'm going to be experimenting a bit with this post. It's currently a work in progress that I plan on fleshing out over the coming months as I learn more about the topic and stumble upon new resources. I always intend on blogging about my OMSCS coursework after a particularly interesting class ends, but never actually get around to doing it ([KBAI](https://www.omscs.gatech.edu/cs-7637-knowledge-based-artificial-intelligence-cognitive-systems) I'm looking at you 👀). It should end up being on the longer side of my posts and I anticipate wrapping it up in May or June.
 
-**Update (2018-02-08):** Just completed a week-long Linux training and the first project in GIOS. Updated this post with what I've found helpful so far for succeeding in GIOS and my thoughts on the training.
+**Update (2018-02-09):** Just completed a week-long Linux training and the first project in GIOS. Updated this post with my thoughts on the training and added some learning strategies for GIOS.
 
 ## Motivation Behind Learning OS Concepts
 
@@ -30,9 +30,26 @@ One of my goals this year is to learn more of the underlying concepts and theory
 If you're intrested in the course the recorded lectures are available to anyone via [Udacity](https://classroom.udacity.com/courses/ud923).
 
 ## Approach Toward the Class
-So far in these first weeks of the course I have just been watching lectures and working on the first project. Will flesh out this section more as time goes on.
+I've currently made it through the first month and a half of the course and have completed the first project. If you're currently taking this course and are interested, this is the approach I've taken so far. If not, feel free to skip ahead to the [learning resources](#general-operating-systems-and-c-language-resources) section of this post.
 
-## Learning Resources
+### Lecture Videos
+The lectures for the course are all pre-recorded and available through Udacity. However, I generally try to find time to squeeze them in and watch them in places where I don't typically have unlimited internet access: such as on the BART during my commute or in the gym.
+
+Fortunately, Udacity lets you download the videos in bulk so I just toss them on to my Kindle Fire tablet that I picked up for about thirty bucks during Black Friday. I watch them using [VLC media player](https://www.videolan.org/vlc/index.html) since it allows me to adjust the playback speed.
+
+### Office Hours
+Office hours with the professor and TAs typically occur during Eastern time since the program is based out of Atlanta, GA which means I usually can't attend them live. The professor usually uploads them to Youtube, however, so I download and watch them after the fact. It's not ideal since I can't ask questions while the office hours are being held, but it does mean I can fast forward any questions that aren't personally relevant.
+
+### Piazza and Slack
+The TAs in this course are incredibly active in the [class Slack](https://omscs6200.slack.com/messages/C6KPYD8AK/). They can be a little sassy at times, but are super responsive to questions which has been nice.
+
+### Textbook
+The course doesn't have a required textbook this semester, but I bought one of the recommendations: [Operating Systems: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP/). It's available for free online, but a hardcover copy was only around thirty dollars. I haven't actually needed to use it yet, but we'll see. 😬
+
+### Papers and Readings
+The course has a number of assigned papers and some of them can be pretty dry. I generally follow the strategy put forth in this meta-paper on how to effectively read an academic paper: [How to Read a Paper](https://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf). It was first introduced to me in a Computer Networking course and has been pretty helpful so far.
+
+## General Operating Systems and C Language Resources
 Below are some of the resources that helped me prepare and learn various operating systems topics throughout the course. Like this whole post, the format is still a work in progress.
 
 ### Learning C
