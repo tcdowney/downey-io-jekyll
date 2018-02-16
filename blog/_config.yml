@@ -28,3 +28,7 @@ assets:
   sources:
     - _assets/javascripts
     - _assets/stylesheets
+
+collections:
+  notes:
+    output: true
