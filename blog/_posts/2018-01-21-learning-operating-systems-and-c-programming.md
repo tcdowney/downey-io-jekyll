@@ -19,6 +19,10 @@ description:
   "One of my goals this year is to learn more of the underlying concepts and theory of operating systems and improve my systems programming skills. Consequentially, I've enrolled in Graduate Introduction to Operating Systems through Georgia Tech this semester to help meet this goal. However, it's been a few years since I've written any C and I never had the opportunity to take an Operating Systems course in undergrad so I've got some ground to cover. This post is currently a work in progress, but I'll add to it over time to document my learning journey and include links to any resources that proved helpful along the way."
 ---
 
+<div>
+<img src="https://s3.amazonaws.com/images.downey.io/blog/learning-operating-systems.jpg" alt="Open facing Operating Systems in Three Easy Pieces and closed The Linux Programming Interface books">
+</div>
+
 > I'm going to be experimenting a bit with this post. It's currently a work in progress that I plan on fleshing out over the coming months as I learn more about the topic and stumble upon new resources. I always intend on blogging about my OMSCS coursework after a particularly interesting class ends, but never actually get around to doing it ([KBAI](https://www.omscs.gatech.edu/cs-7637-knowledge-based-artificial-intelligence-cognitive-systems) I'm looking at you 👀). It should end up being on the longer side of my posts and I anticipate wrapping it up in May or June.
 
 **Update (2018-02-09):** Just completed a week-long Linux training and the first project in GIOS. Updated this post with my thoughts on the training and added some learning strategies for GIOS.
