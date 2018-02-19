@@ -1,0 +1,29 @@
+.notes-list {
+  width: 90%;
+  margin: auto;
+
+  @include media($large-screen) {
+    width: 70%;
+  }
+
+  & > .notes {
+    display: inline-block;
+    & > * {
+      text-align: left;
+    }
+  }
+
+  > .notes-header {
+    width: 100%;
+    padding-top: golden-ratio(1em, -1);
+    margin-bottom: $base-line-height;
+
+    p {
+      @extend .subdued;
+    }
+  }
+
+  time {
+    @extend .subdued;
+  }
+}
