@@ -8,6 +8,8 @@ date: 2018-02-15
 categories:
   - programming
   - cloud foundry
+description:
+  "How to create a Cloud Foundry read-only admin user when using a bosh-lite with CredHub"
 ---
 I wanted to create a section of my site where I can drop off little one-off posts or snippets mostly for my own personal (future) use. This is the inaugural note! 😁
 
