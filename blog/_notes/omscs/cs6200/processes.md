@@ -14,8 +14,13 @@ description:
 This note will be loosely structured -- it's just to help me organize my thoughts around the OS Process abstraction (mostly Unix processes) and prepare for the first exam in CS6200.
 
 ## Light-weight Processes
-TBD
-* [Wiki link](https://en.wikipedia.org/wiki/Light-weight_process)
+In SunOS ([see notes on Multithreading in SunOS]({% link _notes/omscs/cs6200/multithreading-in-solaris.md %})) there is a pool of light-weight processes, or LWPs, that are backed one-to-one by a kernel thread.
+
+User-level threading libraries use these LWPs to back the user-level threads. Since the scheduling now happens at user level, the user-level thread library can context switch between threads without having to enter the kernel.
+
+Each LWP has its own **private set of registers** and **signal mask**.
+
+* [Light-weight process Wiki link](https://en.wikipedia.org/wiki/Light-weight_process)
 
 ## Process States
 <dl>
