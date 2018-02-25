@@ -18,16 +18,16 @@ description:
 Data is contained within a `proc` structure.
 `proc` structure includes:
 1. list of kernel threads for the process
-2. pointer to the process address space
+2. pointer to the process's virtual address space
 3. user credentials
 4. signal handlers
 
 ### Light-weight Process (LWP)
 Contains the process-control-block, or PCB. The PCB includes:
 1. user-level process registers
-2. syscall arguments
-3. signal handling masks
-4. resource usage
+2. system call (syscall) arguments
+3. signal mask
+4. resource usage information
 5. profiling pointers
 
 The LWP also includes:
@@ -38,17 +38,17 @@ The LWP also includes:
 
 ### Kernel-thread
 Kernel thread structure contains:
-1. kernel registers
-2. scheduling class
-3. dispatch queue links
-4. pointer to stack
+1. kernel level registers
+2. scheduling class (scheduling info)
+3. dispatch queue links (scheduling info)
+4. stack pointer
 5. pointer to associated LWP
 6. pointer to associated process structure
 7. pointer to CPU structure
 
 ### CPU
 The `cpu` structure contains per-processor data, including:
-1. pointer to currently executing thread
+1. pointer to currently executing thread and list of kernel threads
 2. the idle thread for the CPU
 3. current dispatching and scheduling information
 4. other architecture-dependent information

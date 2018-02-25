@@ -42,8 +42,6 @@ status_codes:
 
 The rest of the post still applies to older versions of the buildpack and still serves as an example of how to use the buildpack's `location_include` functionality.
 
-**Caution:** This gets a bit wordy, so feel free to [skip the exposition](#configuring-a-custom-404-page) or reference my [example site](https://github.com/tcdowney/jekyll-cf-static-site-example).
-
 ## error 404 - configuration options not found
 
 Earlier this week I wrote about [how to deploy a static site to Cloud Foundry]({{ site.baseurl }}{% post_url 2017-09-17-how-to-deploy-static-site-cloud-foundry %}), and once you've familiarized yourself with [the basic of Cloud Foundry](https://pivotal.io/platform/pcf-tutorials/getting-started-with-pivotal-cloud-foundry/introduction), it's pretty darn simple. However, as I migrated one of my sites over from GitLab pages over to Pivotal Web Services I did run into one issue that was particularly annoying: my site was using the default NGINX 404 page and not my lovingly crafted `public/404.html`.
