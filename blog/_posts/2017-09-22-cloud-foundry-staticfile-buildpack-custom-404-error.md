@@ -6,6 +6,7 @@ sub_title:  "Replacing the Staticfile Buildpack's Default NGINX 404 Page"
 color: teal
 icon: fa-code
 date: 2017-09-22
+last_modified_at: 2018-02-25
 categories:
   - blogging
   - static site hosting
@@ -21,6 +22,25 @@ description:
 <div>
 <img src="https://s3.amazonaws.com/images.downey.io/blog/default-nginx-404-error-page.png" alt="Default NGINX 404 Page (in all of its glory)">
 </div>
+
+## important update
+As of February 2018, the most recent version (`v1.4.22`) of the Staticfile buildpack has first-class support of custom error pages. You can now just enumerate various status codes and the page that you would like to display for them. Just add something like this to your `Staticfile`:
+
+```yaml
+status_codes:
+  404: /path/to/404.html
+  500: /path/to/500.html
+```
+
+For my site, my `Staticfile` now looks like this since my `404.html` page is at the top level of my `public` folder:
+
+```yaml
+root: public
+status_codes:
+  404: /404.html
+```
+
+The rest of the post still applies to older versions of the buildpack and still serves as an example of how to use the buildpack's `location_include` functionality.
 
 **Caution:** This gets a bit wordy, so feel free to [skip the exposition](#configuring-a-custom-404-page) or reference my [example site](https://github.com/tcdowney/jekyll-cf-static-site-example).
 
