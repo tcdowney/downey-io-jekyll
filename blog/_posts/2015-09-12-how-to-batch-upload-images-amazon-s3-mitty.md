@@ -43,7 +43,7 @@ mitty resize PATH
 
 By default, this will generate thumbnails as well as small, medium, and large versions of your images.  If the `generate_low_quality` configuration value is set to `true`, it will also generate both low and high quality versions of your images in every size.
 
-As an aside, several folks have asked me what is the purpose of generating low quality versions of images.  Well, in short, it is to help improve page load times.  I've found that having several high quality images on a page at once resulted in unacceptable load times, particularly on mobile.  A solution I found was to initially load low quality versions of images on the page and then use [lazysizes.js](https://github.com/aFarkas/lazysizes) to load the nicer looking images after the page has loaded.  
+As an aside, several folks have asked me what is the purpose of generating low quality versions of images.  Well, in short, it is to help improve page load times.  I've found that having several high quality images on a page at once resulted in unacceptable load times, particularly on mobile.  A solution I found was to initially load low quality versions of images on the page and then use [lazysizes.js](https://github.com/aFarkas/lazysizes) to load the nicer looking images after the page has loaded.
 
 ## Batch Uploading Images to AWS with Mitty
 Images can be uploaded to an Amazon S3 bucket in isolation without any additional processing via the following command:

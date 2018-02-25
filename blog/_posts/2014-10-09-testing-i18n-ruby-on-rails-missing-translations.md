@@ -79,7 +79,7 @@ Once you’ve got everything set up, there are several ways to go about finding 
 # spec/features/home_page_spec.rb
 require 'rails_helper'
 
-RSpec.describe 'user views home page', :type => :feature do  
+RSpec.describe 'user views home page', :type => :feature do
   # Configure capybare to set the 'Accept-Language' header to the appropriate locale
   # and set the locale that is used for the expected result comparison.
   before do
@@ -124,9 +124,9 @@ RSpec::Matchers.define :have_missing_translations do
 
     # Default missing translation fallback for I18n.t
     missing_i18n_t  = /translation missing: \S*\.\S*/
-    
-    !!(actual.body.match(missing_rails_t) || 
-       actual.body.match(missing_i18n_t)  || 
+
+    !!(actual.body.match(missing_rails_t) ||
+       actual.body.match(missing_i18n_t)  ||
        actual.body.match(missing_i18n_js))
   end
 
@@ -146,7 +146,7 @@ Simply `require 'support/missing_translations' in your `spec_helper.rb` file and
 # spec/features/home_page_spec.rb
 require 'rails_helper'
 
-RSpec.describe 'user views home page', :type => :feature do  
+RSpec.describe 'user views home page', :type => :feature do
   # Configure capybare to set the 'Accept-Language' header to the appropriate locale
   # and set the locale that is used for the expected result comparison.
   before do

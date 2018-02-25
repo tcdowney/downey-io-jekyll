@@ -20,7 +20,7 @@ description:
 ---
 
 <div>
-<img src="https://s3.amazonaws.com/images.downey.io/blog/credhubble-credgazing.jpg" alt="Gazing at all the CredHub credentials in the Milky Way">
+<img src="https://images.downey.io/blog/credhubble-credgazing.jpg" alt="Gazing at all the CredHub credentials in the Milky Way">
 </div>
 
 ## Storing Rails Secrets

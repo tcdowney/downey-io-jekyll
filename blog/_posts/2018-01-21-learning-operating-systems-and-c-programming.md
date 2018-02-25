@@ -20,7 +20,7 @@ description:
 ---
 
 <div>
-<img src="https://s3.amazonaws.com/images.downey.io/blog/learning-operating-systems.jpg" alt="Open facing Operating Systems in Three Easy Pieces and closed The Linux Programming Interface books">
+<img src="https://images.downey.io/blog/learning-operating-systems.jpg" alt="Open facing Operating Systems in Three Easy Pieces and closed The Linux Programming Interface books">
 </div>
 
 > I'm going to be experimenting a bit with this post. It's currently a work in progress that I plan on fleshing out over the coming months as I learn more about the topic and stumble upon new resources. I always intend on blogging about my OMSCS coursework after a particularly interesting class ends, but never actually get around to doing it ([KBAI](https://www.omscs.gatech.edu/cs-7637-knowledge-based-artificial-intelligence-cognitive-systems) I'm looking at you 👀). It should end up being on the longer side of my posts and I anticipate wrapping it up in May or June.

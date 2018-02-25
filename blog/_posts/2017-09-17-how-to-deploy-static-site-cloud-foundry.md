@@ -155,7 +155,7 @@ Once you've got your domain pointing to their nameservers, just add the same DNS
 
 
 <div>
-	<img src="https://s3.amazonaws.com/images.downey.io/blog/cloudflare-pws-dns.png">
+	<img src="https://images.downey.io/blog/cloudflare-pws-dns.png">
 </div>
 
 There will be a warning regarding the non-subdomain form of the domain (e.g. `example.com`) being configured as a `CNAME`, but it should be fine. CloudFlare will "flatten" it into representing the IP that the target domain currently resolves to which should account for any changes behind the scenes with the `cfapps.io` domain on PWS.

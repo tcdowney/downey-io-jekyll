@@ -20,7 +20,7 @@ description:
 ---
 
 <div>
-<img src="https://s3.amazonaws.com/images.downey.io/blog/default-nginx-404-error-page.png" alt="Default NGINX 404 Page (in all of its glory)">
+<img src="https://images.downey.io/blog/default-nginx-404-error-page.png" alt="Default NGINX 404 Page (in all of its glory)">
 </div>
 
 ## important update

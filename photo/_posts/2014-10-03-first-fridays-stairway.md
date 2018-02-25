@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Stairway to Art, 2014"
-image: "https://s3.amazonaws.com/images.downey.io/2015-08-24/PA030059_large.jpg"
-image_lq: "https://s3.amazonaws.com/images.downey.io/2015-08-24/PA030059_large_lq.jpg"
-image_med: "https://s3.amazonaws.com/images.downey.io/2015-08-24/PA030059_medium.jpg"
-image_med_lq: "https://s3.amazonaws.com/images.downey.io/2015-08-24/PA030059_medium_lq.jpg"
-image_thumb: "https://s3.amazonaws.com/images.downey.io/2015-08-24/PA030059_thumb.jpg"
-image_thumb_lq: "https://s3.amazonaws.com/images.downey.io/2015-08-24/PA030059_thumb_lq.jpg"
+image: "https://images.downey.io/2015-08-24/PA030059_large.jpg"
+image_lq: "https://images.downey.io/2015-08-24/PA030059_large_lq.jpg"
+image_med: "https://images.downey.io/2015-08-24/PA030059_medium.jpg"
+image_med_lq: "https://images.downey.io/2015-08-24/PA030059_medium_lq.jpg"
+image_thumb: "https://images.downey.io/2015-08-24/PA030059_thumb.jpg"
+image_thumb_lq: "https://images.downey.io/2015-08-24/PA030059_thumb_lq.jpg"
 alt: "First Fridays Stairway"
 date: 2014-10-03
 categories: stairs

@@ -28,7 +28,7 @@ Thanks to its active community, CKEditor 4 has already been translated into over
 
 If you have the time and resources, go with the first option if at all possible.  By giving back to the community and contributing translations, others won't have to go through the pain you went through. :)
 
-Not everyone has the luxury of being able to contribute, however. For example, you may need to modify an existing language to better serve your users needs. Or maybe you need to add support for a new language immediately and you simply can't wait around for your contributions to reach the CKEditor trunk.  
+Not everyone has the luxury of being able to contribute, however. For example, you may need to modify an existing language to better serve your users needs. Or maybe you need to add support for a new language immediately and you simply can't wait around for your contributions to reach the CKEditor trunk.
 
 If you are able to use a custom build of CKEditor, definitely go with option two.  There are a number of benefits to using a custom build (smaller footprint, more streamlined editor, etc.) and editing / adding language files will be much simpler.  To edit an existing language, just navigate to the `ckeditor/lang` directory within the project and edit the files directly.  To add a new language, just mirror the structure of an existing language file and add your new locale to CKEditor's `CKEDITOR.lang.languages` object so that the editor is aware of its existence:
 
@@ -53,10 +53,10 @@ Now, create a `lang` directory within your `app/assets/javascripts/ckeditor` dir
 {% highlight js %}
 // app/assets/javascripts/ckeditor/lang/en-US-CUSTOM.js
 
-CKEDITOR.lang['en-US-CUSTOM'] = {  
+CKEDITOR.lang['en-US-CUSTOM'] = {
   "editor": "My Custöm Editor!",
   "save": "Pls save",
-  "undo": {  
+  "undo": {
     "redo": "Put it back!",
     "undo": "Oops"
   }

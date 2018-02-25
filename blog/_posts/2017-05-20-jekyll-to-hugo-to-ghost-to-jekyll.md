@@ -19,7 +19,7 @@ description:
 ---
 
 <div>
-<img src="https://s3.amazonaws.com/images.downey.io/blog/subaru-park-city-journey.jpg" alt="Excuse #1 for not making blog posts: cross-country move">
+<img src="https://images.downey.io/blog/subaru-park-city-journey.jpg" alt="Excuse #1 for not making blog posts: cross-country move">
 </div>
 
 It's been nearly 18 months since I have last posted to this blog. Sure, 2016 was a busy year for us -- we moved from Kansas City to the SF Bay Area and I started working toward my Master's -- but the real reason I haven't been posting was because I felt the itch to "upgrade" this site away from [Jekyll](http://jekyllrb.com/) before adding any new content.  I decided to act on this itch and find a blogging platform that met the following criteria:
