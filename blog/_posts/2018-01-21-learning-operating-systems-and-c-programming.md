@@ -6,7 +6,7 @@ sub_title:  "A Ruby dev's rambling journey deeper down the stack"
 color: green
 icon: fa-book
 date: 2018-01-21
-last_modified_at: 2018-02-09
+last_modified_at: 2018-02-25
 categories:
   - programming
   - c programming language
@@ -27,13 +27,15 @@ description:
 
 **Update (2018-02-09):** Just completed a week-long Linux training and the first project in GIOS. Updated this post with my thoughts on the training and added some learning strategies for GIOS.
 
+**Update (2018-02-25):** Just finished up the midterm and have added notes on my note-taking approach which I've found to be useful.
+
 ## Motivation Behind Learning OS Concepts
 
 One of my goals this year is to learn more of the underlying concepts and theory of operating systems and improve my systems programming skills. Consequentially, I've enrolled in [Graduate Introduction to Operating Systems (CS 6200)](https://www.omscs.gatech.edu/cs-8803-introduction-operating-systems) (referred to as GIOS from here on out) through Georgia Tech's [OMSCS program](https://www.omscs.gatech.edu/) this semester to help meet this goal. However, it's been a few years since I've written any C and I never had the opportunity to take an Operating Systems course in undergrad so I've got some ground to cover. This post is currently a work in progress, but I'll add to it over time to document my learning journey and include links to any resources that proved helpful along the way.
 
 If you're intrested in the course the recorded lectures are available to anyone via [Udacity](https://classroom.udacity.com/courses/ud923).
 
-## Approach Toward the Class
+## Approach Toward Succeeding in CS6200
 I've currently made it through the first month and a half of the course and have completed the first project. If you're currently taking this course and are interested, this is the approach I've taken so far. If not, feel free to skip ahead to the [learning resources](#general-operating-systems-and-c-language-resources) section of this post.
 
 ### Lecture Videos
@@ -52,6 +54,12 @@ The course doesn't have a required textbook this semester, but I bought one of t
 
 ### Papers and Readings
 The course has a number of assigned papers and some of them can be pretty dry. I generally follow the strategy put forth in this meta-paper on how to effectively read an academic paper: [How to Read a Paper](https://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf). It was first introduced to me in a Computer Networking course and has been pretty helpful so far.
+
+Another technique I've found helpful is paraphrasing and summarizing critical parts of the papers in my own words. I've added a new [notes]({{ page.baseurl }}/notes) section to the site where I can add freely jot this stuff down. By making the notes public, I end up trying a little harder to make sure that what I've written makes sense and this, in turn, helps reinforce my understanding of the material. As an added benefit, maybe someone else will find them useful as well!
+
+So far I've summarized:
+* [Processes]({% link _notes/omscs/cs6200/processes.md %})
+* [Multithreading in SunOS and Solaris]({% link _notes/omscs/cs6200/multithreading-in-solaris.md %})
 
 ## General Operating Systems and C Language Resources
 Below are some of the resources that helped me prepare and learn various operating systems topics throughout the course. Like this whole post, the format is still a work in progress.
