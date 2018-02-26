@@ -9,6 +9,8 @@ categories:
   - operating systems
   - multithreading
   - solaris
+  - sunos
+  - cs6200
 description:
   "Notes on various papers covering how multithreading is implemented in the SunOS and Solaris operating systems"
 ---

@@ -1,15 +1,16 @@
 # Site settings
 title: downey.io
 name: Tim Downey
-description: "Software development blog and online home of Tim Downey."
+description: "Personal blog containing thoughts on software development, lifelong learning, photography, etc."
 keywords:
   - tim downey software engineer
   - tim downey
   - programming blog
   - ruby
+  - omscs blog
   - software development
 baseurl: ""
-url: "http://downey.io"
+url: "https://downey.io"
 
 # Build settings
 highlighter: rouge
