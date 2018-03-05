@@ -1,7 +1,7 @@
 ---
 layout: post
 type: note
-title: "BOSH v2 CLI 'bosh scp' example"
+title: "BOSH v2 CLI 'bosh scp' usage example"
 color: teal
 icon: fa-code
 date: 2018-02-26
