@@ -2,7 +2,7 @@
 layout: post
 type: blog
 title: "Hack Mini - Linux Workstation Build Log"
-sub_title:  "Build Log and Case Mod of My Mini (Hackintosh Compatible) Linux Computer"
+sub_title:  "Build Log of My Mini (Hackintosh Compatible) Linux Computer"
 color: teal
 icon: fa-terminal
 date: 2018-03-04
@@ -41,6 +41,8 @@ Anyways, what follows is primarily just gonna be my parts list and some pictures
   <li><a href="https://www.newegg.com/Product/Product.aspx?Item=N82E16820231878">G.SKILL Ripjaws V Series 16GB (2 x 8GB) 288-Pin liR4 SDRAM liR4 3000</a></li>
   <li><strong>Graphics Card</strong></li>
   <li><a href="https://www.evga.com/products/product.aspx?pn=04G-P4-6253-KR">EVGA Geforce 1050 Ti Single Fan</a></li>
+  <li><strong>Power Supply</strong></li>
+  <li><a href="http://amzn.to/2oOaDbG">EVGA SuperNOVA 650 G3 80+ Gold Fully Modular PSU</a></li>
   <li><strong>Boot Drive</strong></li>
   <li><a href="https://www.newegg.com/Product/Product.aspx?Item=N82E16820147373">Samsung 850 EVO 500GB 2.5-Inch SATA III Internal SSD</a></li>
   <li><strong>Storage Drive</strong></li>
@@ -63,7 +65,9 @@ I originally purchased an Intel Core i7 7700k because I got a good deal one one,
 
 As I mentioned earlier, I was concerned with the thermals of this case so I decided to spend a bit more and go with a high quality Noctua case fan and one of the better low profile Noctua CPU coolers. As a benefit, the much maligned brown color of the Noctua fans actually complemented my case design. 😊
 
-I selected the ASRock Motherboard due to positive reviews of folks on the TonyMac Hackintosh forums in case I ever wanted to go down that road.
+I chose the energy efficient EVGA SuperNOVA 650 G3 power supply mainly because I've had good experiences with EVGA PSUs in the past and because it is fully modular (can detach unused power cables) and was short in length so fitting it within the relatively cramped case wasn't too difficult.
+
+I selected the ASRock Motherboard due to positive reviews of folks on the TonyMac Hackintosh forums in case I ever wanted to turn this workstation into a Hackintosh. If you do decide to go down this road, note that the built in WiFi chip will not work with MacOS out of the box. You can, however, pick up [an adapter](http://amzn.to/2oLrDjB) and plug in a MacBook Air's WiFi (`BCM94360CS2`) WiFi card.
 
 This was last Fall when I purchased these parts. As of writing this post (March 2018) the RAM and graphics card I purchased are now even more exorbitant. 😭
 
