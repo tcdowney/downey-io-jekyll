@@ -9,8 +9,9 @@ date: 2018-03-04
 categories:
   - hackintosh
   - linux workstation
-  - case mod
+  - white and orange pc case
   - mITX case
+  - cooler master elite 110 case mod
 excerpt:
  "Recently I've found myself wanting a dedicated desktop machine just for coding. Although I do most of my development at work on iMacs and at home on an aging MacBook Air, I decided against buying another Mac -- the price and performance I wanted just wasn't there. \"Linux is close enough\", I thought, so I decided to build this small, discrete machine just for development."
 description:
