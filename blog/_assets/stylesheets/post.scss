@@ -142,6 +142,22 @@ article {
     }
   }
 
+  .post-badge-green-9009 {
+    @extend .post-badge;
+
+    > span .fa {
+      color: $green-9009;
+    }
+  }
+
+  .post-badge-red-9009 {
+    @extend .post-badge;
+
+    > span .fa {
+      color: $red-9009;
+    }
+  }
+
   h1 {
     text-align: left;
     font-size: 2em;
