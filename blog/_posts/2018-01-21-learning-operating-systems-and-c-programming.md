@@ -61,6 +61,7 @@ So far I've summarized:
 * [Processes]({% link _notes/omscs/cs6200/processes.md %})
 * [Multithreading in SunOS and Solaris]({% link _notes/omscs/cs6200/multithreading-in-solaris.md %})
 * [Operating System Memory Management]({% link _notes/omscs/cs6200/os-memory-management.md %})
+* [Operating System Synchronization Constructs]({% link _notes/omscs/cs6200/os-synchronization-constructs.md %})
 * [Operating System Task Scheduling]({% link _notes/omscs/cs6200/os-task-scheduling.md %})
 
 ## General Operating Systems and C Language Resources
