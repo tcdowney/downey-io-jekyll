@@ -6,7 +6,7 @@ sub_title:  "A Ruby dev's rambling journey deeper down the stack"
 color: green
 icon: fa-book
 date: 2018-01-21
-last_modified_at: 2018-04-15
+last_modified_at: 2018-04-29
 categories:
   - programming
   - c programming language
@@ -61,6 +61,7 @@ So far I've summarized:
 * [Processes]({% link _notes/omscs/cs6200/processes.md %})
 * [Multithreading in SunOS and Solaris]({% link _notes/omscs/cs6200/multithreading-in-solaris.md %})
 * [Operating System Memory Management]({% link _notes/omscs/cs6200/os-memory-management.md %})
+* [Operating System Task Scheduling]({% link _notes/omscs/cs6200/os-task-scheduling.md %})
 
 ## General Operating Systems and C Language Resources
 Below are some of the resources that helped me prepare and learn various operating systems topics throughout the course. Like this whole post, the format is still a work in progress.
