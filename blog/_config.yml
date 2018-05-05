@@ -10,7 +10,7 @@ keywords:
   - omscs blog
   - software development
 baseurl: ""
-url: "https://downey.io"
+url: "downey.io"
 
 # Build settings
 highlighter: rouge

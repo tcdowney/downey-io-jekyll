@@ -7,7 +7,7 @@ keywords:
   - landscape photography
   - photoblog
 baseurl: ""
-url: "http://photo.downey.io"
+url: "photo.downey.io"
 
 # Build settings
 highlighter: pygments
