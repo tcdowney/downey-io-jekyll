@@ -6,7 +6,7 @@ sub_title:  "A Ruby dev's rambling journey deeper down the stack"
 color: green
 icon: fa-book
 date: 2018-01-21
-last_modified_at: 2018-04-29
+last_modified_at: 2018-05-07
 categories:
   - programming
   - c programming language
@@ -29,6 +29,8 @@ description:
 
 **Update (2018-02-25):** Just finished up the midterm and have added notes on my note-taking approach which I've found to be useful.
 
+**Update (2018-05-07):** Finished the course and earned my A. 😊 Added a few closing remarks, but overall I'm done updating this post. I think overall writing this up helped focus my efforts in the course so I'm going to do something similar for [Machine Learning](https://www.omscs.gatech.edu/cs-7641-machine-learning) this Fall and likely for [Machine Learning For Trading](https://www.omscs.gatech.edu/cs-7646-machine-learning-trading) (maybe I'll combine them into one super-post) this Summer.
+
 ## Motivation Behind Learning OS Concepts
 
 One of my goals this year is to learn more of the underlying concepts and theory of operating systems and improve my systems programming skills. Consequentially, I've enrolled in [Graduate Introduction to Operating Systems (CS 6200)](https://www.omscs.gatech.edu/cs-8803-introduction-operating-systems) (referred to as GIOS from here on out) through Georgia Tech's [OMSCS program](https://www.omscs.gatech.edu/) this semester to help meet this goal. However, it's been a few years since I've written any C and I never had the opportunity to take an Operating Systems course in undergrad so I've got some ground to cover. This post is currently a work in progress, but I'll add to it over time to document my learning journey and include links to any resources that proved helpful along the way.
@@ -36,21 +38,29 @@ One of my goals this year is to learn more of the underlying concepts and theory
 If you're intrested in the course the recorded lectures are available to anyone via [Udacity](https://classroom.udacity.com/courses/ud923).
 
 ## Approach Toward Succeeding in CS6200
-I've currently made it through the first month and a half of the course and have completed the first project. If you're currently taking this course and are interested, this is the approach I've taken so far. If not, feel free to skip ahead to the [learning resources](#general-operating-systems-and-c-language-resources) section of this post.
+I'm now finished with the course and feel like I've learned a lot!
+
+If you're currently taking this course and are interested, this is the approach I've taken so far. If not, feel free to skip ahead to the [learning resources](#general-operating-systems-and-c-language-resources) section of this post.
 
 ### Lecture Videos
 The lectures for the course are all pre-recorded and available through Udacity. However, I generally try to find time to squeeze them in and watch them in places where I don't typically have unlimited internet access: such as on the BART during my commute or in the gym.
 
 Fortunately, Udacity lets you download the videos in bulk so I just toss them on to my Kindle Fire tablet that I picked up for about thirty bucks during Black Friday. I watch them using [VLC media player](https://www.videolan.org/vlc/index.html) since it allows me to adjust the playback speed.
 
+Doing well on the exams requires a thorough understanding of the lectures, so I typically watched each one multiple times. First time through I would do ~1.25x speed and then subsequent watches I'd cruise through at 2x for this course to jog my memory.
+
 ### Office Hours
 Office hours with the professor and TAs typically occur during Eastern time since the program is based out of Atlanta, GA which means I usually can't attend them live. The professor usually uploads them to Youtube, however, so I download and watch them after the fact. It's not ideal since I can't ask questions while the office hours are being held, but it does mean I can fast forward any questions that aren't personally relevant.
 
 ### Piazza and Slack
-The TAs in this course are incredibly active in the [class Slack](https://omscs6200.slack.com/messages/C6KPYD8AK/). They can be a little sassy at times, but are super responsive to questions which has been nice.
+The TAs and classmates in this course are super active in the [class Slack](https://omscs6200.slack.com/messages/C6KPYD8AK/).
+
+I ended up spending a decent amount of time goofing off in Slack, but overall it was incredibly helpful and a great way to meet fellow classmates.
 
 ### Textbook
-The course doesn't have a required textbook this semester, but I bought one of the recommendations: [Operating Systems: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP/). It's available for free online, but a hardcover copy was only around thirty dollars. I haven't actually needed to use it yet, but we'll see. 😬
+The course doesn't have a required textbook this semester, but I bought one of the recommendations: [Operating Systems: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP/). It's available for free online, but a hardcover copy was only around thirty dollars.
+
+**Update:** Even though I purchased a paper copy of the book, I ended up just going through it piecemeal. Many of the chapters were relevant to the topics we covered and it was a good resource for explaining concepts deeper, but you can successfully make it through the course with just the lecture videos and required papers.
 
 ### Papers and Readings
 The course has a number of assigned papers and some of them can be pretty dry. I generally follow the strategy put forth in this meta-paper on how to effectively read an academic paper: [How to Read a Paper](https://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf). It was first introduced to me in a Computer Networking course and has been pretty helpful so far.
