@@ -5,6 +5,7 @@ title: "Installing a Gem From a Git Repository Subdirectory using Bundler"
 color: red-violet
 icon: fa-code
 date: 2018-03-29
+last_modified_at: 2018-05-07
 categories:
   - programming
   - ruby
@@ -13,6 +14,9 @@ categories:
 description:
   "How to bundle install a gem from a Git repository that is nested deep within the repository's root directory"
 ---
+
+**Update (2018-05-07):** My [PR to bundler-site](https://github.com/bundler/bundler-site/pull/377) has been accepted so the `:glob` option can now be found on the official [Bundler Docs](http://bundler.io/guides/git.html). 😊
+
 Sometimes projects, such as the [Cloud Foundry Copilot service](https://github.com/cloudfoundry/copilot/) include their Ruby client gems within [subdirectories](https://github.com/cloudfoundry/copilot/tree/feb69363fff010ea48e1dacd38ca859528cfa0d4/sdk/ruby) of the main project itself. While under active development, it can be useful to install the gem directly from the Git repository. Bundler [makes this pretty easy](http://bundler.io/guides/git.html) for gems that have standalone repos, but there is no clear way to include a gem that is nested deep within a repo. Fortunately, the poorly documented `glob` parameter can help. 😊
 
 For example, the `cf-copilot` gem above can be included in a `Gemfile` like this:
