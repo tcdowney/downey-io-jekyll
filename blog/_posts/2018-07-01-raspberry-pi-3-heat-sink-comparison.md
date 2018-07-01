@@ -1,7 +1,8 @@
 ---
 layout: post
 type: blog
-title: "Raspberry Pi 3 Heat Sink Science"
+title: "Raspberry Pi Heat Sink Science"
+sub_title:  "Does the Raspberry Pi 3 Model B need a heat sink?"
 color: red-9009
 icon: fa-flask
 date: 2018-07-01
@@ -12,9 +13,9 @@ categories:
   - thermal tape raspberry pi
   - science
 excerpt:
- "An unscientific study of the thermal performance of the Raspberry Pi 3 Model B with and without a heat sink. As a bonus, we'll also compare performance of the heat sinks when adhered with thermal paste vs. thermal tape."
+ "Does the Raspberry Pi 3 even need a heat sink? An unscientific look into that age-old question that investigates the thermal performance of the Raspberry Pi 3 Model B with and without a heat sink. As a bonus, we'll also consider thermal paste versus thermal tape."
 description:
-  "An unscientific study of the thermal performance of the Raspberry Pi 3 Model B with and without a heat sink. As a bonus, we'll also compare performance of the heat sinks when adhered with thermal paste vs. thermal tape."
+  "Does the Raspberry Pi 3 even need a heat sink? An unscientific look into that age-old question that investigates the thermal performance of the Raspberry Pi 3 Model B with and without a heat sink. As a bonus, we'll also consider thermal paste versus thermal tape."
 ---
 
 <div>
@@ -98,7 +99,7 @@ The tape clearly did not perform as well as the paste -- in fact, the results we
 
 ## Results
 <div>
-<img src="https://images.downey.io/raspi/raspi-heat-sink-science-4.jpg" alt="Raspberry Pi 3 cable management">
+<img src="https://images.downey.io/raspi/raspi-heat-sink-science-4.jpg" alt="Raspberry Pi 3 cable management" title="dat cable management">
 </div>
 
 I did see significant thermal performance improvements when using the heat sinks along with thermal paste. Unfortunately, given my plans for the Pis I did not want to have to worry about the heat sinks getting bumped so I switched to thermal tape. The tape + heat sinks offered slight benefits over not using a heat sink at all, but probably not enough to justify the expense. Even if it isn't actually cooler, the Pis certainly _look_ cooler with heat sinks, so maybe they are worth it after all.  ¯\\\_(ツ)\_/¯
