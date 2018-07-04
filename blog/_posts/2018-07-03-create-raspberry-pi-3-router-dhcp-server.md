@@ -1,18 +1,26 @@
 ---
 layout: post
-type: note
-title: "Using a Raspberry Pi 3 as a Router and Jumpbox for Kubernetes Pi Cluster"
+type: blog
+title: "Baking a Pi Router for my Raspberry Pi Kubernetes Cluster"
+sub_title: "How I used a Raspberry Pi 3 as a dhcp server and router for my Pi-based Kubernetes Cluster"
 color: red-violet
 icon: fa-wifi
-date: 2018-07-02
+date: 2018-07-03
 categories:
   - raspberry pi
   - raspberry pi router
   - raspberry pi dhcp
+  - raspberry pi access point
   - raspberry pi kubernetes jumpbox
+  - bare metal kubernetes
+excerpt: "How I set up a Raspberry Pi 3 Model B+ to be the dns/dhcp server and router for my Raspberry Pi-based Kubernetes cluster. A general guide to how I eventually managed to get the Pi Router sharing working and some cautionary tales of pitfalls I encountered along the way."
 description:
-  "How I set up a Raspberry Pi 3 Model B+ to be the dhcp server/router for my Raspberry Pi Kubernetes cluster."
+  "How I set up a Raspberry Pi 3 Model B+ to be the dns/dhcp server and router for my Raspberry Pi Kubernetes cluster. A general guide to how I eventually managed to get the Pi Router sharing working and some cautionary tales of pitfalls I encountered along the way."
 ---
+
+<div>
+<img src="https://images.downey.io/raspi/raspi-cluster-router-1.jpg" alt="Raspberry Pi Router connected to unmanaged switch">
+</div>
 
 As I've mentioned in [previous posts]({% post_url 2018-07-01-raspberry-pi-3-heat-sink-comparison %}), I'm working on build a Kubernetes cluster out of Raspberry Pis. One of my design goals for the cluster is for it to be modular and separate from my home WiFi network.
 
@@ -23,6 +31,18 @@ To do this, I've decided to take one of the Pis and make it into a jumpbox for a
 </div>
 
 I tried following other guides on the internet (particularly ones trying to do the opposite and configure `wlan0` to be a wireless access point) and had some issues. Turns out things change in Raspbian and some configuration options are no longer valid. So my goal with this post is to be less of an exact "step by step" guide and more of a trail of breadcrumbs to provide some general guidance -- and help me remember what I did when this Pi inevitably dies.
+
+## Equipment
+I assume if you've stumbled upon this post that you probably have all the equipment that you need, but I figured it wouldn't hurt to mention the relevant equipment I used.
+
+* [Raspberry Pi 3 Model B+](https://www.adafruit.com/product/3775)
+* [C4 Labs "Zebra" Wood Case](https://amzn.to/2Nlggtc)
+* [TP-Link 8-port Gigabit Unmanaged Switch](https://amzn.to/2u4zvP1)
+* [Silicon Power 32GB Class 10 microSD card](https://amzn.to/2ML8nw3) (budget-friendly and fast, time will tell if reliable)
+* [Monoprice SlimRun Cat6 Ethernet Cables](https://www.monoprice.com/product?c_id=102&cp_id=10232&cs_id=1023205&p_id=13510) (I really like these)
+* Miscellaneous other Cat5 and Cat6 ethernet cables
+
+The gigabit switch is probably overkill for this project since the Pis can't network nearly that fast -- could have also done with Cat5 cable all around -- but the reviews were good and the prices were right. So now that that's out of the way, let's get in to how I transformed this Raspberry Pi and pile of cables into a functioning router for my Pi Kubernetes cluster.
 
 ## Install Raspbian Linux
 You can download the latest version of Raspbian stretch [here](https://www.raspberrypi.org/downloads/raspbian/). I ended up installing full Raspbian on the Pi Router and Raspbian Lite on all of the other clustered Pis. The full Raspbian includes a graphical desktop environment which certainly came in handy for recovery when I broke my `dhcpcd` service and `wlan0` interface. 😉
@@ -272,15 +292,5 @@ As I mentioned earlier, the editing `/etc/network/interfaces` did not work at al
 
 Additionally, I had trouble around `dnsmasq` coming up before `10.0.0.1` was available for it to bind to. Adding a sleep to its init script "fixed" this, but it feels hacky. Still on the hunt for a better solution here.
 
-## Resources
-This is just a link dump of resources I found helpful during this process. If you're attempting a similar setup and run into issues, I recommend checking some of these out:
-
-* [https://www.diyhobi.com/share-raspberry-pi-wifi-internet-ethernet/](https://www.diyhobi.com/share-raspberry-pi-wifi-internet-ethernet/)
-* [https://www.raspberrypi.org/forums/viewtopic.php?t=191453](https://www.raspberrypi.org/forums/viewtopic.php?t=191453)
-* [https://wiki.debian.org/HowTo/dnsmasq](https://wiki.debian.org/HowTo/dnsmasq)
-* [http://www.microhowto.info/howto/make_the_configuration_of_iptables_persistent_on_debian.html](http://www.microhowto.info/howto/make_the_configuration_of_iptables_persistent_on_debian.html)
-* [https://www.raspberrypi.org/forums/viewtopic.php?t=207056](https://www.raspberrypi.org/forums/viewtopic.php?t=207056)
-* [https://superuser.com/questions/681601/verify-dnsmasq-configuration](https://superuser.com/questions/681601/verify-dnsmasq-configuration)
-* [https://www.raspberrypi.org/forums/viewtopic.php?t=173641](https://www.raspberrypi.org/forums/viewtopic.php?t=173641)
-* [https://unix.stackexchange.com/questions/410833/i-am-not-able-to-start-dnsmasq-on-boot](https://unix.stackexchange.com/questions/410833/i-am-not-able-to-start-dnsmasq-on-boot)
-
+## Concluding Remarks
+Like I mentioned earlier, these steps worked for me for my particular version of Raspbian stretch and hardware configuration. As I personally found from past guides, these steps may not continue to work. The gist of things should remain the same, however, so with some skilled Binging I'm sure you'll get your Pi router working as well. Best of luck!
