@@ -147,6 +147,16 @@ listen-address=10.0.0.1
 # 12 hours
 dhcp-range=10.0.0.32,10.0.0.128,12h
 
+# Decided to assign static IPs to the kube cluster members
+# This would make it easier for tunneling, certs, etc.
+dhcp-host=b8:27:eb:00:00:01,10.0.0.50
+dhcp-host=b8:27:eb:00:00:02,10.0.0.51
+dhcp-host=b8:27:eb:00:00:03,10.0.0.52
+dhcp-host=b8:27:eb:00:00:04,10.0.0.53
+dhcp-host=b8:27:eb:00:00:05,10.0.0.54
+dhcp-host=b8:27:eb:00:00:06,10.0.0.55
+dhcp-host=b8:27:eb:00:00:07,10.0.0.56
+
 # This is where you declare any name-servers. We'll just use Google's
 server=8.8.8.8
 server=8.8.4.4
