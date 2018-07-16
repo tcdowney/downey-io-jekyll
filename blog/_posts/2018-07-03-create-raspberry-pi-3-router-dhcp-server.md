@@ -96,8 +96,8 @@ See "systemctl status dhcpcd.service" and "journalctl -xe" for details.
 ```
 
 This meant my `wlan0` connection was down and I could no longer `ssh` in to the Pi. Luckily, I had installed the desktop environment and was able to salvage things. So I did some digging and found these two posts on the Raspberry Pi forums:
-* [https://www.raspberrypi.org/forums/viewtopic.php?t=191453](https://www.raspberrypi.org/forums/viewtopic.php?t=191453)
-* [https://www.raspberrypi.org/forums/viewtopic.php?t=207056](https://www.raspberrypi.org/forums/viewtopic.php?t=207056)
+* [Rapsberry Pi Forums: Configuring dhcpcd in Raspbian Stretch](https://www.raspberrypi.org/forums/viewtopic.php?t=191453)
+* [Rapsberry Pi Forums: problems with stretch static ip dhcpcd](https://www.raspberrypi.org/forums/viewtopic.php?t=207056)
 
 They mainly were concerned with the `wlan0` wireless access point use case, but I adapted the information in them for our situation. The secret was to add the following to our `/etc/dhcpcd.conf` file. This file configures our dhcp client daemon ([more info here](https://wiki.archlinux.org/index.php/dhcpcd)). If you're interested in even more information about `dhcpcd.conf`, I recommend reading [these Ubuntu docs](http://manpages.ubuntu.com/manpages/trusty/man5/dhcpcd.conf.5.html).
 
