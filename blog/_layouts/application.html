@@ -4,15 +4,15 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <title>
-        {% if page.title %}
-          {{ page.title }}
-            {% if page.sub_title %}
+        {%- if page.title -%}
+          {{- page.title }}
+            {%- if page.sub_title -%}
              : {{ page.sub_title }}
-            {% endif %}
-            | {{ site.title }}
-        {% else %}
+            {%- endif -%}
+             | {{- site.title }}
+        {%- else -%}
           {{ site.title }}
-        {% endif %}
+        {%- endif -%}
       </title>
       <meta name="viewport" content="width=device-width" />
       <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
