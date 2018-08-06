@@ -1,9 +1,9 @@
 ---
 layout: post
 type: blog
-title: "Exploring cgroups on the Raspberry Pi Zero"
-sub_title: "Fun with cgroups in Raspbian Stretch Lite"
-color: violet
+title: "Cgroups on the Raspberry Pi Zero"
+sub_title: "A brief survey of the memory, cpu, and freezer cgroups in Raspbian Stretch Lite"
+color: chartreuse
 icon: fa-object-group
 date: 2018-08-05
 categories:
@@ -13,9 +13,9 @@ categories:
   - raspberry pi cpu cgroup
   - raspberry pi freezer cgroup
   - raspberry pi zero
-excerpt: "Cgroups are a feature of the Linux kernel which allow groups of processes to be managed and monitored. For a resource constrained environment such as the five dollar Raspberry Pi Zero, limiting access to scarce resources like memory and CPU can be very useful. In this post we'll explore the memory, cpu, and freezer cgroups in Raspbian Linux."
+excerpt: "Cgroups are a feature of the Linux kernel which allow groups of processes to be managed and monitored. For a resource constrained environment such as the five dollar Raspberry Pi Zero, limiting access to scarce resources like memory and CPU can come in handy. In this post we'll take a closer look at the memory, cpu, and freezer cgroups in Raspbian Linux."
 description:
-  "Cgroups are a feature of the Linux kernel which allow groups of processes to be managed and monitored. For a resource constrained environment such as the five dollar Raspberry Pi Zero, limiting access to scarce resources like memory and CPU can be very useful. In this post we'll explore the memory, cpu, and freezer cgroups in Raspbian Linux running."
+  "Cgroups are a feature of the Linux kernel which allow groups of processes to be managed and monitored. For a resource constrained environment such as the five dollar Raspberry Pi Zero, limiting access to scarce resources like memory and CPU can come in handy. In this post we'll take a closer look at the memory, cpu, and freezer cgroups in Raspbian Linux."
 ---
 
 <div>
