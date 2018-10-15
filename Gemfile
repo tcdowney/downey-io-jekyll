@@ -6,7 +6,7 @@ gem 'jekyll-sitemap'
 gem 'jekyll-redirect-from'
 gem 'jekyll-paginate'
 
-gem 'bourbon', '~> 4.3.4'
+gem 'bourbon', '~> 5.1.0'
 gem 'neat', '~> 1.0'
 
 gem 'rouge'

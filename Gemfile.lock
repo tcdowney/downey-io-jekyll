@@ -12,7 +12,7 @@ GEM
     aws-sdk-resources (2.10.52)
       aws-sdk-core (= 2.10.52)
     aws-sigv4 (1.0.2)
-    bourbon (4.3.4)
+    bourbon (5.1.0)
       sass (~> 3.4)
       thor (~> 0.19)
     colorator (1.1.0)
@@ -30,7 +30,7 @@ GEM
     extras (0.3.0)
       forwardable-extended (~> 2.5)
     fastimage (2.1.0)
-    ffi (1.9.21)
+    ffi (1.9.25)
     forwardable-extended (2.6.0)
     http_parser.rb (0.6.0)
     i18n (0.9.5)
@@ -88,7 +88,7 @@ GEM
     rainbow (2.2.2)
       rake
     rake (12.1.0)
-    rb-fsevent (0.10.2)
+    rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     ref (2.0.0)
@@ -108,7 +108,7 @@ GEM
       dotenv (~> 1.0)
       thor (~> 0.18)
     safe_yaml (1.0.4)
-    sass (3.5.5)
+    sass (3.6.0)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -126,7 +126,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bourbon (~> 4.3.4)
+  bourbon (~> 5.1.0)
   jekyll
   jekyll-assets
   jekyll-paginate
