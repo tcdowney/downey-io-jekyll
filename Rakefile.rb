@@ -1,5 +1,3 @@
-# Remembering to build before I pushed to s3 was getting tedious
-
 namespace :deploy do
   desc 'Builds and deploys all Jekyll sites with an s3_website.yml file'
   task :all do
@@ -22,5 +20,14 @@ namespace :deploy do
     fail 'photo/s3_website.yml does not exist' unless File.exists?('photo/s3_website.yml')
 
     sh 'cd photo; JEKYLL_ENV=production jekyll build; s3_website push'
+  end
+end
+
+namespace :test do
+  desc 'Builds and all Jekyll sites'
+  task :build do
+    ['blog', 'photo'].each do |subfolder|
+      sh "cd #{ subfolder }; JEKYLL_ENV=development jekyll build"
+    end
   end
 end
