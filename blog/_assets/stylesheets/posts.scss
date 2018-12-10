@@ -190,3 +190,27 @@
   @include post-excerpt-color($post-background);
 }
 
+.post-excerpt-vapor-wave-pink {
+  @extend .post-excerpt;
+  $post-background: $vapor-wave-pink;
+  @include post-excerpt-color($post-background);
+}
+
+.post-excerpt-vapor-wave-blue {
+  @extend .post-excerpt;
+  $post-background: $vapor-wave-blue;
+  @include post-excerpt-color($post-background);
+}
+
+.post-excerpt-vapor-wave-green {
+  @extend .post-excerpt;
+  $post-background: $vapor-wave-green;
+  @include post-excerpt-color($post-background);
+}
+
+.post-excerpt-vapor-wave-purple {
+  @extend .post-excerpt;
+  $post-background: $vapor-wave-purple;
+  @include post-excerpt-color($post-background);
+}
+

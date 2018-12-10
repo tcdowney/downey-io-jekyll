@@ -166,6 +166,38 @@ article {
     }
   }
 
+  .post-badge-vapor-wave-pink {
+    @extend .post-badge;
+
+    > span .fa {
+      color: $vapor-wave-pink;
+    }
+  }
+
+  .post-badge-vapor-wave-blue {
+    @extend .post-badge;
+
+    > span .fa {
+      color: $vapor-wave-blue;
+    }
+  }
+
+  .post-badge-vapor-wave-green {
+    @extend .post-badge;
+
+    > span .fa {
+      color: $vapor-wave-green;
+    }
+  }
+
+  .post-badge-vapor-wave-purple {
+    @extend .post-badge;
+
+    > span .fa {
+      color: $vapor-wave-purple;
+    }
+  }
+
   h1 {
     text-align: left;
     font-size: 2em;
