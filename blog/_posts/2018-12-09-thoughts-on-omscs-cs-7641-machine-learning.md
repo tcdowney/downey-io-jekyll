@@ -1,7 +1,7 @@
 ---
 layout: post
 type: blog
-title: "Adventures in CS 7641: Machine Learning"
+title: "Adventures in CS 7641 - Machine Learning"
 sub_title: "\"It's over. It's done!\""
 color: vapor-wave-purple
 icon: fa-graduation-cap
@@ -27,9 +27,9 @@ Fortunately, I just wrapped up [CS 7641](https://www.omscs.gatech.edu/cs-7641-ma
 ## Course Summary
 CS 7641 Machine Learning (which I will from now on abbreviate as ML) is a survey of topics that make up the foundations of machine learning as a subject. The first several months of the course cover Supervised Learning and Optimization and the second half covers Unsupervised Learning, Markov Decision Processes, Reinforcement Learning, and a bit of Game Theory. The textbook for the course was Tom Mitchell's [Machine Learning](https://amzn.to/2QHkgsv) which I found useful -- albeit a bit dry. As many students were quick to point out, Deep Learning was conspicuously absent from the topic list. However, neural networks were explored in depth in several of the projects and, at least for me, the foundations that we learned in this course are more valuable. For example, I now feel prepared to enroll in [Fast.ai's Deep Learning course](https://course.fast.ai/), whereas before I wouldn't have even dared.
 
-The lectures are taught by Georgia Tech's Charles Isbell and Brown University's Michael Littman and their friendly banters makes them exceptionally entertaining and engaging. The videos can border on being too long at times, but overall these were some of the best lectures I've watched in the OMSCS program so far.
+The lectures are taught by Georgia Tech's Charles Isbell and Brown University's Michael Littman and their friendly banter makes them exceptionally entertaining and engaging. The videos can border on being too long at times, but overall these were some of the best lectures I've watched in the OMSCS program so far.
 
-### Topics
+## Topics Covered
 I briefly mentioned the main topics we covered earlier, but let's go a bit deeper.
 
 **Supervised Learning -**
@@ -44,7 +44,7 @@ After the midterm exam we learned about Unsupervised Learning through several cl
 **Markov Decision Processes and Reinforcement Learning -**
 The final main topic we covered was Reinforcement Learning and modeling problems as Markov Decision Processes. The project for this portion had us choose two Markov Decision Processes (I chose stochastic variants of the [OpenAI Gym Frozen Lake problem](https://gym.openai.com/envs/FrozenLake8x8-v0/)) and apply policy-iteration, value-iteration, and a Q-learner to the problem. This portion of the course was conceptually very similar to the final half of [CS 7646 Machine Learning for Trading](https://www.omscs.gatech.edu/cs-7646-machine-learning-trading). CS 7641 went in to far greater detail, however, and with less hand holding.
 
-### Projects
+## Projects
 
 Speaking of projects, the four that we worked on throughout the course managed to consume the majority of my weekends (and some evenings) this past semester. The gist behind all of them was to select several datasets of your choosing (I used [Adult census data](https://archive.ics.uci.edu/ml/datasets/adult) and the [Spambase spam email dataset](https://archive.ics.uci.edu/ml/datasets/spambase)), "implement" the required machine learning algorithms, apply them to your data, and analyze the results. And when I say "implement", I mean find and use libraries like [scikit-learn](https://scikit-learn.org/stable/) that implement them for you. In fact, this may come as a surprise to many of you, your code implementations are worth absolutely nothing in this class. Project grades are purely based on the quality of your (12 page+) analyses and your understanding of the material.
 
@@ -56,8 +56,10 @@ We were given between three and four weeks to complete each project, which sound
 <img src="https://images.downey.io/blog/monticello-ryzen-server-running-clustering-code-downey.png" alt="Linux server with all 12 cores under heavy load running machine learning clustering">
 </div>
 
+Also, you aren't graded on your ability to preprocess and clean data so I don't recommend spending too much of your valuable project time doing so. Since the class is entirely bring your own data I recommend using some of the [OpenML datasets](https://www.openml.org/search?type=data) since they're already pretty clean and nicely structured. OpenML has most of the [UCI datasets](https://archive.ics.uci.edu/ml/datasets.html) available, but often in friendlier file formats (CSVs with headings that are great for Pandas) and sometimes even with simplified attributes and categories. For example, the Abalone dataset available straight from UCI has quite a few different classes. This can make it difficult to work with some of the supervised learning algorithms that you're asked to use, for example. However, on OpenML there are versions where the classes are collapsed and it instead becomes a binary classification problem. In general, I had good experiences with the OpenML data.
+
 ## Helpful Resources
-I did not have the math or analytics background that many of my fellow classmates had so I spent a decent amount of effort trying to backfill any knowledge gaps. Luckily there were lots of good resources online!
+I did not have the math or analytics background that many of my fellow classmates had so I spent a decent amount of effort trying to backfill any knowledge gaps. Luckily there were lots of good resources online! Here's some of what I found helpful.
 
 ### Slack
 The [OMSCS Study Slack](https://omscs-study.slack.com/) instance's `#cs7641` channel had a pretty low signal-to-noise ratio (lots of gifs and chatter), but it was home to many former students who were always happy to give advice (thanks Jontay 😊). It was also a good place to get encouragement from fellow students currently taking the class and bounce ideas off each other. Professor Isbell himself would frequently drop by as well!
