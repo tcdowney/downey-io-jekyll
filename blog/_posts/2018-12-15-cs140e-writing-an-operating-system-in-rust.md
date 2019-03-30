@@ -6,6 +6,7 @@ sub_title: "rust is gr8"
 color: red
 icon: fa-cog
 date: 2018-12-15
+last_modified_at: 2019-03-30
 categories:
   - stanford cs140e
   - rust operating systems course
@@ -19,6 +20,11 @@ description:
 <div>
 <img src="https://images.downey.io/blog/cs140e-rust-ferris-crochet-downey-1.jpg" alt="Raspberry Pi 3 running CS140e code with crocheted Ferris crab">
 </div>
+
+## ⚠️ important update ⚠️
+It was brought to my attention that the [cs140e site](https://web.stanford.edu/class/cs140e/) has been completely redone and the class is now being taught in C. 😒 Fortunately, the Internet Archive has [an archived version](https://web.archive.org/web/20180809015024/http://web.stanford.edu/class/cs140e) that will still let you access the assignments. I also recommend checking out Philipp Oppermann's [Writing an OS in Rust](https://os.phil-opp.com/) blog series. I've only had a chance to skim the content, but it looks like another good alternative.
+
+## introduction
 
 I first found out about [Stanford's experimental Rust-based cs140e OS course](https://web.stanford.edu/class/cs140e/) through a comment on the OMSCS [GIOS](https://www.omscs.gatech.edu/cs-8803-introduction-operating-systems) Slack. Now I'm always down to learn more about Operating Systems, but what really hooked me was the fact that the course combined two of my favorite topics: the Rust programming language and Raspberry Pis ([check out my Raspberry Pi Kubernetes cluster 😊]({% post_url 2018-08-04-how-to-build-raspberry-pi-kubernetes-cluster %})). Now that my [machine learning courses]({% post_url 2018-12-09-thoughts-on-omscs-cs-7641-machine-learning %}) are behind me, I've finally had a few cycles to spare and really dig in to the material.
 
