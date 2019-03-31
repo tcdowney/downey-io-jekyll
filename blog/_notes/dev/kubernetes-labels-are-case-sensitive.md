@@ -15,7 +15,7 @@ description:
   "Examples demonstrating that label keys and values are case-sensitive when querying via a label selector."
 ---
 The other day someone asked me if [Kubernetes label selectors](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) are case insensitive
-when filtering resources. I said they were definitely case-sensitive, but found it difficult to find examples online. Let this note be one small step toward remedying that.
+when filtering resources. I said they definitely were, but found it difficult to find examples online. Let this post be one small step toward remedying that.
 
 ## setup
 I'm doing this all on [minikube](https://kubernetes.io/docs/setup/minikube/#installation) using the [hello-node](gcr.io/hello-minikube-zero-install/hello-node) container image.
