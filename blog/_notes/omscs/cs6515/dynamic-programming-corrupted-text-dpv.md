@@ -15,18 +15,18 @@ description:
   "My solution for problem 6.4 in the Dasgupta Papadimitriou Vazirani (DPV) Algorithms textbook"
 ---
 
-This was an ungraded practice problem for our [CS6515 class](https://gt-algorithms.com/). There are [existing solutions](http://www.cs.rpi.edu/~goldsd/docs/fall2013-csci2300/sample-final-exam-solutions.pdf) out there, but I found them a bit unintuitive so this is my attempt at explaining the problem.
+This was an ungraded practice problem for our [CS6515 class](https://gt-algorithms.com/). There are [existing solutions](http://www.cs.rpi.edu/~goldsd/docs/fall2013-csci2300/sample-final-exam-solutions.pdf) out there, but I found them a bit unintuitive so this is my attempt at explaining the problem a little differently.
 
 ## Problem Summary
-You are given a string _s_ containing _n_ chracters _s_[1..._n_]. The string is corrupted such that all punctuation has been removed. For example, the string "you are a bold one." would appear as "youareaboldone". You are also given a dictionary method, _dict(w)_, that is able to determine whether or not a substring _w_ of _s_ is a valid word. In other words, _dict("bold")_ would return _true_, while _dict("aboldo")_ would return _false_. You are tasked with doing the following:
+You are given a string _s_ containing _n_ characters _s_[1..._n_]. The string is corrupted such that all punctuation has been removed. For example, the string "you are a bold one." would appear as "youareaboldone". You are also given a dictionary method, _dict(w)_, that is able to determine whether or not a substring _w_ of _s_ is a valid word. In other words, _dict("bold")_ would return _true_, while _dict("aboldo")_ would return _false_. You are tasked with doing the following:
 
 1. Give a dynamic programming algorithm that can tell whether or not a string _s_ contains a sentence of valid words. This algorithm should take at most _O(n<sup>2</sup>)_ time.
-2. If the string is valid output the sequence of words.
+2. If the string is valid, output the sequence of words.
 
 _Refer to page 178 of [the textbook](https://amzn.to/2WoPTuB) for the full, formalized problem description._
 
 ## Solution
-I'm going to go about solving this problem similarly to my [knapsack problem explanation](https://dev.to/downey/solving-the-knapsack-problem-with-dynamic-programming-4hce) and do the following.
+I'm going to go about solving this problem similarly to my [knapsack problem explanation](https://dev.to/downey/solving-the-knapsack-problem-with-dynamic-programming-4hce) and do the following:
 
 1. State the subproblems
 2. Define the recurrence
