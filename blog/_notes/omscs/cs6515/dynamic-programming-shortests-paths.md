@@ -13,7 +13,7 @@ categories:
   - graph algorithms
   - bellman-ford
 description:
-  "Brief explanations of and pseudocode for the Bellman-Ford and Floyd-Warshall algorithms using dynamic programming."
+  "Brief explanations of and pseudocode for the Bellman-Ford algorithm using dynamic programming."
 ---
 
 You may be familiar with [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) for quickly finding the shortest paths in a weighted directed graph. It's usually great, but if your graph has negative edge weights Dijkstra's algorithm [will let you down](https://stackoverflow.com/questions/13159337/why-doesnt-dijkstras-algorithm-work-for-negative-weight-edges). Fortunately we have (slower) alternatives such as the [Bellman-Ford](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm) and [Floyd-Warshall](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm) algorithms that _do_ work when we have negative weights. In this post, I'll talk about how the Bellman-Ford algorithm works to find shortest paths and how we can use it to find negative weight cycles (loops in the graph where the weight ends up decreasing the more times you cycle through the loop).
