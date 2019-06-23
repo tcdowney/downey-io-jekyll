@@ -1,7 +1,7 @@
 ---
 layout: post
 type: note
-title: "Graphs - Minimum Spanning Trees and Kruskal's Algorithm"
+title: "Graphs - Finding Minimum Spanning Trees with Kruskal's Algorithm"
 sub_title: "a look into minimum spanning trees, kruskal's algorithm, and the cut property"
 color: vapor-wave-purple
 icon: fa-map-signs
@@ -29,7 +29,7 @@ A [minimum spanning tree](https://en.wikipedia.org/wiki/Minimum_spanning_tree) o
 Let's consider the following graph _G_:
 
 <div>
-<img src="https://images.downey.io/minimum-spanning-tree/mst-graph-g-plain.png" alt="Graph G with 7 verticies">
+<img src="https://images.downey.io/minimum-spanning-tree/mst-graph-g-plain.png" alt="Graph G with 7 vertices">
 </div>
 
 As you can see, _G_ is an undirected graph with weights on all edges. Now let's look at some examples of subgraphs that are **not** minimum spanning trees.
@@ -74,17 +74,17 @@ We'll be doing the following:
 2. Gradually add in edges, smallest first, to connect components without introducing a cycle
 3. Repeat the process above until we run out of edges or only a single connected component remains (the minimum spanning tree). If we run out of edges then the graph is not connected so there is **no minimum spanning tree** for it.
 
-Sounds pretty simple, right? The trickiest bit in my opinion is this portion: _connect components without introducing a cycle_. We can do this by using something called a [union-find datastructure](https://www.youtube.com/watch?v=ibjEGG7ylHk). The linked video does a great job of explaining how it works, but in essence it will allow us to track which vertices are members of which connected components.
+Sounds pretty simple, right? The trickiest bit in my opinion is this portion: _connect components without introducing a cycle_. We can do this by using something called a [union-find data structure](https://www.youtube.com/watch?v=ibjEGG7ylHk). The linked video does a great job of explaining how it works, but in essence it will allow us to track which vertices are members of which connected components.
 
 We'll start by adding all vertices to the union-find as their own component, and as we add in edges we will gradually merge (or union) components. The way this will work is as follows:
 
-1. When considering an edge _e_ first do a _find_ using the union-find datastructure on the two vertices _u_ and _w_ connected by _e_. If _find(u)_ and _find(w)_ return the same result then both vertices are already members of the same component and adding this edge will introduce a cycle. In this case we cannot add _e_.
+1. When considering an edge _e_ first do a _find_ using the union-find data structure on the two vertices _u_ and _w_ connected by _e_. If _find(u)_ and _find(w)_ return the same result then both vertices are already members of the same component and adding this edge will introduce a cycle. In this case we cannot add _e_.
 2. If _find(u)_ and _find(w)_ return different results then these two vertices are not currently connected and _e_ is a valid candidate edge. We then perform _union(u,v)_ on the vertices to union their components in the union-find. The next time we call _find(u)_ and _find(w)_ we will get the same result since they share a component.
 
 Now assuming we have a sweet union-find at our disposal, let's walk through Kruskal's algorithm for our graph _G_.
 
 <div>
-<img src="https://images.downey.io/minimum-spanning-tree/mst-graph-g-plain.png" alt="Graph G with 7 verticies">
+<img src="https://images.downey.io/minimum-spanning-tree/mst-graph-g-plain.png" alt="Graph G with 7 vertices">
 </div>
 
 First let's sort our edges by weight:
