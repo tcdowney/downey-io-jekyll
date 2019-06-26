@@ -16,7 +16,10 @@ excerpt: "The max flow problem is an optimization problem for determining the ma
 description:
   "A few examples that walk through the Ford-Fulkerson algorithm for finding Max Flow through a flow network graph. Now including the wise words of Matthew McConaughey."
 ---
+
+<div class="video-wrapper">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/aq5ecBaOb6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Prereqs
 
@@ -134,7 +137,7 @@ Augment the current flow with our findings above and update the residual graph.
 There are now know edges with available capacity that we can use to create a path from _s_ to _t_. This means our run of the Ford-Fulkerson algorithm is complete and our max flow leading into _t_ is 5!
 
 ## Summary
-That was a pretty trivial example, so I would look to reiterate that the Ford-Fulkerson algorithm can be used to find the max flow of _much_ more complicated flow networks. Provided that they have positive integers as capacities, of course.
+That was a pretty trivial example, so I would like to reiterate that the Ford-Fulkerson algorithm can be used to find the max flow of _much_ more complicated flow networks. Provided that they have positive integers as capacities, of course.
 
 I highly recommend watching [William Fiset's video explanation](https://www.youtube.com/watch?v=LdOnanfc5TM) to see an example of the algorithm run against one of these larger networks. Apart from that video, if you'd like to go deeper or just to have it explained in additional ways, I personally found the following lectures, videos, and notes really useful:
 
