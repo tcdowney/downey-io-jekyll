@@ -1,6 +1,6 @@
 ---
 layout: post
-type: note
+type: blog
 title: "Finding Max Flow using the Ford-Fulkerson Algorithm and Matthew McConaughey"
 sub_title: "a step-by-step explanation"
 color: red-9009
@@ -32,7 +32,7 @@ The [max flow problem](https://en.wikipedia.org/wiki/Maximum_flow_problem) is an
 To make this more concrete, let's look at the following example:
 
 <div>
-<img src="https://images.downey.io/max-flow/max-flow-1.png" alt="Simple flow network">
+<img class="image-frame" src="https://images.downey.io/max-flow/max-flow-1.png" alt="Simple flow network">
 </div>
 
 This is a pretty simple graph with no back edges where _s_ is the source vertex and _t_ is the sink. Let's imagine that _s_ is a water treatment facility and _t_ is our home and we're interested in finding out the amount of water that can flow through to our literal bathroom sink.
@@ -40,13 +40,13 @@ This is a pretty simple graph with no back edges where _s_ is the source vertex 
 You can kind of eyeball this one and see that although the edges coming out of the source (vertex _s_) have a large capacity, we're bottlenecked by the edge leading to our home (the sink vertex _t_) which can only transport 1 unit of water.
 
 <div>
-<img src="https://images.downey.io/max-flow/max-flow-2.png" alt="Max flow path drawn across simple flow network">
+<img class="image-frame" src="https://images.downey.io/max-flow/max-flow-2.png" alt="Max flow path drawn across simple flow network">
 </div>
 
 Here our flow can clearly be at most the capacity of our smallest edge leading into _t_. So can we simply look for the smallest capacity edges and say definitively that we know our maximum flow? Almost... and we'll get to that later with the [max-flow min-cut theorem](https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem), but first let's look at a more difficult example that has multiple edges flowing into the sink.
 
 <div>
-<img src="https://images.downey.io/max-flow/max-flow-3.png" alt="Simple flow network for tutorial">
+<img class="image-frame" src="https://images.downey.io/max-flow/max-flow-3.png" alt="Simple flow network for tutorial">
 </div>
 
 The flow network above is a bit of a classic example of this problem. We have four vertices and three paths from _s_ to _t_. Let's imagine we have the following greedy algorithm to discover the max flow for this graph:
@@ -54,7 +54,7 @@ The flow network above is a bit of a classic example of this problem. We have fo
 1. Initially set the flow along every edge to 0.
 
 <div>
-<img src="https://images.downey.io/max-flow/max-flow-4.png" alt="Simple flow network for tutorial initial zero flow">
+<img class="image-frame" src="https://images.downey.io/max-flow/max-flow-4.png" alt="Simple flow network for tutorial initial zero flow">
 </div>
 
 2. Use a pathfinding algorithm like depth-first search (DFS) or breadth-first search (BFS) to find a path _P_ from _s_ to _t_ that has available capacity.
@@ -63,13 +63,13 @@ The flow network above is a bit of a classic example of this problem. We have fo
 5. Repeat the process from step 2 until there are no paths left from _s_ to _t_ that have available capacity.
 
 <div>
-<img src="https://images.downey.io/max-flow/max-flow-5.png" alt="Simple flow network naive algorithm results">
+<img class="image-frame" src="https://images.downey.io/max-flow/max-flow-5.png" alt="Simple flow network naive algorithm results">
 </div>
 
 Using the naive greedy algorithm described above on our flow network will result in a suboptimal flow of 3. However, with the two edges entering _t_ having capacities of 2 and 3, it really feels like we should be able to achieve a max flow of 5. The graph below shows how we can achieve this by being just a bit smarter with our flow allocations.
 
 <div>
-<img src="https://images.downey.io/max-flow/max-flow-6.png" alt="Simple flow network true max flow results">
+<img class="image-frame" src="https://images.downey.io/max-flow/max-flow-6.png" alt="Simple flow network true max flow results">
 </div>
 
 How can we do this though? This is where the wisdom of Matthew McConaughey comes in.
@@ -83,7 +83,7 @@ Imagine if we could look back at the choices we've made and undo some of our ear
 We'll basically take our existing graph and update the capacities of all the regular edges to be the current remaining capacity (_c<sub>e</sub>_ - _f<sub>e</sub>_). We'll then add back edges indicating the amount of flow currently going across this edge. We can then use that back edge to decrease flow in order to try out alternate flow allocations. The graph below shows the residual graph that results after running our original algorithm.
 
 <div>
-<img src="https://images.downey.io/max-flow/max-flow-7.png" alt="The residual graph for the tutorial flow network">
+<img class="image-frame" src="https://images.downey.io/max-flow/max-flow-7.png" alt="The residual graph for the tutorial flow network">
 </div>
 
 With a few tweaks to our algorithm, we can use the concept of a residual graph to find the true maximum flow in our network. This is known as the [Ford-Fulkerson algorithm](https://en.wikipedia.org/wiki/Ford%E2%80%93Fulkerson_algorithm).
@@ -95,7 +95,7 @@ This algorithm will look pretty similar to the one we laid out earlier, with one
 2. Construct a residual graph for this network. It should look the same as the input flow network.
 
 <div>
-<img src="https://images.downey.io/max-flow/max-flow-8.png" alt="Ford Fulkerson walkthrough initial">
+<img class="image-frame" src="https://images.downey.io/max-flow/max-flow-8.png" alt="Ford Fulkerson walkthrough initial">
 </div>
 
 3. Use a pathfinding algorithm like depth-first search (DFS) or breadth-first search (BFS) to find a path _P_ from _s_ to _t_ that has available capacity **in the residual graph**.
@@ -110,31 +110,31 @@ Let's step through this for our example graph.
 Initial flow is set to 0.
 
 <div>
-<img src="https://images.downey.io/max-flow/max-flow-8.png" alt="Ford Fulkerson walkthrough initial">
+<img class="image-frame" src="https://images.downey.io/max-flow/max-flow-8.png" alt="Ford Fulkerson walkthrough initial">
 </div>
 
 ### Step 2
 Run through the algorithm once and find we can achieve a flow of 3. Update the residual graph.
 
 <div>
-<img src="https://images.downey.io/max-flow/max-flow-9.png" alt="Ford Fulkerson walkthrough first round">
+<img class="image-frame" src="https://images.downey.io/max-flow/max-flow-9.png" alt="Ford Fulkerson walkthrough first round">
 </div>
 
 ### Step 3
 Search through the updated residual graph for a new _s-t_ path. There are no forward edges available anymore, but we can use a back edge to augment the current flow. We can decrease the flow along the A-B edge by 2 which will allow us to make use of both edges leading into _t_!
 
 <div>
-<img src="https://images.downey.io/max-flow/max-flow-10.png" alt="Ford Fulkerson walkthrough path through back edge">
+<img class="image-frame" src="https://images.downey.io/max-flow/max-flow-10.png" alt="Ford Fulkerson walkthrough path through back edge">
 </div>
 
 ### Step 4
 Augment the current flow with our findings above and update the residual graph.
 
 <div>
-<img src="https://images.downey.io/max-flow/max-flow-11.png" alt="Ford Fulkerson walkthrough complete results">
+<img class="image-frame" src="https://images.downey.io/max-flow/max-flow-11.png" alt="Ford Fulkerson walkthrough complete results">
 </div>
 
-There are now know edges with available capacity that we can use to create a path from _s_ to _t_. This means our run of the Ford-Fulkerson algorithm is complete and our max flow leading into _t_ is 5!
+There are now no edges with available capacity that we can use to create a path from _s_ to _t_. This means our run of the Ford-Fulkerson algorithm is complete and our max flow leading into _t_ is 5!
 
 ## Summary
 That was a pretty trivial example, so I would like to reiterate that the Ford-Fulkerson algorithm can be used to find the max flow of _much_ more complicated flow networks. Provided that they have positive integers as capacities, of course.

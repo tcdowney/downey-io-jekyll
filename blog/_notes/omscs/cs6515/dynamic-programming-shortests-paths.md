@@ -22,7 +22,7 @@ You may be familiar with [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Di
 Consider the following graph:
 
 <div>
-<img src="https://images.downey.io/bellman-ford/bellman-ford-graph.png" alt="Graph with six vertices.">
+<img class="image-frame" src="https://images.downey.io/bellman-ford/bellman-ford-graph.png" alt="Graph with six vertices.">
 </div>
 
 It has six vertices "S", "A", "B", "C", "D", and "E" and six weighted edges between these vertices. We will use the Bellman-Ford algorithm to find the shortest path from our start vertex, "S", to all of the other reachable vertices in this graph (in this one they're all reachable from "S"). This is known as the "single-source shortest path problem."
@@ -57,7 +57,7 @@ Now for our main recurrence, we're basically just going to look at the distance 
 For this example, we'll use a two-dimensional memoization table to track both _i_ and _z_. As _i_ increases and we're able to visit more vertices on the graph, we will track the current shortest path distances at T[_i_][_z_]. Vertices that haven't been reached yet will have shortest path distance of _infinity_.
 
 <div>
-<img src="https://images.downey.io/bellman-ford/bellman-ford-table.png" alt="Memoization table for the graph.">
+<img class="image-frame" src="https://images.downey.io/bellman-ford/bellman-ford-table.png" alt="Memoization table for the graph.">
 </div>
 
 The table above shows what the memoization table will contain after completing Bellman-Ford for our example graph.
@@ -119,7 +119,7 @@ This makes the Bellman-Ford algorithm _O_(_nm_) where _n_ is the number of edges
 So our graph above had no negative weight cycles (or negative weights in general for that matter). What happens if we do? Let's consider the following graph:
 
 <div>
-<img src="https://images.downey.io/bellman-ford/bellman-ford-negative-weight-cycle.png" alt="Graph with six vertices and a negative weight cycle.">
+<img class="image-frame" src="https://images.downey.io/bellman-ford/bellman-ford-negative-weight-cycle.png" alt="Graph with six vertices and a negative weight cycle.">
 </div>
 
 Notice that there is a negative weight cycle between "A", "B", and "C". Each time we travel around the cycle our total path weight decreases by negative two. The Bellman-Ford algorithm can't work with this because it means there is no shortest path for certain vertices in the graph -- the more times we loop through the cycle the shorter the path gets. This could go on infinitely!
@@ -130,7 +130,7 @@ But we can **detect negative weight cycles**!
 Let's take a look at a Bellman-Ford memoization table for this graph.
 
 <div>
-<img src="https://images.downey.io/bellman-ford/bellman-ford-neg-weight-cycle-table.png" alt="Memoization table for graph with negative weight cycle.">
+<img class="image-frame" src="https://images.downey.io/bellman-ford/bellman-ford-neg-weight-cycle-table.png" alt="Memoization table for graph with negative weight cycle.">
 </div>
 
 If the graph had a well-defined solution we would expect it to converge on the shortest paths after solving for paths of length _n_ - 1 edges (_i_ = 5). As we can see, the paths actually continue to decrease as we check paths of length _n_ (_i_ = 6). This could go on forever, so we can stop the algorithm now. Finding negative weight cycles using Bellman-Ford is as simple as checking to see if the _n_ edge path solution is the same as the _n_ - 1 edge solution. If it's smaller then there is a negative weight cycle!

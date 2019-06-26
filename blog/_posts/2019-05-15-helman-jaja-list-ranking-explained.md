@@ -28,7 +28,7 @@ In one of our labs in Georgia Tech's [Intro to High Performance Computing](https
 To operate on and access a linked list in parallel we need to rethink our representation of it. It can't simply be a loose collection of node that contain pointers to each other since there is no way of discovering/accessing the nodes out of order that way. Instead, we need to represent the linked list using an array. Professor Vuduc refers to this as an [array pool](https://www.youtube.com/watch?v=M4Zsh5OuB5Y) representation. I found this naming confusing at first since it made me think of an [object pool](https://en.wikipedia.org/wiki/Object_pool_pattern) consisting of a bunch of arrays. It's not that, though. It's a pool of list nodes that just happens to be represented by an array. Regardless of the naming, using an array pool let's us represent a linked list using a single contiguous piece of memory. Consider the arrays below:
 
 <div>
-<img src="https://images.downey.io/diagrams/helman-jaja-5.png" alt="Array Pool representation of a linked list">
+<img class="image-frame" src="https://images.downey.io/diagrams/helman-jaja-5.png" alt="Array Pool representation of a linked list">
 </div>
 
 The `Successors` array represents the "next" pointers for each node in a linked list and each "next" pointer corresponds with an index in the array. The `List Ranks` array represents the "value" for each node in the linked list at a given index. Or in other words, `Successors[0]` and `List Ranks[0]` both refer to the same logical linked list node, they just contain different attributes of the node.
@@ -55,7 +55,7 @@ Helman and JáJá describe their approach to the list ranking problem with a spa
 Split the linked list into sublists by randomly choosing at least _P - 1_ **sublist heads** in addition to the list's true head to create _s_ sublists. This in theory will allow us to divide up sequential list-ranking of each sublist across the _P_ processors. However, since we're randomly choosing sublist heads there is the potential for the work to be distributed unevenly. So, in practice, I actually saw improved performance by choosing a value of _s_ that was greater than _P_ and allowing [OpenMP](https://www.openmp.org/) to sort of load balance the work across the processors. In the diagram below we're randomly selecting 2 sublist heads (indices 6 and 8) in addition to the list's true head (index 2):
 
 <div>
-<img src="https://images.downey.io/diagrams/helman-jaja-1.png" alt="Random sublist head selection">
+<img class="image-frame" src="https://images.downey.io/diagrams/helman-jaja-1.png" alt="Random sublist head selection">
 </div>
 
 ### Traverse Each Sublist in Parallel and Compute Partial List Rankings
@@ -63,20 +63,20 @@ Split the linked list into sublists by randomly choosing at least _P - 1_ **subl
 Now, in parallel, we can traverse each sublist -- stopping when we reach the head of another sublist. In the diagram below, consider the green, blue, and orange traversals to be occurring on distinct processors.
 
 <div>
-<img src="https://images.downey.io/diagrams/helman-jaja-2.png" alt="Sublist traversal of an array pool linked list">
+<img class="image-frame" src="https://images.downey.io/diagrams/helman-jaja-2.png" alt="Sublist traversal of an array pool linked list">
 </div>
 
 While walking these sublists, we sequentially compute the list ranking for the sublist on each processor. After we're done, we should have these partial rankings in our `List Ranking` array. Whenever we reach the end of a sublist we record the total rank of our current sublist and the index of the next sublist's head for use in the next step. See the diagram below for what the current state of our `List Ranking` array will look like:
 
 <div>
-<img src="https://images.downey.io/diagrams/helman-jaja-3.png" alt="Partial list rankings for sublists">
+<img class="image-frame" src="https://images.downey.io/diagrams/helman-jaja-3.png" alt="Partial list rankings for sublists">
 </div>
 
 ### Sequentially Compute the List Rankings of the Sublist Heads
 As mentioned earlier, we should have recorded the total rank for each sublist along with the index of the head of the following sublist. We can use that data to sequentially compute the starting rank offsets for each sublist.
 
 <div>
-<img src="https://images.downey.io/diagrams/helman-jaja-6.png" alt="Sequentially Compute the List Rankings of the Sublist Heads">
+<img class="image-frame" src="https://images.downey.io/diagrams/helman-jaja-6.png" alt="Sequentially Compute the List Rankings of the Sublist Heads">
 </div>
 
 As you can see in the diagram above, we can walk across the sublist heads themselves in the correct order since we recorded each sublist's successor index. Since we recorded the total rank as well for each sublist we can just accumulate these values using a [prefix sum](https://en.wikipedia.org/wiki/Prefix_sum) operation.
@@ -85,7 +85,7 @@ As you can see in the diagram above, we can walk across the sublist heads themse
 Now, in parallel, we can apply the rank offsets we computed for each sublist head to all of the nodes in each sublist. The diagram below demonstrates what this might look like:
 
 <div>
-<img src="https://images.downey.io/diagrams/helman-jaja-4.png" alt="Apply rank offsets across sublist nodes in parallel">
+<img class="image-frame" src="https://images.downey.io/diagrams/helman-jaja-4.png" alt="Apply rank offsets across sublist nodes in parallel">
 </div>
 
 If you've done some basic bookkeeping to track which sublist a node belongs to, this can be done as a massively parallel operation using a simple `parallel for` loop across all of the elements at once. As you can see in the diagram above, this results in the `List Ranks` array containing the final list ranking values for the linked list.

@@ -62,7 +62,7 @@ We can use tree-based or [butterfly style](http://www.csd.uwo.ca/~moreno/CS433-C
 ### All-to-One Reduce
 
 <div>
-<img src="https://images.downey.io/mpi-collectives/all-to-one-reduce.png" alt="All-to-One Reduce diagram">
+<img class="image-frame" src="https://images.downey.io/mpi-collectives/all-to-one-reduce.png" alt="All-to-One Reduce diagram">
 </div>
 
 * **MPI Collective:** [MPI_Reduce](https://www.mpich.org/static/docs/latest/www3/MPI_Reduce.html)
@@ -73,7 +73,7 @@ We can use tree-based or [butterfly style](http://www.csd.uwo.ca/~moreno/CS433-C
 ### One-to-All Broadcast
 
 <div>
-<img src="https://images.downey.io/mpi-collectives/one-to-all-broadcast.png" alt="One-to-All Broadcast diagram">
+<img class="image-frame" src="https://images.downey.io/mpi-collectives/one-to-all-broadcast.png" alt="One-to-All Broadcast diagram">
 </div>
 
 * **MPI Collective:** [MPI_Bcast](https://www.mpich.org/static/docs/latest/www3/MPI_Bcast.html)
@@ -84,7 +84,7 @@ We can use tree-based or [butterfly style](http://www.csd.uwo.ca/~moreno/CS433-C
 ### Scatter
 
 <div>
-<img src="https://images.downey.io/mpi-collectives/scatter.png" alt="Scatter diagram">
+<img class="image-frame" src="https://images.downey.io/mpi-collectives/scatter.png" alt="Scatter diagram">
 </div>
 
 * **MPI Collective:** [MPI_Scatter](https://www.mpich.org/static/docs/latest/www3/MPI_Scatter.html)
@@ -95,7 +95,7 @@ We can use tree-based or [butterfly style](http://www.csd.uwo.ca/~moreno/CS433-C
 ### Gather
 
 <div>
-<img src="https://images.downey.io/mpi-collectives/gather.png" alt="Gather diagram">
+<img class="image-frame" src="https://images.downey.io/mpi-collectives/gather.png" alt="Gather diagram">
 </div>
 
 * **MPI Collective:** [MPI_Gather](https://www.mpich.org/static/docs/latest/www3/MPI_Gather.html)
@@ -106,7 +106,7 @@ We can use tree-based or [butterfly style](http://www.csd.uwo.ca/~moreno/CS433-C
 ### All-Gather
 
 <div>
-<img src="https://images.downey.io/mpi-collectives/all-gather.png" alt="All-Gather diagram">
+<img class="image-frame" src="https://images.downey.io/mpi-collectives/all-gather.png" alt="All-Gather diagram">
 </div>
 
 * **MPI Collective:** [MPI_Allgather](https://www.mpich.org/static/docs/latest/www3/MPI_Allgather.html)
@@ -117,7 +117,7 @@ We can use tree-based or [butterfly style](http://www.csd.uwo.ca/~moreno/CS433-C
 ### Reduce-Scatter
 
 <div>
-<img src="https://images.downey.io/mpi-collectives/reduce-scatter.png" alt="Reduce-Scatter diagram">
+<img class="image-frame" src="https://images.downey.io/mpi-collectives/reduce-scatter.png" alt="Reduce-Scatter diagram">
 </div>
 
 * **MPI Collective:** [MPI_Reduce_scatter](https://www.mpich.org/static/docs/latest/www3/MPI_Reduce_scatter.html)
@@ -128,7 +128,7 @@ We can use tree-based or [butterfly style](http://www.csd.uwo.ca/~moreno/CS433-C
 ### All-To-All
 
 <div>
-<img src="https://images.downey.io/mpi-collectives/all-to-all-collective.png" alt="All-to-All diagram">
+<img class="image-frame" src="https://images.downey.io/mpi-collectives/all-to-all-collective.png" alt="All-to-All diagram">
 </div>
 
 * **MPI Collective:** [MPI_Alltoall](https://www.mpich.org/static/docs/latest/www3/MPI_Alltoall.html); [MPI_Alltoallv](https://www.mpich.org/static//docs/latest/www3/MPI_Alltoallv.html)
