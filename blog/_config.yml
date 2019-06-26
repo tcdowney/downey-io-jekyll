@@ -14,7 +14,7 @@ url: "https://downey.io"
 
 # Build settings
 highlighter: rouge
-paginate: 5
+paginate: 10
 paginate_path: "blog/page:num"
 permalink: "blog/:title/"
 
