@@ -12,7 +12,7 @@ description: Digital field notes on software development, Georgia Tech OMSCS cou
   </div>
 
   <ul class="notes">
-    {% for note in site.notes %}
+    {% for note in site.notes reversed %}
         <li>
           <div>
             <a href="{{ note.url }}">{{ note.title }}</a> - <span><time>{{ note.date | date: '%B %d, %Y' }}</time></span>
