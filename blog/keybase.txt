@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/tcdowney
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://downey.io
+  * I am tcdowney (https://keybase.io/tcdowney) on keybase.
+  * I have a public key with fingerprint 90C8 2606 77B1 FF63 34C1  1DEE 301B 9993 40D5 E292
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01201d1fac13b4728015fe0f45bb6d416c930f8eef3f856653f8709bc40b0910f01b0a",
+      "fingerprint": "90c8260677b1ff6334c11dee301b999340d5e292",
+      "host": "keybase.io",
+      "key_id": "301b999340d5e292",
+      "kid": "01010b3909bc165369e1cf6dfbaf2d61b5e0620b235a73c062562b0f6b9394fb9c1c0a",
+      "uid": "1c939d360637a9593a3df565e87d5c19",
+      "username": "tcdowney"
+    },
+    "service": {
+      "hostname": "downey.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1570340091,
+  "expire_in": 157680000,
+  "prev": "5f12dd837761211e374ddf47372d46474259d29c7cd44627d3048e17eb246087",
+  "seqno": 12,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owFtUmtMXEUY3V2gPLKlECnQWn5wtUB1gTv3uZcWtImrUaGWhiKvFu9jLtwF9s1j
+g5SEtsaiUBqUR8S00FQCNqEaadPwiiEFFdoClmKoUKW0kYdALKuIpjhLyz9nfszM
+mfOdOd/J1Gz3UPmo75X8nhDyXWCiemhOUB1rLFOXYoJZcmJxpVge3FxgvgTtjuw8
+RcLiMBwQOJCAzIuAFCiW0OOAliEuU7QgMBIFGJEjcVkPoUzKepphaLSwOCeIFC7g
+HMBlHAg4j+kwWTHlQJvFppgcSJbDRT3B4AzLCkCWGZKkRAAkCElE5ziOpHCJhgRH
+oMJcs91dgcwJvB3GKGaEoUP2pr3/4W/5RlMgObcVgFwxHASizEiywMuExACBhjhD
+4AJB0jxLimhPM4SAy4zAkRwlC5wIxE3fhZtyALXJSSRyTLI8R3MkT0oyzdBQz0q0
+CDg30Q5tJr4AIrZDlMzFJpRmmQ5DaJEiQnew7k6eMZ7eP23GYjM7zKI5H8G5DofF
+Hucuczgtbl4xFLKfKWQLiklCIaKKImizK2YTFgcQU3QobklAsziKAWWuw2CJRbHB
+bMW0CTN6HA33O7AISdIyICRJT7JsKgMIACDJUpIkUyzJEhLFUCxF0JxEcCIrShTF
+EKxE4pQeAhYKBMXgehZzN2U1mZE4gYzyOUjUruSYeEehDWJlfmc0pKdK7aMKCw73
+7ArqadMUJiTsOZ66vvXzvDTub6fy8w3YQlzdOzbKLzSoui59Gd/qMQPUUR+fOnGp
+0Xg04vT3sZnWl3quGfqeaFtvz4/XxCzah6cyqoPuZdb+1pHom973OL9Os3xXf/uw
+eXI1YvaKRRi16YN+6b5w69xfPT1rAwvLabtLk6b2hp1p+lkJ1SQNvrr+w0PXQUPV
+6st1/icisag7Y8UFg4bPlrzNyS2DManR6t4244gzZLq9f6b8kTOy6gtj1VDfbDrR
+cLJ5MGGl5Xz2a9uOkqYP5upDry/7Hh5vuniLt244wvfbxkaMXz2IeW5mLaBF5/FG
+auKj4ZDmfUs7yBTnwR+DIys6+4/5WDs6Tq96/jvfY5gun+CzemcaZoPXDDD03a+9
+DMPbD+0Y2rWuG4o2bryT1PYKR+b9Ux8W6/VpS9rGR7k3rzr+rNS8eX1l5/DC0Fmn
+qS9WZfQfmNg1d2N+VJ4sfv9ArbJ4xdJhDay13uk/f//c378+39yqunx35YXUi3mN
+Dz9pjNR8nh4+lhC4T+9fmRKbfwNL22Oo8BuIzG26/KG/66f5s7SDP1LITkzsrBFX
+/VzGdnXxVHJLr7Yi5/5C6AGt3TvrsS69xfe9qqhtZfPtVyetJ6u91kH5dHxn1jed
+Tx44u71dzB/aguHRhoDGogK/xeiswsoj++NTMooy335raa9Wef1QUd1ycHWX1ng8
+bqCVvTmyO+7atyUb4xmn6iNcWckv/gc=
+=5pmY
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/tcdowney
+
+==================================================================
