@@ -26,7 +26,7 @@ Over the past three years, I've worked as a full-time contributor to Cloud Found
 
 <script id="asciicast-279484" src="https://asciinema.org/a/279484.js" async></script>
 
-I've grown fond of pushing raw source code and using buildpacks [https://devcenter.heroku.com/articles/buildpacks]. I enjoy the ease of creating and mapping routes. I like that my app logs are a mere `cf logs`  away. That is if you're deploying a stateless 12 Factor app. If you're not -- or even if you just need to go a bit off the rails of your PaaS -- the platform can hinder more than it helps. It's these use cases where Kubernetes shines.
+I've grown fond of pushing raw source code and [using buildpacks](https://devcenter.heroku.com/articles/buildpacks). I enjoy the ease of creating and mapping routes. I like that my app logs are a mere `cf logs`  away. That is if you're deploying a stateless 12 Factor app. If you're not -- or even if you just need to go a bit off the rails of your PaaS -- the platform can hinder more than it helps. It's these use cases where Kubernetes shines.
 
 You don't have to completely forgo the PaaS experience you're used to, however. In this post we'll take a look at two tools: `pack` and `kapp` that help bring some of that that PaaS goodness to Kubernetes.
 
@@ -38,6 +38,7 @@ If you want to follow along, you'll need the following:
 3. Install `docker` ([install the Community Edition](https://docs.docker.com/v17.09/engine/installation/))
 4. Install `pack` ([installation instructions](https://buildpacks.io/docs/install-pack/))
 5. Install `kapp` ([installation instructions](https://get-kapp.io/))
+6. Check out the sample app [`sinatra-k8s-sample`](https://github.com/tcdowney/sinatra-k8s-sample)
 
 ## Cluster Configuration
 
@@ -75,7 +76,11 @@ _<sup>1</sup>$20 for a k8s cluster is still nothing to sneeze at, so if you want
 <img src="https://images.downey.io/blog/belafonte.png" alt="Belafonte App">
 </div>
 
-Throughout this post we'll be deploying a simple, stateless Ruby app called `belafonte`. It is named after _The Belafonte_, the esteemed research vessel helmed by oceanographer Steve Zissou and it will carry us safely on our Kubernetes journey. If you want to follow along, simply clone the app: `git clone https://github.com/tcdowney/sinatra-k8s-sample`
+Throughout this post we'll be deploying a simple, stateless Ruby app called `belafonte`. It is named after _The Belafonte_, the esteemed research vessel helmed by oceanographer Steve Zissou and it will carry us safely on our Kubernetes journey. If you want to follow along, simply clone the app.
+
+```bash
+git clone https://github.com/tcdowney/sinatra-k8s-sample
+```
 
 To make things a bit more interesting, `belafonte` relies on a microservice to feed it UUIDs for display. This is a bit contrived, but that's ok. We'll be deploying a small Python app called [httpbin](https://github.com/postmanlabs/httpbin) to serve this purpose.
 
@@ -177,12 +182,12 @@ spec:
           servicePort: 8080
 ```
 
-At it's most basic, this configuration instructs the ingress NGINX to direct traffic destined for `belafonte.k8s.downey.dev` to the `belafonte` service defined by `service.yaml`. Since we're using `cert-manager`, the annotations on it will instruct cert-manager and the `letsencrypt-prod` ClusterIssuer to issue and serve [LetsEncrypt](https://letsencrypt.org/) TLS certs for this domain. This part is only required if you want to support `https`, but it's simple enough so I'd recommend it.
+At its most basic, this configuration instructs the ingress NGINX to direct traffic destined for `belafonte.k8s.downey.dev` to the `belafonte` service defined by `service.yaml`. Since we're using `cert-manager`, the annotations on it will instruct cert-manager and the `letsencrypt-prod` ClusterIssuer to issue and serve [LetsEncrypt](https://letsencrypt.org/) TLS certs for this domain. This part is only required if you want to support `https`, but it's simple enough so I'd recommend it.
 
 Similar YAML config exists for `httpbin` in the `deploy/httpbin` directory (minus the Ingress since we do not want it externally reachable).
 
 ## Installing the App with kapp
-<script id="asciicast-mNBmwbSnBQFo34N0hL06RG2Ql" src="https://asciinema.org/a/mNBmwbSnBQFo34N0hL06RG2Ql.js" async></script>
+<script id="asciicast-279697" src="https://asciinema.org/a/279697.js" async></script>
 
 All of that YAML declaritively represents the desired state we want our applications to be in. If you just `kubectl apply -f <file>` every file in that `deploy` directory you'll get a running `belafonte` app and an `httpbin` microservice to back it. Unfortunately, `kubectl apply` can be a pretty blunt tool. It's hard to tell what it is going to do without hand inspecting each YAML file. Options like `--dry-run` and commands like `kubectl diff` exist to help improve things, but those used to doing `git push heroku` or `cf push` may still desire a nicer UX.
 
