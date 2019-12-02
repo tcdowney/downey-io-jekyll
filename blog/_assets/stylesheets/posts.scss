@@ -218,3 +218,9 @@
   @include post-excerpt-color($post-background);
 }
 
+.post-excerpt-kube-blue {
+  @extend .post-excerpt;
+  $post-background: $kube-blue;
+  @include post-excerpt-color($post-background);
+}
+
