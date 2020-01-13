@@ -11,7 +11,7 @@ categories:
   - 2020 goals
   - learning goals
   - fitness goals
-excerpt: "When it comes to goals and self-improvement, I have a nasty habit of being over-ambitious and over-committing myself -- as evidenced by the piles of technical books and unused yoga equipment cluttering my apartment. And it's not that I don't achieve anything. Last year I completed Georgia Tech's online Masters in Computer Science (OMSCS) and published seventeen posts on DEV, for example. It's more that I have trouble focusing on a single thing and seeing it to completion."
+excerpt: "When it comes to goals and self-improvement, I have a nasty habit of being over-ambitious and over-committing myself -- as evidenced by the piles of technical books and unused yoga equipment cluttering my apartment. In this post I describe what goals, both technical and otherwise, that I will focus on for 2020."
 description:
   "Learning and life goals for the new decade"
 ---

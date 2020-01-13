@@ -198,6 +198,14 @@ article {
     }
   }
 
+  .post-badge-kube-blue {
+    @extend .post-badge;
+
+    > span .fa {
+      color: $kube-blue;
+    }
+  }
+
   h1 {
     text-align: left;
     font-size: 2em;
