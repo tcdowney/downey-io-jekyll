@@ -30,14 +30,14 @@ It was once acceptable — and even expected — for web services to go down for
 One way to achieve higher availability is by running countless copies, or replicas, of our services across geographies. Now, though, we've got ourselves a distributed system to wrangle! This is cool, it can add a shiny new buzzword to your resume, but it also brings along its own challenges.
 
 You've now got to...
-1. Keep n servers up to date with the latest operating system patches
+1. Keep _n_ servers up to date with the latest operating system patches
 2. Ensure that they are all running the correct version of your service
 3. Prevent configuration drift across them all
 4. Orchestrate rollouts of new code and configuration
 5. Handle network partitions between servers
 6. Etc. ...
 
-Platforms such as Kubernetes and Cloud Foundry can solve many of these problems. There are a few they can't avoid, however.
+Platforms such as [Kubernetes](https://kubernetes.io/) and [Cloud Foundry](https://www.cloudfoundry.org/) can solve many of these problems. There are a few they can't avoid, however.
 
 ### CAP Theorem and Kubernetes
 <div>
@@ -136,7 +136,7 @@ spec:
 In the `Deployment` above, we declare that we want to five two replicas of our web service (`httpbin`) and that each needs 256M of memory to run. We also specify that we want it to perform rolling updates with at most one-quarter of the `Pods` being updated at a given time. Let's apply it:
 
 ```bash
-kubectl apply -f example-deployment.yaml
+$ kubectl apply -f example-deployment.yaml
 ```
 
 Wait a few seconds and then view the `deployments` and `pods` that are running:
@@ -363,6 +363,7 @@ example-deployment-58958c58d9   0         0         0       3h52m
 example-deployment-9787854b4    5         5         5       39s
 
 $ kubectl get pods
+
 NAME                                  READY   STATUS              RESTARTS   AGE
 example-deployment-58958c58d9-4f2nq   1/1     Running             0          33m
 example-deployment-58958c58d9-cwbzp   1/1     Running             0          3h51m
@@ -397,4 +398,4 @@ Actual State is the state the system is currently in (to the best of our knowled
 
 Desired State and Actual State may not always align, but Kubernetes will try its hardest!
 
-Cheers and have a happy Palindrome Day (2020-02-02)! 🤓
+Have a happy Palindrome Day (2020-02-02)! 🤓
