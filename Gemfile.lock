@@ -85,7 +85,7 @@ GEM
       forwardable-extended (~> 2.6)
     powerpack (0.1.2)
     public_suffix (3.0.3)
-    rack (1.6.11)
+    rack (1.6.13)
     rainbow (3.0.0)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
