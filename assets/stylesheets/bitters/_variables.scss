@@ -56,11 +56,14 @@ $red-9009: $old-rose;
 $twilight-lavender: #754668ff;
 $fire-opal: #ee6958ff;
 
+$congo-pink: #f28b7dff; // no post-* css
+$antique-fuchsia: #995c88ff; // no post-* css
+
 $badge-accent-1: $cornflower-blue;
 $badge-accent-2: $green-9009;
 $badge-accent-3: $red-9009;
-$badge-accent-4: $fire-opal;
-$badge-accent-5: $twilight-lavender;
+$badge-accent-4: $congo-pink;
+$badge-accent-5: $antique-fuchsia;
 
 // Body Color
 $home-body-color: $indigo;
@@ -82,15 +85,15 @@ $base-border-color: $light-gray;
 
 // Nav Colors
 $nav-base-color: $off-white;
-$nav-accent-color: $red;
+$nav-accent-color: $red-9009;
 $nav-alt-color: $dark-gray;
-$nav-alt-accent-color: $teal;
+$nav-alt-accent-color: $green-9009;
 
 // Home Page Colors
 $home-base-color: $off-white;
-$home-first-interest-color: $red;
-$home-second-interest-color: $green;
-$home-third-interest-color: $blue;
+$home-first-interest-color: $red-9009;
+$home-second-interest-color: $green-9009;
+$home-third-interest-color: $cornflower-blue;
 
 // Flash Colors
 $error-color: $light-red;
