@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Simplify Kubernetes App Deployments With Cloud Native Buildpacks and kapp"
 sub_title: "build your own PaaS using command line tools"
-color: badge-accent-1
+color: badge-accent-2
 icon: fa-ship
 date: 2019-11-06
 categories:

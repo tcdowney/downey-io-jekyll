@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "2020 Goals"
 sub_title: "a new year, a new decade"
-color: badge-accent-3
+color: badge-accent-4
 icon: fa-check-circle-o
 date: 2020-01-12
 categories:
