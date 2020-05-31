@@ -2,7 +2,7 @@
 layout: post
 type: note
 title: "Notes on Memory Management in Operating Systems"
-color: green-9009
+color: badge-accent-1
 icon: fa-code
 date: 2018-04-15
 categories:

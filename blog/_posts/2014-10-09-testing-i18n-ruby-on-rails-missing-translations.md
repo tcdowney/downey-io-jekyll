@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Testing i18n in Ruby on Rails"
 sub_title:  "Rooting Out Missing Translations"
-color: red
+color: badge-accent-2
 icon: fa-code
 date: 2014-10-09
 categories:

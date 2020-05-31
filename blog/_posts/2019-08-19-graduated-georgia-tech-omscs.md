@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Completing Georgia Tech's Online Master of Science in Computer Science"
 sub_title: "a long three years in the omscs"
-color: green-9009
+color: badge-accent-1
 icon: fa-graduation-cap
 date: 2019-08-19
 categories:

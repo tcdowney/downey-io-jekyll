@@ -2,7 +2,7 @@
 layout: post
 type: note
 title: "Notes on Scheduling in Operating Systems"
-color: red-9009
+color: badge-accent-3
 icon: fa-code
 date: 2018-04-29
 categories:

@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Hack Mini - Linux Workstation Build Log"
 sub_title:  "Build Log of My Mini (Hackintosh Compatible) Linux Computer"
-color: teal
+color: badge-accent-2
 icon: fa-terminal
 date: 2018-03-04
 categories:

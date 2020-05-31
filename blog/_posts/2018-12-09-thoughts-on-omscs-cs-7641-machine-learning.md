@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Adventures in CS 7641 - Machine Learning"
 sub_title: "\"It's over. It's done!\""
-color: vapor-wave-purple
+color: badge-accent-2
 icon: fa-graduation-cap
 date: 2018-12-09
 categories:

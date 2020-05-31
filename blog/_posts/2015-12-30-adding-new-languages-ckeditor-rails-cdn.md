@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "How to Add Custom Language Files to CKEditor 4"
 sub_title:  "Localizing CKEditor Without Requiring a Custom Build"
-color: red-violet
+color: badge-accent-5
 icon: fa-code
 date: 2015-12-30
 categories:

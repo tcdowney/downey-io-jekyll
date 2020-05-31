@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Finding Max Flow using the Ford-Fulkerson Algorithm and Matthew McConaughey"
 sub_title: "a step-by-step explanation"
-color: red-9009
+color: badge-accent-5
 icon: fa-random
 date: 2019-06-25
 categories:

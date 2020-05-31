@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "How to Deploy a Static Website with Cloud Foundry"
 sub_title:  "Deploying a Jekyll Site with a Custom Domain Name and Cloudflare SSL"
-color: subaru-orange
+color: badge-accent-2
 icon: fa-code
 date: 2017-09-17
 categories:

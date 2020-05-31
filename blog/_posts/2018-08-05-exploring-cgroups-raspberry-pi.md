@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Cgroups on the Raspberry Pi Zero"
 sub_title: "A brief survey of the memory, cpu, and freezer cgroups in Raspbian Stretch Lite"
-color: chartreuse
+color: badge-accent-1
 icon: fa-object-group
 date: 2018-08-05
 categories:

@@ -2,7 +2,7 @@
 layout: post
 type: note
 title: "NP Problem Reduction Notes"
-color: red-9009
+color: badge-accent-3
 icon: fa-exclamation
 date: 2019-07-25
 categories:

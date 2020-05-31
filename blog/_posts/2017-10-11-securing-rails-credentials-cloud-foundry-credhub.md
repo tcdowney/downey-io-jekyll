@@ -4,7 +4,7 @@ layout: post
 type: blog
 title: "Securing Rails Secrets with Cloud Foundry CredHub"
 sub_title:  "Credgazing with CredHubble 🔭"
-color: red-violet
+color: badge-accent-4
 icon: fa-key
 date: 2017-10-11
 categories:

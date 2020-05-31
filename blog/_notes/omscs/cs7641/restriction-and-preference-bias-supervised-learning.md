@@ -2,7 +2,7 @@
 layout: post
 type: note
 title: "Preference and Restriction Biases for Supervised Learning Algorithms"
-color: red-9009
+color: badge-accent-3
 icon: fa-graduation-cap
 date: 2018-10-06
 categories:

@@ -2,7 +2,7 @@
 layout: post
 type: note
 title: "Distributed Memory Model and MPI Collectives"
-color: red-9009
+color: badge-accent-3
 icon: fa-code-fork
 date: 2019-04-27
 categories:

@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Using kbld to Rapidly Iterate on Kubernetes Deployed Apps"
 sub_title: "speeding up the Docker image build-push-deploy cycle"
-color: red-9009
+color: badge-accent-1
 icon: fa-ship
 date: 2020-05-27
 categories:

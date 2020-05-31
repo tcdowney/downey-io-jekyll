@@ -2,7 +2,7 @@
 layout: post
 type: note
 title: "Pre-Midterm IHPC Concurrency Primitives"
-color: green-9009
+color: badge-accent-1
 icon: fa-code-fork
 date: 2019-02-23
 categories:

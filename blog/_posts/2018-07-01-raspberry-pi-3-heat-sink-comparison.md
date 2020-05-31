@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Raspberry Pi Heat Sink Science"
 sub_title:  "Does the Raspberry Pi 3 Model B need a heat sink?"
-color: red-9009
+color: badge-accent-3
 icon: fa-flask
 date: 2018-07-01
 categories:

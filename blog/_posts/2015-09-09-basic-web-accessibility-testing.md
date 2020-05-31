@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Web Accessibility Testing for Everyone"
 sub_title:  "Simple Ways to Evaluate Your Site"
-color: violet
+color: badge-accent-3
 icon: fa-wheelchair
 date: 2015-09-09
 categories:

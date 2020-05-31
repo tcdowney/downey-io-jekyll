@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "How to Add a Custom 404 Error Page to a Cloud Foundry Staticfile Buildpack Site"
 sub_title:  "Replacing the Staticfile Buildpack's Default NGINX 404 Page"
-color: teal
+color: badge-accent-3
 icon: fa-code
 date: 2017-09-22
 last_modified_at: 2018-02-25

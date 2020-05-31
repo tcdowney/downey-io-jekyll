@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Desired State Versus Actual State in Distributed Systems"
 sub_title: "Eventual Consistency in Kubernetes and the Real World™"
-color: red-9009
+color: badge-accent-4
 icon: fa-cogs
 date: 2020-02-02
 categories:

@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Reflections on Kubecon 2019"
 sub_title: "good times in San Diego plus a bonus Istio meetup on a boat"
-color: kube-blue
+color: badge-accent-2
 icon: fa-ship
 date: 2019-12-01
 categories:

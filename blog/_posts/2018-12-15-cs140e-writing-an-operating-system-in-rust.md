@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Learning to build an Operating System in Rust via CS140e"
 sub_title: "rust is gr8"
-color: red
+color: badge-accent-3
 icon: fa-cog
 date: 2018-12-15
 last_modified_at: 2019-03-30

@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Unlimited Power! My Unstoppable Raspberry Pi Kubernetes Cluster"
 sub_title: "How I built a Kubernetes cluster out of a handful of Raspberry Pis"
-color: subaru-orange
+color: badge-accent-5
 icon: fa-ship
 date: 2018-08-04
 categories:

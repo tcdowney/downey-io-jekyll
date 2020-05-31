@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "How to Write Custom Rubocop Linters for Database Migrations"
 sub_title:  "Linting Migration Files With Your Very Own Rubocop Cops"
-color: violet
+color: badge-accent-5
 icon: fa-code
 date: 2017-12-09
 categories:

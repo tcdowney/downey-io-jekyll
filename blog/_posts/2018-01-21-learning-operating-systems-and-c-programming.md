@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Learning Operating Systems and Rediscovering C"
 sub_title:  "A Ruby dev's rambling journey deeper down the stack"
-color: green
+color: badge-accent-1
 icon: fa-book
 date: 2018-01-21
 last_modified_at: 2018-05-07

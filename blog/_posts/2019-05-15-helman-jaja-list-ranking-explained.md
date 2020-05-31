@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "The Helman and JáJá List Ranking Algorithm"
 sub_title: "a simpler explanation"
-color: teal
+color: badge-accent-4
 icon: fa-list-ol 
 date: 2019-05-15
 categories:

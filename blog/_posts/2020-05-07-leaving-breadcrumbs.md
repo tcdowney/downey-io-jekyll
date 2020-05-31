@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Leaving Breadcrumbs"
 sub_title: "the joys of public note taking"
-color: green-9009
+color: badge-accent-1
 icon: fa-book
 date: 2020-05-08
 categories:

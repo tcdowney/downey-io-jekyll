@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Migrating from Jekyll to Hugo to Ghost to Jekyll"
 sub_title:  "There and Back Again: A Static Site Generator Tale"
-color: green
+color: badge-accent-1
 icon: fa-pencil-square-o
 date: 2017-05-20
 categories:

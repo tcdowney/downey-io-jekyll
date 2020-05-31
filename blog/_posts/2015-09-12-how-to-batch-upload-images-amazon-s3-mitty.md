@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Batch Uploading Photos to Amazon S3 with Mitty"
 sub_title:  "Using Mitty for Jekyll Photo Blogs"
-color: teal
+color: badge-accent-4
 icon: fa-camera-retro
 date: 2015-09-12
 categories:

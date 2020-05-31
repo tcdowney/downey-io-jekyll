@@ -3,7 +3,7 @@ layout: post
 type: blog
 title: "Baking a Pi Router for my Raspberry Pi Kubernetes Cluster"
 sub_title: "How I used a Raspberry Pi 3 as a dhcp server and router for my Pi-based Kubernetes Cluster"
-color: red-violet
+color: badge-accent-4
 icon: fa-wifi
 date: 2018-07-03
 categories:

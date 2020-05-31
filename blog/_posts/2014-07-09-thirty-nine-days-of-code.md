@@ -2,7 +2,7 @@
 layout: post
 type: blog
 title: "Thirty-Nine Days of Code"
-color: green
+color: badge-accent-1
 icon: fa-code
 date: 2014-07-09
 categories: programming
