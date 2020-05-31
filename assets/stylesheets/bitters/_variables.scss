@@ -41,13 +41,26 @@ $teal: #288C8F;
 $blue: #0074D9;
 $green: #489E41;
 $chartreuse: #7FFF00;
-$green-9009: #97C2A2; // Inspired by Cherry G80-9009
-$red-9009: #C88380;
 $vapor-wave-pink: #ff71ce; // Inspired by GMK Laser
 $vapor-wave-blue: #01cdfe;
 $vapor-wave-green: #05ffa1;
 $vapor-wave-purple: #b967ff;
 $kube-blue: #3a5ae7;
+
+// https://coolors.co/97c2a2-c88380-ee6958-754668-6e85ed
+$eton-blue: #97c2a2ff; // $green-9009
+$old-rose: #c88380ff; //$red-9009
+$green-9009: $eton-blue; // Inspired by Cherry G80-9009
+$cornflower-blue: #6E85EDff;
+$red-9009: $old-rose;
+$twilight-lavender: #754668ff;
+$fire-opal: #ee6958ff;
+
+$badge-accent-1: $cornflower-blue;
+$badge-accent-2: $green-9009;
+$badge-accent-3: $red-9009;
+$badge-accent-4: $fire-opal;
+$badge-accent-5: $twilight-lavender;
 
 // Body Color
 $home-body-color: $indigo;
