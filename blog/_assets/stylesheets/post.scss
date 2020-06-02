@@ -206,46 +206,6 @@ article {
     }
   }
 
-  .post-badge-eton-blue {
-    @extend .post-badge;
-
-    > span .fa {
-      color: $eton-blue;
-    }
-  }
-
-  .post-badge-old-rose {
-    @extend .post-badge;
-
-    > span .fa {
-      color: $old-rose;
-    }
-  }
-
-  .post-badge-fire-opal {
-    @extend .post-badge;
-
-    > span .fa {
-      color: $fire-opal;
-    }
-  }
-
-  .post-badge-twilight-lavender {
-    @extend .post-badge;
-
-    > span .fa {
-      color: $twilight-lavender;
-    }
-  }
-
-  .post-badge-cornflower-blue {
-    @extend .post-badge;
-
-    > span .fa {
-      color: $cornflower-blue;
-    }
-  }
-
   .post-badge-badge-accent-1 {
     @extend .post-badge;
 

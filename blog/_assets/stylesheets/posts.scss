@@ -224,36 +224,6 @@
   @include post-excerpt-color($post-background);
 }
 
-.post-excerpt-cornflower-blue {
-  @extend .post-excerpt;
-  $post-background: $cornflower-blue;
-  @include post-excerpt-color($post-background);
-}
-
-.post-excerpt-eton-blue {
-  @extend .post-excerpt;
-  $post-background: $eton-blue;
-  @include post-excerpt-color($post-background);
-}
-
-.post-excerpt-old-rose {
-  @extend .post-excerpt;
-  $post-background: $old-rose;
-  @include post-excerpt-color($post-background);
-}
-
-.post-excerpt-fire-opal {
-  @extend .post-excerpt;
-  $post-background: $fire-opal;
-  @include post-excerpt-color($post-background);
-}
-
-.post-excerpt-twilight-lavender {
-  @extend .post-excerpt;
-  $post-background: $twilight-lavender;
-  @include post-excerpt-color($post-background);
-}
-
 .post-excerpt-badge-accent-1 {
   @extend .post-excerpt;
   $post-background: $badge-accent-1;
