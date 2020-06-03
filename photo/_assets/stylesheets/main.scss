@@ -16,6 +16,10 @@ header {
   text-align: center;
   display: block;
 
+  h1 {
+    margin-bottom: 1em;
+  }
+
   @include media($medium-screen-up) {
     h1 {
       float: left;
@@ -53,6 +57,8 @@ main {
 }
 
 nav {
+  padding: 0 0 0 1.5em;
+
   a {
     display: inline;
     margin-right: 1em;
@@ -100,23 +106,27 @@ footer {
   .footer-social {
     li {
       display: inline-block;
-      padding: 0 .25em 0;
+      padding: 0 .4em 0;
+      margin-top: 1em;
     }
 
     @include media($medium-screen-up) {
       float: right;
+      margin-top: 0em;
     }
   }
 
   .footer-notices {
     li {
       display: inline-block;
-      padding: 0 .25em 0;
+      padding: 0 .4em 0;
+      margin-top: 2em;
       font-size: $base-font-size * .75;
     }
 
     @include media($medium-screen-up) {
       float: left;
+      margin-top: 0em;
     }
   }
 }
