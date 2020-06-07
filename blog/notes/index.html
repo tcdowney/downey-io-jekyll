@@ -11,13 +11,14 @@ description: Digital field notes on software development, Georgia Tech OMSCS cou
     <p>my digital field notes</p>
   </div>
 
-  <ul class="notes">
+  <div class="notes">
     {% for note in site.notes reversed %}
-        <li>
-          <div>
-            <a href="{{ note.url }}">{{ note.title }}</a> - <span><time>{{ note.date | date: '%B %d, %Y' }}</time></span>
-          </div>
-        </li>
+    <div class="note-title">
+      <a href="{{ note.url }}">{{ note.title }}</a>
+    </div>
+    <div class="note-date">
+      </span><time>{{ note.date | date: '%B %d, %Y' }}</time>
+    </div>
     {% endfor %}
-  </ul>
+      </div>
 </div>
