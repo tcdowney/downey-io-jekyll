@@ -1,8 +1,8 @@
 ---
 layout: post
 type: blog
-title: "Desired State Versus Actual State in Distributed Systems"
-sub_title: "Eventual Consistency in Kubernetes and the Real World™"
+title: "Desired State Versus Actual State in Kubernetes"
+sub_title: "Eventual Consistency in Kubernetes, Distributed Systems, and the Real World™"
 color: badge-accent-5
 icon: fa-cogs
 date: 2020-02-02
