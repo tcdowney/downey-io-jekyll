@@ -2,7 +2,7 @@
 layout: post
 type: note
 title: "Creating a Simple Kubernetes Debug Pod"
-sub_title: "Ubuntu Sleep Pod YAML"
+sub_title: "Premium Ubuntu Sleep Pod YAML"
 color: badge-accent-3
 icon: fa-code
 date: 2020-06-26
@@ -12,14 +12,16 @@ categories:
   - kubernetes
   - debug
 description:
-  "Sample YAML for creating a debug pod that runs Ubuntu."
+  "Sample YAML for creating a debug pod that runs Ubuntu and sleeps for a week."
 ---
 
-Sometimes it can be helpful to deploy a simple Ubuntu container to a cluster when debugging. Say you just applied some new `NetworkPolicy` and want to test network connectivity between namespaces. Or maybe you added a new mutating admission webhook and want to see that it installs the sidecar container you expected. One thing I like to do is deploy a `Pod` running Ubuntu that will let me install whatever tools I want. No need to worry about thin, [distroless](https://github.com/GoogleContainerTools/distroless) images that are so secure I can't do anything! With the Ubuntu image everything is just an `apt install` away!
+Sometimes it can be helpful to deploy a simple Ubuntu container to a cluster when debugging. Say you just applied some new `NetworkPolicy` and want to test network connectivity between namespaces. Or maybe you added a new mutating admission webhook to inject sidecar containers and you need something to test it out with. Or maybe you just want a sandbox container to deploy and play around in.
 
-However, you need to make it actually _do something_ or the container will just exit immediately. This is easy enough... just make it `sleep` for a long time! However I find myself doing this fairly frequently... and I hate having to write the YAML from scratch every time.
+One thing I like to do is deploy a `Pod` running Ubuntu that will let me install whatever tools I want. No need to worry about thin, [distroless](https://github.com/GoogleContainerTools/distroless) images that are so secure I can't do anything! With the Ubuntu image everything is just an `apt install` away. 😌
 
-This note is a [breadcrumb](https://downey.io/blog/leaving-breadcrumbs/) for myself to find and give me something to copy and paste from in the future. 🤞
+However, it's not as simple as running the `ubuntu` image on its own. You need to make it actually _do something_ or the container will just exit immediately. Fortunately this is easy enough... just make the container `sleep` for a long time!
+
+I do this fairly often and hate having to write the YAML from scratch everytime. So this post will serve as a [breadcrumb](https://downey.io/blog/leaving-breadcrumbs/) for my future self to find and copy and paste from in the future. 🤞
 
 ## The YAML
 The following YAML will deploy a `Pod` with a container running the [`ubuntu` Docker image](https://hub.docker.com/_/ubuntu/) that sleeps for a week. Plenty of time to do what you need!
@@ -86,5 +88,11 @@ Now you can install whatever you want! For example, I often install `curl` via t
 $ apt update && apt install curl -y
 ```
 
-## Why Not Ephemeral Debug Containers?
-One thing I'd like to note. Kubernetes 1.18+ introduces a new alpha feature called [ephemeral debug containers](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-running-pod/#ephemeral-container). This will let you attach a debug container that has all the tools you want to a **running Pod**. That's really cool and can cover many of the debugging use cases (plus some additional ones too!) for an Ubuntu sleep Pod. However, that's pretty bleeding edge still since 1.18 was just released a few months ago (March 25, 2020).
+## What About Ephemeral Debug Containers?
+If you've been following along with the latest Kubernetes releases, you may be aware of a new alpha feature in Kubernetes 1.18 known as [ephemeral debug containers](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-running-pod/#ephemeral-container). This features lets you take a **running Pod** and attach an arbitrary "debug" container that has all of the tools you might need to debug it. This is really powerful for several reasons:
+
+1. If a Pod is misbehaving you can attach the container to it and see what's going on directly.
+2. You can continue to follow best practices and publish small container images. No need to include debug utilities "just in case."
+3. No need to look up this page to copy paste some YAML for a hacky Ubuntu sleep pod!
+
+I'm really looking forward to them. However, Kubernetes 1.18 is still pretty bleeding age (at least at the time of writing this post) and the feature is still in alpha. There's also some use cases for the Ubuntu pod that it doesn't cover so this method still has some life in it yet!
