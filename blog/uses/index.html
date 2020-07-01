@@ -1,0 +1,165 @@
+---
+layout: default
+title: /uses
+type: uses
+description: "My /uses page"
+date: 2020-06-30
+last_modified_at: 2020-06-30
+---
+
+<div class="uses-list">
+  <div class='uses-header'>
+    <h1>/uses</h1>
+    <p>A list of the hardware, software, and tools that I use. Not an exhaustive list by any means, just the things that come to mind. Inspired by <a href="https://uses.tech/">uses.tech</a>.</p>
+    <p class="date">Last Updated: <time>{{ page.last_modified_at | date: '%B %d, %Y' }}</time></p>
+  </div>
+
+  <div class="uses">
+        <hr>
+        <h2>Software</h2>
+
+        <div>
+            <img src="https://images.downey.io/uses/terminal.png" alt="Screenshot of an iTerm2 terminal using tmux">
+        </div>
+
+        <h3>Operating Systems</h3>
+        <dl>
+            <dt>MacOS</dt>
+            <dd>Main OS that I use day-to-day</dd>
+            <dt>Ubuntu Linux</dt>
+            <dd>OS that all of my code runs on</dd>
+            <dt>Android</dt>
+            <dd>Mobile OS (but definitely tempted by the Apple Watch)</dd>
+        </dl>
+
+        <h3>Editors</h3>
+        <dl>
+            <dt><a href="https://code.visualstudio.com/">Visual Studio Code</a></dt>
+            <dd>Editor for local Golang development</dd>
+            <dt><a href="https://www.jetbrains.com/ruby/">RubyMine</a></dt>
+            <dd>Editor for local Ruby development</dd>
+            <dt><a href="https://github.com/luan/vimfiles">Luan</a>-flavored <a href="https://neovim.io/">neoVim</a></dt>
+            <dd>Editor for remote development</dd>
+        </dl>
+
+        <h3>Terminal</h3>
+        <dl>
+            <dt><a href="https://github.com/luan/tmuxfiles">Luan</a>-flavored <a href="https://en.wikipedia.org/wiki/Tmux">tmux</a></dt>
+            <dd>Terminal multiplexer for local/remote Linux development</dd>
+            <dt><a href="https://iterm2.com/index.html">iTerm2</a></dt>
+            <dd>Terminal multiplexer for local MacOS development</dd>
+            <dt><a href="https://github.com/clvv/fasd">fasd</a></dt>
+            <dd>Awesome utility for terminal nagivation. Can use the `z` alias to jump to a directory based on a partial name-match and frequency+recency.</dd>
+        </dl>
+
+        <h3>Misc</h3>
+        <dl>
+            <dt><a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a></dt>
+            <dd>Desktop browser - I'm a big fan of Mozilla's efforts around web standards, Rust, and focus on user privacy.</dd>
+            <dt><a href="https://brave.com/dow140">Brave</a></dt>
+            <dd>Mobile browser  - I use Brave on Android primarily for its built-in ad/tracker blocking. Really helps save my mobile bandwidth.</dd>
+        </dl>
+        <hr>
+        <h2>Hardware</h2>
+            <p>The various hardware I use at home for software development and computing in general. At work I use a boring old iMac or Mac Mini in <a href="https://tanzu.vmware.com/content/blog/what-s-the-best-way-to-pair">pairing configuration</a>. At home I use (and these days every day is working from home):</p>
+
+            <h3>Computers</h3>
+
+            <h4>Hack Mini</h4>
+            <div>
+                <img src="https://images.downey.io/2018-03-04/hack-mini-linux-workstation-10.jpg" alt="Orange and off white mITX Linux Computer">
+            </div>
+            <p>My "<a href="https://downey.io/blog/hack-mini-linux-workstation-case-mod-log/">Hack Mini</a>" is my daily driver. It's a Hackintosh, housed in a small mITX case that I <a href="https://downey.io/blog/hack-mini-linux-workstation-case-mod-log/">customized</a>. It's got an Intel i7 (7700) quad-core processor, 16GB of RAM, and an NVIDIA 1050ti GPU. I love it when it works. However, every software update -- no matter how mundane -- really scares me. There's no telling if the update will destroy it so I've got to take full image backups weekly using <a href="https://bombich.com/">Carbon Copy Cloner</a>. It's a real pain in the butt to maintaint. Definitely going to be my first and last Hackntosh (not that I have a choice thanks to <a href="https://www.apple.com/newsroom/2020/06/apple-announces-mac-transition-to-apple-silicon/">Apple silicon</a>!).</p>
+            
+            <h4>TomorrowLAN Linux Server</h4>
+            <div>
+                <img src="https://images.downey.io/blog/monticello-ryzen-based-machine-learner-downey.jpg" alt="The AMD Ryzen based Linux server that ran most of my project code. Hostname: TomorrowLAN">
+            </div>
+            <p>My hexacore (12 vCPU!) Linux box that I `ssh` on to and use for development. It has an AMD Ryzen 2600 and 16GB of RAM (used to be 48GB but some of the RAM died 😭). Enough to comfortably run a <a href="https://kind.sigs.k8s.io/">Kubernetes in Docker</a> cluster. When idle I put the cores to use by <a href="https://foldingathome.org/">folding proteins</a>. I'm really pleased with how efficient, yet powerful, the Ryzen processor is. This was my first AMD build and I'm now definitely a fan.</p>
+
+            <h4>Raspberry Pis</h4>
+            <div>
+                <img src="https://images.downey.io/raspi/raspi-kubernetes-cluster-4.jpg" alt="Raspberry Pi based Kubernetes Cluster">
+            </div>
+            <p>I've got a whole bunch of <a href="https://www.raspberrypi.org/">Raspberry Pis</a>. I've legitimately lost count. I know I have at least one original Pi, two Zeros, eight-ish 3B and 3B+, and five Raspberry Pi 4s with 4GB of RAM. Most of the 3Bs make up the <a href="https://downey.io/blog/how-to-build-raspberry-pi-kubernetes-cluster/">Raspberry Pi Kubernetes cluster</a> that's pictured above. The 4s will comprise an even better cluster. It will use Power-over-Ethernet (PoE), be net-booted off of an SSD, and more. Will be pretty cool... if I ever get around to building it. 😅</p>
+
+            <h4>Other 'Puters</h4>
+            <dl>
+                <dt>Windows "Gaming" PC (2016)</dt>
+                <dd>I built a flashy PC for gaming in 2016 that's decked out in RGBs with a tempered glass case. I'd take a picture of it, but it's full of dust and not presentable! It's got an Intel i7 (6700k) quad-core processor, 32GB of RAM, and an NVIDIA 1070 GPU. These days I mostly use it for editing photos and <a href="https://foldingathome.org/">folding proteins</a>.</dd>
+                <dt>Macbook Air (2014)</dt>
+                <dd>This is the most solid laptop I've ever owned. Over six years old and the batter still holds a decent charge. It's only got 4GB of RAM, but it's still great for web browsing and I can develop on it by `ssh`ing in to my Linux box.</dd>
+                <dt>Orange iMac (1998)</dt>
+                <dd>This was my family's first computer (pictured above behind the Raspberry Pi Kubernetes cluster). My parents were going to get rid of it, but I said "please no!" Now I drag it around with me across the country. I consider it to be more a piece of art at this point.</dd>
+            </dl>
+
+            <hr>
+            <h3>Keyboards and Peripherals</h3>
+            <p>I've got way too many mechanical keyboards, keysets, custom switches, etc. It's kind of embarassing how much money I've spent on them over the years<sup>1</sup>. So I'm going to keep this section brief and list the few that I use daily. There's gonna be a lot of jargon in this section, so if you're actually interested in getting in to mechanical keyboards I recommend checking out the <a href="https://keyboard.university/">Keyboard University</a>! 😂</p>
+
+            <p><em><sup>1</sup>Thinking back on how much I've spent... I'm going to shamelessly use some afilliate links below to try and recoup my losses. Maybe I'll earn a few cents.</em></p>
+
+            <div>
+                <img src="https://images.downey.io/uses/realforce-keyboard-wood-palm-rest.jpg" alt="Realforce Keyboard with Wooden Palm Rest">
+            </div>
+
+            <dl>
+                <dt><a href="https://amzn.to/3dFfeEl">Topre Realforce 87u 55g</a></dt>
+                <dd>My daily driver at home, a tenkeyless Topre switched keyboard (pictured above). Not much to say about it other than it's built like a tank and I love it.</dd>
+                <dt><a href="https://amzn.to/3iiwN0O">Leopold FC750R PD (Cherry Brown switches)</a></dt>
+                <dd>I use a sound-dampened Leopold tenkeyless keyboard with cherry brown switches. It has a set of EnjoyPBT Cherry 9009 keycaps from <a href="https://kbdfans.com/products/enjoypbt-9009">KBDFans</a>. I'd include a picture, but it's currently abanded in my office in San Francisco due to COVID-19. If I didn't have the Realforce at home though I'd totally risk a BART trip to fetch it, though.</dd>
+                <dt><a href="https://amzn.to/31sb5RO">Logitech MX Master 2s mouse</a></dt>
+                <dd>I got this mouse on sale and I'm a fan of how solid it feels and how long its battery lasts. The flywheel took some getting used to, but now I'm pretty sold on that as well.</dd>
+                <dt><a href="https://drop.com/buy/npkc-wooden-wrist-rests?utm_source=linkshare&referer=2322J3">Wooden Palm Rests</a></dt>
+                <dd>This is probably the most unique part of my keyboard setup. Wooden palm wrests (pictured above)! I have a couple that I got from Massdrop made by a company called NPKC and they're wonderful. I find that they give just the right amount of support without encouraging you to compress your palms/wrists like I've found cushioned ones to do.</dd>
+            </dl>
+
+            <hr>
+            <h3>Monitors</h3>
+            <dl>
+                <dt><a href="https://amzn.to/3eLxZrg">Acer V277U 27" WQHD 2560X1440 IPS</a></dt>
+                <dd>This is my main monitor. The size and resolution is perfect for my setup and I've found the IPS display to be excellent for my purposes (software development and amateur photography). My only complain is that the buttons feel pretty fragile.</dd>
+                <dt><a href="https://amzn.to/2ZpptYB">ASUS VS247H-P 23.6" 1920x1080</a></dt>
+                <dd>I purchased a pair of these in 2013 after graduating from IU. They're still going strong, no complaints here.</dd>
+                <dt><a href="https://amzn.to/2VsDqn6">Hewlett Packard BT861AT HP Single Monitor Arm (2)</a></dt>
+                <dd>I don't think they make these specific models anymore, but I love having my monitors on articulating arms. They let me rearrange the displays as necessary and even rotate them into portrait mode.</dd>
+            </dl>
+
+            <hr>
+            <h3>Audio/Visual</h3>
+
+            <div>
+                <img src="https://images.downey.io/uses/rode-podmic-durham-cathedral-pipes.jpg" alt="Rode PodMic with Durhma Cathedral Pipes Preamp">
+            </div>
+
+            <dl>
+                <dt><a href="https://drop.com/buy/massdrop-x-sennheiser-pc37x-gaming-headset?utm_source=linkshare&referer=2322J3">Massdrop X Sennheiser PC37X Gaming Headset</a></dt>
+                <dd>At work I pair-program all day every day. Since I'm part of a distributed team we pair remotely using tools like tmux and video chats. I'm a big fan of this Sennheiser headset (and it's big brother the <a href="https://amzn.to/3g8a8lN">Sennheiser Game Zero</a>). It's comfortable enough to wear all day and the mic can be muted by raising the boom. This is way better than muting via software (or even a hardware button) because it provides a visual signal to other video call participants that your mic is muted. So glad I purchased a pair for myself before COVID hit and they all went out of stock.</dd>
+                <dt><a href="https://amzn.to/31v0ZzE">Logitech C922 HD Pro Webcam</a></dt>
+                <dd>I purchased this webcam originally for the Georgia Tech Online Master's program I was enrolled in. All exams were remote proctored and a good web cam was a requirement. This one is pretty decent.</dd>
+                <dt><a href="https://amzn.to/2ZiPOr2">Rode PodMic Cardioid Dynamic Podcasting Microphone</a></dt>
+                <dd>Purchased this microphone for speaking at virtual conferences. To hear an example, my portion of this talk on <a href="https://www.youtube.com/watch?v=A8fvYySV5WU">Networking in Cloud Foundry for Kubernetes</a> was recorded with it. It's pretty heavy, but I've found that a <a href="https://amzn.to/3eMkxTN">Samson MB1 Mini Boom</a> stand can support it well.</dd>
+                <dt><a href="https://amzn.to/3gdEGTo">Focusrite Scarlett 2i2 (3rd Gen) USB Audio Interface</a></dt>
+                <dd>The audio interface I use with my Rode PodMic.</dd>
+                <dt><a href="https://cathedralpipes.site/amplifiers-c-68/the-durham-mkii-mic-booster-preamp-p-208.html">The Durham MKII Mic Preamp</a></dt>
+                <dd>The PodMic/Scarlett 2i2 combo was pretty quiet out of the box and I was worried about streaming situations where I wouldn't be able to boost the volume in post. I did some research and found that this preamp from Cathedral Pipes looked like the most budget friendly option. I'm pleased to say it works pretty well!</dd>
+            </dl>
+
+        <hr>
+        <h2>Photography</h2>
+        <p>I like going on hikes and <a href="https://photo.downey.io/">taking pictures</a>. Here's what I use for that!</p>
+
+        <div>
+            <img src="https://images.downey.io/uses/olympus-omd-em10.jpg" alt="Olympus OM-D E-M10 Mark I camera with concrete Oddish planter">
+        </div>
+
+        <dl>
+            <dt><a href="https://amzn.to/3eKKZgL">Olympus OM-D E-M10 Mark I</a></dt>
+            <dd>My first "real" camera that will always have a special place in my heart. I love Olympus's mirrorless offerings and their magical in-body stabilization. So sad that they're <a href="https://www.bbc.com/news/technology-53165293">not going to make cameras anymore</a>. And with my favorite lens, the <a href="https://amzn.to/2VxETJ7">20mm Panasonic "pancake"</a>, it's super portable. I've taken this one everywhere.</dd>
+            <dt><a href="https://amzn.to/2VuNdsO">Nikon D750</a></dt>
+            <dd>I use my full-frame Nikon for night photography. It can suck in a lot of light! It's also super heavy so I only take it out when I've got something specific in mind.</dd>
+            <dt><a href="https://amzn.to/2NI4sCY">Olympus OM-D E-M10 Mark II</a></dt>
+            <dd>Just got this one when I heard Olympus wasn't going to make cameras anymore. My Mark I is starting to show its age so this will serve as its replacement.</dd>
+        </dl>
+  </div>
+</div>

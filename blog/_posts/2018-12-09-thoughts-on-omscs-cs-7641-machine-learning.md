@@ -17,7 +17,7 @@ description:
 ---
 
 <div>
-<img src="https://images.downey.io/blog/monticello-ryzen-based-machine-learner-downey.jpg" alt="The AMD Ryzen based Linux server that ran most of my project code. Hostname: monticello">
+<img src="https://images.downey.io/blog/monticello-ryzen-based-machine-learner-downey.jpg" alt="The AMD Ryzen based Linux server that ran most of my project code. Hostname: TomorrowLAN">
 </div>
 
 Wow, it's been months since I've written anything here. Between taking on additional leadership responsibilities at work and enduring through Georgia Tech's graduate Machine Learning course, it has just been difficult to find the time -- and energy. 😩

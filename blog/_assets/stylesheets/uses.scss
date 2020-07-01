@@ -1,0 +1,33 @@
+.uses-list {
+    width: 90%;
+    margin: auto;
+  
+    @include media($large-screen) {
+      width: 70%;
+    }
+  
+    & > .uses {  
+      & > * {
+        text-align: left;
+      }
+    }
+  
+    > .uses-header {
+      width: 100%;
+      padding-top: golden-ratio(1em, -1);
+      margin-bottom: $base-line-height;
+  
+      p {
+        @extend .subdued;
+      }
+
+      .date {
+        color: transparentize($base-font-color, .4);
+        font-style: italic;
+        font-size: 1em;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  
