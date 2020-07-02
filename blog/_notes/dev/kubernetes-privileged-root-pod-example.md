@@ -74,17 +74,17 @@ spec:
   - image: ubuntu
     command:
       - "sleep"
-      - "3600" # adjust this as needed -- use only as long as you need
+      - "3600"
     imagePullPolicy: IfNotPresent
     name: ubuntu
     securityContext:
       capabilities:
-        add: ["NET_ADMIN", "SYS_ADMIN"] # add the capabilities you need https://man7.org/linux/man-pages/man7/capabilities.7.html
-      runAsUser: 0 # run as root (or any other user)
-  restartPolicy: Never # we want to be intentional about running this pod
-  hostIPC: true # Use the host's ipc namespace https://www.man7.org/linux/man-pages/man7/ipc_namespaces.7.html
-  hostNetwork: true # Use the host's network namespace https://www.man7.org/linux/man-pages/man7/network_namespaces.7.html
-  hostPID: true # Use the host's pid namespace https://man7.org/linux/man-pages/man7/pid_namespaces.7.html
+        add: ["NET_ADMIN", "SYS_ADMIN"]
+      runAsUser: 0
+  restartPolicy: Never
+  hostIPC: true
+  hostNetwork: true
+  hostPID: true
 EOF
 ```
 
