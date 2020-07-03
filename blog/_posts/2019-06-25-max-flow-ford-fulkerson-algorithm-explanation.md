@@ -25,6 +25,13 @@ description:
 
 Before reading further, make sure to watch the necessary prerequisite lecture by Matthew McConaughey above. His words of wisdom are the key to all of this.
 
+<blockquote class="big-quote">
+  <p class="quotation">
+  I know there are those who say you can't go back. Yes you can.
+  </p>
+— Matthew McConaughey on the Maximum Flow Problem
+</blockquote>
+
 ## What is the Max Flow Problem?
 
 The [max flow problem](https://en.wikipedia.org/wiki/Maximum_flow_problem) is an optimization problem for determining the maximum amount of _stuff_ that can flow at a given point in time through a single source/sink [flow network](https://en.wikipedia.org/wiki/Flow_network). A flow network is essentially just a directed graph where the edge weights represent the flow capacity of each edge. The _stuff_ that flows through these networks could be literally anything. Maybe it's traffic driving through a city, water flowing through pipes, or bits traveling across the internet.
@@ -74,7 +81,12 @@ Using the naive greedy algorithm described above on our flow network will result
 
 How can we do this though? This is where the wisdom of Matthew McConaughey comes in.
 
-_**"Sometimes you've got to go back to actually move forward."**_
+<blockquote class="big-quote">
+  <p class="quotation">
+  Sometimes you've got to go back to actually move forward.
+  </p>
+— Also Matthew McConaughey
+</blockquote>
 
 ## The Residual Graph
 
