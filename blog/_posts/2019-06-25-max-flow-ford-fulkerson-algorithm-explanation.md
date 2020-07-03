@@ -29,7 +29,7 @@ Before reading further, make sure to watch the necessary prerequisite lecture by
   <p class="quotation">
   I know there are those who say you can't go back. Yes you can.
   </p>
-— Matthew McConaughey on the Maximum Flow Problem
+  <span>— Matthew McConaughey on the Maximum Flow Problem</span>
 </blockquote>
 
 ## What is the Max Flow Problem?
@@ -85,7 +85,7 @@ How can we do this though? This is where the wisdom of Matthew McConaughey comes
   <p class="quotation">
   Sometimes you've got to go back to actually move forward.
   </p>
-— Also Matthew McConaughey
+  <span>— Also Matthew McConaughey</span>
 </blockquote>
 
 ## The Residual Graph

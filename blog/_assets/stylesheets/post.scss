@@ -363,38 +363,42 @@ article {
 
 blockquote.big-quote {
     all:unset;
-}
 
-.quotation{
-  font-size: 1.25em;
-  quotes: "\201C""\201D""\2018""\2019";
-  padding: .5em 1em;
-  line-height: 2em;
-}
+    p{
+      font-size: 1.25em;
+      quotes: "\201C""\201D""\2018""\2019";
+      padding: .5em 1em;
+      line-height: 2em;
+    }
 
-p.quotation {
-  text-align: center;
-  margin-bottom: 0;
-}
+    p {
+      text-align: center;
+      margin-bottom: 0;
+    }
 
-.quotation:before {
-  content: open-quote;
-  display: inline;
-  height: 0;
-  line-height: 0;
-  left: -10px;
-  position: relative;
-  top: 5px;
-  font-size: 1.5em;
-}
+    p:before {
+      content: open-quote;
+      display: inline;
+      height: 0;
+      line-height: 0;
+      left: -10px;
+      position: relative;
+      top: 5px;
+      font-size: 1.5em;
+    }
 
-.quotation:after {
-  content: close-quote;
-  display: inline;
-  height: 0;
-  line-height: 0;
-  left: 10px;
-  position: relative;
-  top: 5px;
-  font-size: 1.5em;
+    p:after {
+      content: close-quote;
+      display: inline;
+      height: 0;
+      line-height: 0;
+      left: 10px;
+      position: relative;
+      top: 5px;
+      font-size: 1.5em;
+    }
+
+    span {
+      color: transparentize($base-font-color, .4);
+    }
 }
