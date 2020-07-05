@@ -54,7 +54,7 @@ sysbench --test=cpu --cpu-max-prime=50000 --num-threads=4 run
 ### Measuring Temperature and CPU Clock Frequency
 While running this benchmark, I ran [this script](https://github.com/tcdowney/knick-knacks/blob/7cc6c9e47fd918f5d68bb938dec952dd2a323b58/raspberry-pi/raspi-metrics.sh) in the background to output a CSV containing the temperature and CPU frequency for every second of the experiment.  Feel free to check out the script itself, but the important bits are the `vcgencmd measure_temp` command for getting the Raspberry Pi's temperature and the `vcgencmd measure_clock arm` command for getting the **current** clock frequency of the Pi's ARM processor.
 
-The `vcgencmd measure_clock arm` command was a new one for me. Last time I just used whatever was in the `/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq` file, but discovered that this is more like a "desired frequency." The `vcgencmd measure_clock arm` command was giving me the _actual_ frequency, which is useful for detecting thermal throttling<sup>1</sup>. 
+The `vcgencmd measure_clock arm` command was a new one for me. Last time I just used whatever was in the `scaling_cur_freq` file, but discovered that this is more like a "desired frequency." The `vcgencmd measure_clock arm` command was giving me the _actual_ frequency, which is useful for detecting thermal throttling<sup>1</sup>.
 
 ```console
 pi@raspberrypi:~ $ vcgencmd measure_temp
