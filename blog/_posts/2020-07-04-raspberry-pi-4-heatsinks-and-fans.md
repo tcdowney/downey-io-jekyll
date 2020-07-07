@@ -6,6 +6,7 @@ sub_title:  "Comparing Passive Heatsinks and Active Cooling for the Raspberry Pi
 color: badge-accent-4
 icon: fa-flask
 date: 2020-07-04
+last_modified_at: 2020-07-06
 categories:
   - raspberry pi 4B
   - raspberry pi heat sinks
@@ -158,9 +159,11 @@ For the fifth experiment I tested a case that I purchased for its aesthetics. Th
 
 Internally the Argon NEO is affixed to the Pi's CPU with a piece of included thermal tape. This connects it to an aluminum column that lets it radiate heat throughout the entire case. Effectively making it into a massive heatsink! The results speak for themselves. We start at 34°C and make a very gradual climb as the benchmark runs. It tops out at 58°C -- our best performance yet!
 
-I thought for sure that the small size of the case would inhibit air flow and cause it to get pretty hot, but I was pleasantly surprised with how well it performed. For my Raspberry Pi 3 I've been using a [Flirc Case](https://amzn.to/3e0zOiA) that I've been pretty happy with. This one, however, definitely gives it a run for its money.
+I thought for sure that the small size of the case would inhibit air flow and cause it to get pretty hot, but I was pleasantly surprised with how well it performed<sup>2</sup>. For my Raspberry Pi 3 I've been using a [Flirc Case](https://amzn.to/3e0zOiA) that I've been pretty happy with. This one, however, definitely gives it a run for its money.
 
 **🙉 Noise Levels:** Silent! It's passively cooled.
+
+_<sup>2</sup> - I ran a longer experiment later and the Argon NEO was **not** able to keep a Pi cool when under load for hours at time. See the update at the bottom of the post for more details._
 
 ## Experiment 6: Cooling Tower + 40mm RGB Fan
 
@@ -183,8 +186,30 @@ The only downsides are that it's bulky (about triples the height of the Pi) and 
 ## Summary
 If all you care about is absolute cooling performance, go with the [cooler tower](https://amzn.to/3iy4U4C). It looks a bit ridiculous, it's expensive, and it's bulky, but it can sure keep a Pi cool.
 
-However, if you can spare a few degrees and would prefer a more protective and practical case, I strongly recommend the [Argon NEO](https://amzn.to/2BtOzO4).
+However, if you can spare a few degrees and would prefer a more protective and practical case, I strongly recommend the [Argon NEO](https://amzn.to/2BtOzO4). This case is good if you have short (under 10 minute) bursty load, but not if you expect to run the Pi under sustained CPU load. Otherwise seek something with active cooling.
 
 If you want to get by on a budget, just buy an aluminum heatsink. They only cost a few cents each when purchased in bulk. If you think you're likely to have sustained CPU intensive workloads, spend a few dollars more and get a [case with a small fan](https://amzn.to/2ZGJxpe).
 
 If you're interested in the [PoE adapter](https://amzn.to/3ioFkiy) because you want it for its Power over Ethernet capabilities, know that it will do a fine job at cooling your Pi. However, definitely don't buy it just for the fan! I'm satisfied enough, though, that the PoE adapters will be good enough for my future cluster.
+
+---
+
+### Important Update
+
+**_2020-07-06_**
+
+I was impressed with the Argon NEO so chose to use it to run some long-running CPU-intensive tasks. I checked in on it later and just about burned myself on it! 🔥🚒
+
+It was so hot I decided to put it on a silicone coaster to protect the furniture and run some longer tests. Here are the results of it versus the Cooler Tower when run for the better part of a day.
+
+<div>
+<img class="image-frame" src="https://images.downey.io/raspi/raspi-4-temp-charts/long-term-argon-neo.png" alt="Raspberry Pi 4 with Argon NEO long 8000 second experiment temperature chart">
+</div>
+
+After around 10 minutes of continuous CPU load the Raspberry Pi in the Argon NEO case eventually reached 80°C and reached a max temperature of 86°C. During this time it experience significant thermal throttling and was unable to cool itself back below 80. Once the CPU load was removed it took the case a while to passively cool the Pi back down to reasonable levels.
+
+<div>
+<img class="image-frame" src="https://images.downey.io/raspi/raspi-4-temp-charts/long-term-cooler-tower.png" alt="Raspberry Pi 4 with Cooler Tower long 8000 second experiment temperature chart">
+</div>
+
+The Cooling Tower + 40mm fan, on the other hand, only reached a max of 32°C and was able to rapidly cool itself back to the baseline once the experiment stopped.
