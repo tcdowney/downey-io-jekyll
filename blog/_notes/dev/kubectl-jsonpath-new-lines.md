@@ -60,7 +60,7 @@ This outputs:
 10.244.0.4
 ```
 
-Awesome! Now we can work with the output using all sorts of standard UNIX utilities that operate on new line (e.g. `sort`, `awk`, `uniq`, etc.).
+Awesome! Now we can work with the output using all sorts of standard UNIX utilities that operate on new line (e.g. `sort`, `xargs`, `uniq`, etc.).
 
 ## Bonus
 
