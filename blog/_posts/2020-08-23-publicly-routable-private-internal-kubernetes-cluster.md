@@ -158,7 +158,7 @@ spec:
     app: httpbin
 ```
 
-That's cool. We can now reach it at `httpbin.default.svc.cluster.local` from within the cluster on port 80. We can also reach it locally from the by using the `kubectl port-forward` command.
+That's cool. We can now reach it at `httpbin.default.svc.cluster.local` from within the cluster on port 80. This next step isn't necessary, but for fun we can also reach it locally from the by using the `kubectl port-forward` command.
 
 ```console
 tim@tomorrowlan:~/workspace/k8s-yaml$ kubectl port-forward service/httpbin 8000:80
@@ -166,9 +166,10 @@ Forwarding from 127.0.0.1:8000 -> 80
 Forwarding from [::1]:8000 -> 80
 ```
 
-With that running you can just `curl localhost:8000` and hit the `httpbin` pods.
+With that running you can just `curl localhost:8000` and hit the `httpbin` pods. So far so good!
+Go ahead and kill the `kubectl port-forward`. It's time to make it reachable for everyone else.
 
-Next we'll create an `Ingress` resource to let Contour know about it.
+We can do this by creating an `Ingress` resource to let Contour know about our `httpbin` service and what traffic should be routed to it.
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -191,7 +192,15 @@ That's it! We can now access the `httpbin` app on the internet at [http://httpbi
 <img src="https://images.downey.io/kubernetes/httpbin-downey-cloud.png" alt="The httpbin app running on a public domain">
 </div>
 
-What's awesome is that these steps are not actually any different than using a `Deployment`, `Service`, and `Ingress` on a managed Kubernetes cluster!
+So what all just happened? Well...
+
+1. Contour installed a `LoadBalancer` service that points to its Envoy proxy
+2. The inlets-operator saw we have a `LoadBalancer` service that has no IP so it goes ahead and provisions a publicly reachable VM and assigns that VM's public IP to the service
+3. We annotated the Contour `LoadBalancer` service with a special annotation to instruct external-dns to configure our cloud DNS to point `*.k8s.downey.cloud` to the IP that Inlets provisioned
+4. Contour saw the `Ingress` resource we created for `httpbin` and configured its Envoy to direct requests going to `httpbin.k8s.downey.cloud` to the `httpbin` `ClusterIP` service
+5. The `httpbin` `ClusterIP` service enabled the traffic to hit the `httpbin` pods
+
+What's awesome is that the steps for the `httpbin` app itself are not actually any different than using a `Deployment`, `Service`, and `Ingress` on a managed Kubernetes cluster! There was a lot that happened behind the scenes, but once it was all set up it basically just works.
 
 ## Summary
 We've now had the chance to see one of my favorite aspects of Kubernetes -- how extensible it is! By combining a few building blocks, we're able to quickly replicate the `LoadBalancer` service experience of a  managed Kubernetes cluster on a personal dev machine. I've got 12 vCPU and 48 gigs of RAM at my disposal so I have enough resources to develop non-trivial workloads _and_ I can still demo the end result online. All for the five bucks a month it costs to run the Inlets exit node.
