@@ -192,13 +192,21 @@ That's it! We can now access the `httpbin` app on the internet at [http://httpbi
 <img src="https://images.downey.io/kubernetes/httpbin-downey-cloud.png" alt="The httpbin app running on a public domain">
 </div>
 
-So what all just happened? Well...
+So what all just happened? Well let's look back at the diagram from before...
 
-1. Contour installed a `LoadBalancer` service that points to its Envoy proxy
-2. The inlets-operator saw we have a `LoadBalancer` service that has no IP so it goes ahead and provisions a publicly reachable VM and assigns that VM's public IP to the service
-3. We annotated the Contour `LoadBalancer` service with a special annotation to instruct external-dns to configure our cloud DNS to point `*.k8s.downey.cloud` to the IP that Inlets provisioned
-4. Contour saw the `Ingress` resource we created for `httpbin` and configured its Envoy to direct requests going to `httpbin.k8s.downey.cloud` to the `httpbin` `ClusterIP` service
-5. The `httpbin` `ClusterIP` service enabled the traffic to hit the `httpbin` pods
+<div>
+<a href="https://images.downey.io/kubernetes/tomorrowlan-k8s-network-diagram.png">
+<img class="image-frame" src="https://images.downey.io/kubernetes/tomorrowlan-k8s-network-diagram.png" alt="Architecture diagram of cluster using Inlets, Contour, and external-dns.">
+</a>
+</div>
+
+1. Contour came with a `LoadBalancer` service that points to its Envoy proxy which we annotated with `external-dns.alpha.kubernetes.io/hostname: "*.k8s.downey.cloud"`
+2. The inlets-operator saw we have a `LoadBalancer` service that has no IP so it provisioned a cloud VM with a public IP
+3. The inlets-operator oepened a tunnel between an Envoy running on the cloud VM and Contour's Envoy
+4. Since Contour's `LoadBalancer` service has the `external-dns.alpha.kubernetes.io/hostname` annotation, external-dns configured DNS to point to the service's public IP
+5. Contour saw the `Ingress` resource we created for `httpbin` and configured its Envoy to direct requests going to `httpbin.k8s.downey.cloud` to the `httpbin` `ClusterIP` service
+6. The `httpbin` `ClusterIP` service directed the traffic to the `httpbin` pods
+7. This Rube Goldberg machine resulted in our pods being publicly reachable
 
 What's awesome is that the steps for the `httpbin` app itself are not actually any different than using a `Deployment`, `Service`, and `Ingress` on a managed Kubernetes cluster! There was a lot that happened behind the scenes, but once it was all set up it basically just works.
 
