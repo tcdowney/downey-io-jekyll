@@ -192,6 +192,8 @@ That's it! We can now access the `httpbin` app on the internet at [http://httpbi
 <img src="https://images.downey.io/kubernetes/httpbin-downey-cloud.png" alt="The httpbin app running on a public domain">
 </div>
 
+## Recap
+
 So what all just happened? Well let's look back at the diagram from before...
 
 <div>
@@ -210,7 +212,6 @@ So what all just happened? Well let's look back at the diagram from before...
 
 What's awesome is that the steps for the `httpbin` app itself are not actually any different than using a `Deployment`, `Service`, and `Ingress` on a managed Kubernetes cluster! There was a lot that happened behind the scenes, but once it was all set up it basically just works.
 
-## Summary
 We've now had the chance to see one of my favorite aspects of Kubernetes -- how extensible it is! By combining a few building blocks, we're able to quickly replicate the `LoadBalancer` service experience of a  managed Kubernetes cluster on a personal dev machine. I've got 12 vCPU and 48 gigs of RAM at my disposal so I have enough resources to develop non-trivial workloads _and_ I can still demo the end result online. All for the five bucks a month it costs to run the Inlets exit node.
 
 I, at least, think that's pretty cool.
