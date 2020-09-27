@@ -12,7 +12,7 @@ categories:
   - tcpdump kubernetes pod
   - wireshark kubernetes pod
 excerpt:
- "he other day I had a situation where I needed to debug network traffic between an app and its Envoy sidecar. The app was using a minimal distroless container image and didn't have easy access to tcpdump. Fortunately, newer versions of Kubernetes have alpha support for ephemeral debug containers which allow us to spin up temporary containers (with debug tools) inside a running pod! In this post we'll see how we can use ephemeral containers and tcpdump to capture network traffic from a running pod."
+ "he other day I had a situation where I needed to debug network traffic between an app and its sidecar proxy. The app was using a minimal distroless container image and didn't have easy access to tcpdump. Fortunately, newer versions of Kubernetes have alpha support for ephemeral debug containers which allow us to spin up temporary containers (with debug tools) inside a running pod! In this post we'll see how we can use ephemeral containers and tcpdump to capture network traffic from a running pod."
 description:
   "Using ephemeral containers to run tcpdump against a running Kubernetes Pod."
 ---
@@ -21,40 +21,72 @@ description:
 <img src="https://images.downey.io/kubernetes/kubernetes-tcpdump-wireshark-example.png" alt="tcpdump of a kubernetes pod displayed in wireshark">
 </div>
 
-The other day I had a situation where I needed to debug network traffic between an app and its Envoy sidecar. Fortunately, since the app image was Ubuntu-based and it was an unimportant dev cluster, I was able to just `kubectl exec` into a shell on the container and install `tcpdump` to capture packets.
+The other day I had a situation where I needed to debug network traffic between an app and its Envoy sidecar proxy. Fortunately, since the app image was Ubuntu-based and it was an unimportant dev cluster, I was able to just `kubectl exec` into a shell on the container and `apt install tcpdump`.
 
-With `tcpdump` installed, I could run it and pipe the output to my local [Wireshark](https://www.wireshark.org/).
+Now that I had `tcpdump` installed, I could run it and pipe the output to [Wireshark](https://www.wireshark.org/) on my local machine.
 
 ```console
 kubectl exec my-app-pod -c nginx -- tcpdump -i eth0 -w - | wireshark -k -i -
 ```
 
-It was pretty slick, if I do say so myself, and made me feel like a [Hacker](https://en.wikipedia.org/wiki/Hackers_(film)). 😎
+It was pretty slick, if I do say so myself, and made me feel like a [Hackers](https://en.wikipedia.org/wiki/Hackers_(film)) character. 😎
 
-But what if this app had been using a [`distroless`](https://github.com/GoogleContainerTools/distroless) base image or was built with a [buildpack](https://buildpacks.io/)? I wouldn't have been able to install `tcpdump` on the fly, that's for sure. Maybe I could have installed it when building the image initially, but that adds a lot of friction and would require me to redeploy the Pods. Not ideal -- especially if the bug is hard to reproduce.
+There's some issues with this, though. 😳
+
+1. I had to `kubectl exec` and install arbitrary software from the internet on a running Pod. This is fine for internet-connected dev environments, but probably not something you'd want to do (or be able to do) in production.
+2. If this app had been using a minimal [`distroless`](https://github.com/GoogleContainerTools/distroless) base image or was built with a [buildpack](https://buildpacks.io/) I wouldn't have been able to `apt install`.
+3. If I rebuilt the app container image to include `tcpdump` that would have required the Pods to be recreated. Not ideal if the bug is tricky to reproduce.
+
+So installing `tcpdump` as needed isn't always an option. Why not just include it when building the initial container image for the app so that it's always available? That path leads to image bloat and the more unecessary packages we include in our image the more potential attack vectors there are.
+
+So what else can we do?
 
 Fortunately for us, newer versions of Kubernetes come with some alpha features for [debugging running pods](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-running-pod/#ephemeral-container).
 
 ## Ephemeral Debug Containers
-Kubernetes 1.16 has a new [Ephemeral Containers](https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/) feature that is perfect for our use case. With Ephemeral Containers, we can ask for a new temporary container with the image of our choosing to run inside an existing Pod. This means we can keep the main images for our applications lightweight and minimal and then slap on a heavyweight image with all of our favorite debug tools as necessary.
+Kubernetes 1.16 has a new [Ephemeral Containers](https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/) feature that is perfect for our use case. With Ephemeral Containers, we can ask for a new temporary container with the image of our choosing to run inside an existing Pod. This means we can keep the main images for our applications lightweight and then bolt on a heavy image with all of our favorite debug tools when necessary.
 
-For example, let's say we have an app using a `distroless` image, and we really want to open up a shell and poke around. We could use Ephemeral Containers for that!
+For the following examples I'll be using my [`mando` app](https://github.com/tcdowney/mando) which is running as a Pod named `mando-655449598d-fqrvb`. It's built with a Go buildpack ([you can read more on that here](https://downey.io/blog/how-to-use-kbld-with-kubernetes/)), so it's the perfect example of an app with a minimal image.
+
+To demonstrate how this can be hard to work with, let's first try to open a shell in it the traditional way.
 
 ```console
-kubectl alpha debug -it <my-app-pod> --image=busybox --target=<container-name-in-my-app-pod>
+kubectl exec -it mando-655449598d-fqrvb -- /bin/sh
+
+error: Internal error occurred: error executing command in container: failed to exec in container: failed to start exec "3ca55f9b6457995be6c6254a8d274706e42d89f431956b5b02ad9eade5e5f788": OCI runtime exec failed: exec failed: container_linux.go:370: starting container process caused: exec: "/bin/sh": stat /bin/sh: no such file or directory: unknown
 ```
 
-For our use case, maybe we can use an image that's optimized for network troubleshooting: [`nicolaka/netshoot`](https://github.com/nicolaka/netshoot).
+No `/bin/sh`? That's rough. Let's provide a shell with an Ephemeral Container using the `busybox` image:
 
-We can use `kubectl alpha debug` with this image to capture packets with `tcpdump` and pipe them to our local Wireshark just as we'd done before!
+```console
+kubectl alpha debug -it mando-655449598d-fqrvb --image=busybox --target=mando -- /bin/sh
 
-Here's a concrete example of me using `tcpdump` to capture packets on the `eth0` interface<sup>1</sup> with my [`mando` app](https://github.com/tcdowney/mando):
+If you don't see a command prompt, try pressing enter.
+/ # echo "hello there"
+hello there
+/ # ls
+bin   dev   etc   home  proc  root  sys   tmp   usr   var
+```
+
+Now we can do all sorts of shell-like activities!
+
+For our use case, though, we want to capture network packets. So let's use an image that's optimized for network troubleshooting: [`nicolaka/netshoot`](https://github.com/nicolaka/netshoot).
+
+We can use `kubectl alpha debug` with run `tcpdump` and pipe the output to our local Wireshark just as we'd done before!
+
+Here's a concrete example of me using `tcpdump` to capture packets on the `eth0` interface:
 
 ```console
 kubectl alpha debug -i mando-655449598d-fqrvb --image=nicolaka/netshoot --target=mando -- tcpdump -i eth0 -w - | wireshark -k -i -
 ```
 
-_<sup>1</sup> - If you're using a service mesh you may also want to look at other interfaces like `lo` to inspect traffic between the sidecar proxy and your app container._
+Since I'm using [Istio](https://istio.io/) as my service mesh, capturing packets from `eth0` primarily shows traffic to and from the Envoy sidecar proxy. If we want to debug traffic between the proxy and the `mando` app itself we can do the same thing against the `lo` (loopback) interface:
+
+```console
+kubectl alpha debug -i mando-655449598d-fqrvb --image=nicolaka/netshoot --target=mando -- tcpdump -i lo -w - | wireshark -k -i -
+```
+
+I've found both of these commands to be invaluable when debugging the service mesh interactions on my clusters.
 
 ## Caveats
 
