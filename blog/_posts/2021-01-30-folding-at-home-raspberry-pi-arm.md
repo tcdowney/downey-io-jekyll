@@ -39,8 +39,8 @@ You'll need a Raspberry Pi with a 64 bit processor to be able to run Folding@Hom
 In addition to your 64 bit Pi, you'll need a 64 bit OS to run the `arm64` Folding@Home client. The typical Raspbian/Raspberry Pi OS is 32 bit (since until recently Raspberry Pis did not have more than 4 gigs of RAM), so you'll need to download it specially.
 
 You can find the latest ones here:
-* [https://downloads.raspberrypi.org/raspios_arm64/images/](https://downloads.raspberrypi.org/raspios_arm64/images/)
-* [https://downloads.raspberrypi.org/raspios_lite_arm64/images/](https://downloads.raspberrypi.org/raspios_lite_arm64/images/)
+* [Raspberry Pi OS Full arm64 Images](https://downloads.raspberrypi.org/raspios_arm64/images/)
+* [Raspberry Pi OS Lite arm64 Images](https://downloads.raspberrypi.org/raspios_lite_arm64/images/)
 
 I chose to go with the "lite" option since I run my Pis headless. Next install it as you normally would ([follow these steps if you need help!](https://www.raspberrypi.org/documentation/installation/installing-images/)).
 
@@ -96,7 +96,7 @@ It will also ask if you want to run it as a service automatically on start up. I
 That's it! If you ever want to uninstall Folding@Home from your Pi, just run `sudo dpkg -P fahclient`.
 
 ## Folding Performance Comparison
-These things get pretty hot under heavy load, so I decided to test out three different configurations to see what kind of cooling was necessary to fold at max power without thermal throttling. I recorded temperature and clock speed stats while folding using [the same script](https://github.com/tcdowney/knick-knacks/blob/7cc6c9e47fd918f5d68bb938dec952dd2a323b58/raspberry-pi/raspi-metrics.sh) that I used in my cooling experiment.
+These things get pretty hot under heavy load, so I decided to test out three different configurations to see what kind of cooling was necessary to fold at max power without thermal throttling. I recorded temperature and clock speed stats while folding using [the same script](https://github.com/tcdowney/knick-knacks/blob/7cc6c9e47fd918f5d68bb938dec952dd2a323b58/raspberry-pi/raspi-metrics.sh) that I used in my cooling experiment. I dropped a few Amazon referral links to the various cases I used, so if you buy anything through them I'll earn a few bucks and maybe recoup a bit of the electric costs these little guys incurred. 😛
 
 The amount and difficulty of work distributed by Folding@Home is variable so I let the Pis run for two weeks to see what they could accomplish.
 
