@@ -12,7 +12,7 @@ categories:
   - tcpdump kubernetes pod
   - wireshark kubernetes pod
 excerpt:
- "he other day I had a situation where I needed to debug network traffic between an app and its sidecar proxy. The app was using a minimal distroless container image and didn't have easy access to tcpdump. Fortunately, newer versions of Kubernetes have alpha support for ephemeral debug containers which allow us to spin up temporary containers (with debug tools) inside a running pod! In this post we'll see how we can use ephemeral containers and tcpdump to capture network traffic from a running pod."
+ "The other day I had a situation where I needed to debug network traffic between an app and its sidecar proxy. The app was using a minimal distroless container image and didn't have easy access to tcpdump. Fortunately, newer versions of Kubernetes have alpha support for ephemeral debug containers which allow us to spin up temporary containers (with debug tools) inside a running pod! In this post we'll see how we can use ephemeral containers and tcpdump to capture network traffic from a running pod."
 description:
   "Using ephemeral containers to run tcpdump against a running Kubernetes Pod."
 ---
