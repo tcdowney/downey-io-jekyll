@@ -21,6 +21,8 @@ description:
 <img src="https://images.downey.io/raspi/raspi-origami.jpg" alt="Raspberry Pi 4B with PoE Hat and paper origami crane">
 </div>
 
+_**tl;dr?** Feel free to skip ahead to the [installation guide](#installing-folding-at-home-on-raspberry-pi) below._
+
 Back when I was a kid I used to run [Folding@Home](https://foldingathome.org/) on our old family computer -- a silver Gateway tower with a 1.8 GHz Pentium 4. I'm not sure how I found out about it, but I remember being inordinately excited by the prospect of contributing CPU cycles to simulate protein folding and help discover cures for cancer and other diseases. Yeah, I was a nerd. 🤓
 
 Anyways, I kind of forgot about the project until this past year -- thanks to Covid-19. 😒 In addition to the typical work units, Folding@Home was now distributing work to help researchers better understand the SARS-CoV-2 virus ([you can read more on that here!](https://foldingathome.org/diseases/infectious-diseases/covid-19/)). So once again I did my civic duty and fired up my computers to contribute!
