@@ -29,7 +29,7 @@ Anyways, I kind of forgot about the project until this past year -- thanks to Co
 
 My desktop with its GTX 1070 graphics card chewed through simulations like crazy -- leagues faster than the old Gateway ever could. It got me wondering, though, "How would my Raspberry Pis fare?" I've got a ton of these suckers sitting dormant these days, both from my [Pi Kubernetes cluster]({% post_url 2018-08-04-how-to-build-raspberry-pi-kubernetes-cluster %}) and the [Raspberry Pi fan performance tests]({% post_url 2020-07-04-raspberry-pi-4-heatsinks-and-fans %}) that I conducted. Rather than collect dust I thought it would be fun to put them to work (even though it's probably not an efficient use of power). After all, they're probably just as powerful as that old Gateway PC.
 
-Unfotunately, when I first looked, no folding client existed for ARM processors. After all, why would the Folding@Home developers waste time building the software for low power ARM devices when desktop x86 processors and GPUs can run circles around them? I decided to search anyway and [forum posts like these](https://foldingforum.org/viewtopic.php?t=35998) started to give me hope. And sure enough, now it is!
+Unfortunately, when I first looked, no folding client existed for ARM processors. After all, why would the Folding@Home developers waste time building the software for low power ARM devices when desktop x86 processors and GPUs can run circles around them? I decided to search anyway and [forum posts like these](https://foldingforum.org/viewtopic.php?t=35998) started to give me hope. And sure enough, now it is!
 
 ## Installing Folding at Home on Raspberry Pi
 Here's what it takes to start folding on a Raspberry Pi.
@@ -118,7 +118,7 @@ First I tried out an old Raspberry Pi 3B that I had lying around. It's in a pass
 </div>
 
 
-Next I tried one of my Raspberry Pi 4Bs, this one in an aluminum [Argon NEO case](https://amzn.to/2BtOzO4) that's pretty similar to the Flirc case on the 3B. Raspberry Pi 4Bs run both faster and hotter than the 3Bs did so I was curious to see if passive cooling was enough. In [the cooling experiments]({% post_url 2020-07-04-raspberry-pi-4-heatsinks-and-fans %} I had done, under heavy synthetic load the 4B would have to throttle its CPU in this case. Fortunately, this was not the case for folding. It was able to keep running at a full 1.5 GHz, albeit at a toasty 72C.
+Next I tried one of my Raspberry Pi 4Bs, this one in an aluminum [Argon NEO case](https://amzn.to/2BtOzO4) that's pretty similar to the Flirc case on the 3B. Raspberry Pi 4Bs run both faster and hotter than the 3Bs did so I was curious to see if passive cooling was enough. In [the cooling experiments]({% post_url 2020-07-04-raspberry-pi-4-heatsinks-and-fans %}) I had done, under heavy synthetic load the 4B would have to throttle its CPU in this case. Fortunately, this was not the case for folding. It was able to keep running at a full 1.5 GHz, albeit at a toasty 72C.
 
 * **Specs:** Broadcom BCM2711B0 ARM Cortex-A72 Quad Core CPU at 1.5 GHZ
 * **Results:** 24 work units (WUs) completed and 19,648 points (Credit) earned
@@ -134,4 +134,4 @@ My last experiment used another Raspberry Pi 4B with a [ridiculous cooling tower
 * **Results:** 27 work units (WUs) completed and 22,642 points (Credit) earned
 
 ## Summary
-So in concolusion a modern desktop CPU and a GPU could smoke these Pis... and that's ok. I had fun waking up these long dormant little computers and that was worth it to me. If you've got an unused Pi sitting around consider putting it to use for a little bit as well. Maybe it will help cure something! 😊
+So, to wrap it all up, a modern desktop CPU and a GPU could smoke these Pis... and that's ok. I had fun waking up these long dormant little computers and that was worth it to me. If you've got an unused Pi sitting around consider putting it to use for a little bit as well. Maybe it will help cure something! 😊
