@@ -91,7 +91,3 @@ I'd say so. Especially now that I'm done! 😉
 I really enjoyed my time in the program (apart from the last 9 weeks or so of Graduate Algorithms) and I feel like it has helped me grow as a software engineer. In fact, I can't get enough. This Fall I'll be taking a victory lap and will take [Advanced Operating Systems](https://www.omscs.gatech.edu/cs-6210-advanced-operating-systems) as a non-degree seeking student to get some more of that sweet sweet distributed systems knowledge. 🙃
 
 Cheers!
-
-### Footnotes
-
-_\* Unfortunately, this policy lead to the rise of enterprise-grade turnkey CS7641 solutions like [ChedCode™](https://chedcode.cfapps.io) which [broke the class](https://github.com/cmaron/CS-7641-assignments/issues/24)._
