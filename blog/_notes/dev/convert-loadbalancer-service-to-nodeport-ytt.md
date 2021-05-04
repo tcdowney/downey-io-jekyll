@@ -48,4 +48,4 @@ ytt -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-0.3
 | kubectl apply -f -
 ```
 
-_<sup>1</sup> - The `--ignore-unknown-comments=true` flag is to keep `ytt` from complaining about the comments in the source YAML._
+_<sup>1</sup> - The `--ignore-unknown-comments=true` flag is to keep `ytt` from complaining about the comments in the source YAML. As of [v0.32.0](https://github.com/vmware-tanzu/carvel-ytt/releases/tag/v0.32.0), this flag is no longer required — `ytt` now properly distinguishes between "plain YAML" and a YAML file containing templating._
