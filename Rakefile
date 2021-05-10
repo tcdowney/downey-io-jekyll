@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :deploy do
   desc 'Builds and deploys all Jekyll sites with an s3_website.yml file'
   task :all do
