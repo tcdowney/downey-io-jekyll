@@ -6,6 +6,7 @@ sub_title:  "using Inlets, Contour, and external-dns"
 color: badge-accent-5
 icon: fa-globe
 date: 2020-08-23
+last_modified_at: 2021-06-18
 categories:
   - kubernetes
   - kubernetes in docker
@@ -22,6 +23,15 @@ description:
 <div>
 <img src="https://images.downey.io/kubernetes/tomorrowlan-k8s-cluster.jpg" alt="Computer (hostname tomorrowlan) running a Kubernetes cluster">
 </div>
+
+---
+
+## Important Update
+It looks like `inlets-operator` has been folded into [Inlets PRO](https://inlets.dev/) and now requires a (fairly inexpensive) paid license to use which comes with HTTPS and TCP load balancing plus support. You can still use `inlets` for free, you'll just have to configure the ingress node yourself I believe.
+
+Some of the post below still applies -- especially if you're trying to DIY your own set up with `inlets` -- but take it all with a grain of salt as I haven't had a chance to experiment with any of this since.
+
+---
 
 For personal projects and hacking around on Kubernetes, I'm a fan of inexpensive managed clusters (like the ones offered by [Digital Ocean](https://www.digitalocean.com/products/kubernetes/)). For about ten bucks a month, I can spin up a small single-node cluster and hit the ground running. Unfortunately, with these small clusters you only get about a gig of usable RAM and a single vCPU at best. If you want more, prices quickly climb.
 
