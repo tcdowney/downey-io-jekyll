@@ -5,3 +5,4 @@ google*
 .sass-cache
 .asset-cache
 .idea/*
+.vscode/*
