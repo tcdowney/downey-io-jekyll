@@ -21,6 +21,8 @@ Why not just use a pre-built Ruby image? The s3_website gem I'm using to publish
 
 ### Running the Image
 
+Make sure you run this command from the root of the repo. If you're running it from elsewhere, replace `$PWD` with the path to the repo.
+
 ```console
 docker run --platform=linux/amd64 -p 8000:8000 -it --entrypoint=/bin/bash -v $PWD:/downey-io downey/jekyll-env
 ```
