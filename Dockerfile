@@ -50,7 +50,7 @@ RUN set -eux; \
 WORKDIR gemfiles
 COPY Gemfile* .
 ENV BUNDLE_SILENCE_ROOT_WARNING=1
-RUN eval "$(rbenv init -)" && bundle install
+RUN eval "$(rbenv init -)" && bundle install --system
 
 # Remove the Gemfiles we copied so that they don't cause confusion
 WORKDIR /
