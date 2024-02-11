@@ -23,6 +23,7 @@ jobs:
         PHOTO_S3_BUCKET: ${{ secrets.PHOTO_S3_BUCKET }}
         PHOTO_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.PHOTO_CLOUDFRONT_DISTRIBUTION_ID }}
     steps:
+      - uses: actions/checkout@v2
       - name: Deploy Blog
         run: rake deploy:blog
       - name: Deploy Photos
