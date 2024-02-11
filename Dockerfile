@@ -56,4 +56,6 @@ RUN eval "$(rbenv init -)" && bundle install
 WORKDIR /
 RUN rm -rf /gemfiles
 
+RUN cp ~/.bashrc .bashrc
+
 CMD [ "/bin/bash" ]

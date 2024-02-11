@@ -27,6 +27,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy Blog
-        run: eval "$(rbenv init -)" && rake deploy:blog
+        run: pwd && source /.bashrc && rake deploy:blog
       - name: Deploy Photos
-        run: eval "$(rbenv init -)" && rake deploy:photo
+        run:  pwd && source /.bashrc && rake deploy:photo
