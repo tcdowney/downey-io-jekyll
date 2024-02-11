@@ -1,7 +1,7 @@
 name: Deploy Site
 defaults:
   run:
-    shell: bash -leo pipefail {0} 
+    shell: bash
 on:
   push:
     branches:
@@ -29,6 +29,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy Blog
-        run: pwd && source /.bashrc && rake deploy:blog
+        run: run: eval "$(rbenv init -)" && rake deploy:blog
       - name: Deploy Photos
-        run:  pwd && source /.bashrc && rake deploy:photo
+        run:  run: eval "$(rbenv init -)" && rake deploy:photo
