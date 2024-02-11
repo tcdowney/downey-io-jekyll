@@ -85,7 +85,7 @@ This is the second mITX build I've done and definitely the trickiest build overa
 
 Fortunately Fractal Design's instructions were pretty straightforward and my parts list was fairly minimal. The case has room for a 2.5" SSD to be placed in the back, but even with my small form factor PSU that would have been very tight. That's why I went with the two m.2 drives and I plan on finally getting a NAS for media storage.
 
-Just take a look at this lovely cable management. Lovely!
+Just take a look at this cable management. Lovely!
 
 <div>
 <img src="https://images.downey.io/blog/jade-workstation-cable-management.jpg" alt="Fractal Design Terra Jade Cable Management">
@@ -95,7 +95,13 @@ Also as you can see, there was barely any room to spare for the CPU cooler! I ha
 
 After shoving all of the power cables into the case they were brushing up against my single exhaust fan so I had to shield it with a 120mm grill guard.
 
-At the end of the day, though, I was fortunate for everything to work! It posted on the first try!
+My GPU was fairly compact so it fit with no problem, the case is long enough for most three-fan models I'd imagine.
+
+<div>
+<img src="https://images.downey.io/blog/jade-workstation-gpu.jpg" alt="Fractal Design Terra case with side panel open revealing the GPU">
+</div>
+
+In hindsight I probably should have tested out the components a bit outside of the case, but I was fortunate and everything worked on the first try.
 
 ## The Heat
 
