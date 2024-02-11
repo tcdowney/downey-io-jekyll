@@ -25,6 +25,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy Blog
-        run: rake deploy:blog
+        run: bundle exec rake deploy:blog
       - name: Deploy Photos
-        run: rake deploy:photo
+        run: bundle exec rake deploy:photo
