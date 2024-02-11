@@ -27,6 +27,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy Blog
-        run: bundle exec rake deploy:blog
+        run: eval "$(rbenv init -)" && rake deploy:blog
       - name: Deploy Photos
-        run: bundle exec rake deploy:photo
+        run: eval "$(rbenv init -)" && rake deploy:photo
