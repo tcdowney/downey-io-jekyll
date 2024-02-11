@@ -49,6 +49,9 @@ RUN set -eux; \
 # Pre-install most gems
 WORKDIR gemfiles
 COPY Gemfile* .
+
+RUN mkdir -p /.gem
+ENV GEM_HOME=/.gem
 ENV BUNDLE_SILENCE_ROOT_WARNING=1
 RUN eval "$(rbenv init -)" && bundle install --system
 
