@@ -1,5 +1,7 @@
-name: Build Jekyll Env Image
-
+name: Deploy Site
+defaults:
+  run:
+    shell: bash -ieo pipefail {0}
 on:
   push:
     branches:
@@ -25,8 +27,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy Blog
-        shell: bash
         run: bundle exec rake deploy:blog
       - name: Deploy Photos
-        shell: bash
         run: bundle exec rake deploy:photo
