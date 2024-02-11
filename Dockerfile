@@ -5,6 +5,9 @@ ENV LANG=C.UTF-8 \
     TZ=America/Los_Angeles \
     DEBIAN_FRONTEND=noninteractive
 
+RUN mkdir -p /.rbenv
+ENV RBENV_ROOT=/.rbenv
+
 # Dependencies for Ruby
 RUN set -eux; \
 	apt-get update; \
@@ -50,10 +53,8 @@ RUN set -eux; \
 WORKDIR gemfiles
 COPY Gemfile* .
 
-RUN mkdir -p /.gem
-ENV GEM_HOME=/.gem
 ENV BUNDLE_SILENCE_ROOT_WARNING=1
-RUN eval "$(rbenv init -)" && bundle install --system
+RUN eval "$(rbenv init -)" && bundle install
 
 # Remove the Gemfiles we copied so that they don't cause confusion
 WORKDIR /
