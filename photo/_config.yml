@@ -16,6 +16,7 @@ permalink: photos/:year/:month/:day/:title.html
 
 exclude:
   - s3_website.yml
+  - .env
 plugins:
   - jekyll-sitemap
   - jekyll-paginate

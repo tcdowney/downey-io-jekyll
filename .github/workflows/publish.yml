@@ -1,0 +1,29 @@
+name: Build Jekyll Env Image
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container:
+      image: downey/jekyll-env:latest
+      credentials:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+      env:
+        JEKYLL_ENV: production
+        S3_ID: ${{ secrets.S3_ID }}
+        S3_SECRET: ${{ secrets.S3_SECRET }}
+        BLOG_S3_BUCKET: ${{ secrets.BLOG_S3_BUCKET }}
+        BLOG_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.BLOG_CLOUDFRONT_DISTRIBUTION_ID }}
+        PHOTO_S3_BUCKET: ${{ secrets.PHOTO_S3_BUCKET }}
+        PHOTO_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.PHOTO_CLOUDFRONT_DISTRIBUTION_ID }}
+    steps:
+      - name: Deploy Blog
+        run: rake deploy:blog
+      - name: Deploy Photos
+        run: rake deploy:photo

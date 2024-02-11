@@ -1,5 +1,4 @@
 _site/
-s3_website.yml
 google*
 .DS_Store
 .sass-cache
@@ -8,3 +7,4 @@ google*
 .vscode/*
 blog/.jekyll-cache/
 photo/.jekyll-cache/
+.env

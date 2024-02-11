@@ -1,0 +1,13 @@
+s3_id: <%= ENV['S3_ID'] %>
+s3_secret: <%= ENV['S3_SECRET'] %>
+s3_bucket: <%= ENV['BLOG_S3_BUCKET'] %>
+cloudfront_distribution_id: <%= ENV['BLOG_CLOUDFRONT_DISTRIBUTION_ID'] %>
+cloudfront_wildcard_invalidation: true
+
+gzip: true
+gzip:
+  - .html
+  - .css
+  - .md
+redirects:
+  index.html: /blog

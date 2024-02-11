@@ -20,6 +20,7 @@ permalink: "blog/:title/"
 
 exclude:
   - s3_website.yml
+  - .env
 plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
