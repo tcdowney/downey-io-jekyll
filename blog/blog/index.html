@@ -43,13 +43,13 @@ type: blog
           <span aria-label="Previous page" class="fa fa-long-arrow-left fa-2x"></span>
         </a>
       {% else %}
-        <a href="/blog/page{{ paginator.previous_page }}" class="previous">
+        <a href="/blog/{{ paginator.previous_page }}" class="previous">
           <span aria-label="Previous page" class="fa fa-long-arrow-left fa-2x"></span>
         </a>
       {% endif %}
     {% endif %}
     {% if paginator.next_page %}
-      <a href="/blog/page{{ paginator.next_page }}" class="next">
+      <a href="/blog/{{ paginator.next_page }}" class="next">
         <span aria-label="Next page" class="fa fa-long-arrow-right fa-2x"></span>
       </a>
     {% endif %}
