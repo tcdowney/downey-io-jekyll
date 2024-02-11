@@ -2,7 +2,7 @@
 layout: post
 type: blog
 title: "Fractal Design Terra Jade Workstation"
-sub_title:  "My latest waste of money 🌝"
+sub_title:  "A 12-core waste of money 🌝"
 color: badge-accent-4
 icon: fa-desktop
 date: 2024-02-10
