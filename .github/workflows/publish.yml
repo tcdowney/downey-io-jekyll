@@ -1,7 +1,7 @@
 name: Deploy Site
 defaults:
   run:
-    shell: bash
+    shell: bash -ileo pipefail {0} 
 on:
   push:
     branches:
@@ -27,6 +27,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy Blog
-        run: source ~/.bashrc && bundle exec rake deploy:blog
+        run: bundle exec rake deploy:blog
       - name: Deploy Photos
-        run: source ~/.bashrc && bundle exec rake deploy:photo
+        run: bundle exec rake deploy:photo
