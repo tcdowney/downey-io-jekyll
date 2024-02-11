@@ -6,3 +6,5 @@ google*
 .asset-cache
 .idea/*
 .vscode/*
+blog/.jekyll-cache/
+photo/.jekyll-cache/
