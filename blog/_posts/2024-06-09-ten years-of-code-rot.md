@@ -5,7 +5,7 @@ title: "Code Rot"
 sub_title:  "Celebrating a decade of downey.io"
 color: badge-accent-5
 icon: fa-birthday-cake
-date: 2024-06-10
+date: 2024-06-09
 categories:
   - dependabot
   - github actions
